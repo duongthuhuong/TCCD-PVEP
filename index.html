@@ -1,2175 +1,3575 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PVEP | Tiêu chuẩn chức danh</title>
-
-<style>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PVEP Learning | Tiêu chuẩn chức danh</title><style>
 :root{
-  --ink:#25282b;
-  --paper:#fffdf9;
-  --cream:#f4efe7;
-  --cream2:#ebe2d6;
-  --red:#a54b3f;
-  --red2:#78362f;
-  --gold:#c28a4b;
-  --gold2:#8a683e;
-  --green:#687865;
-  --muted:#756e66;
-  --line:#ddd3c6;
-  --dark:#24282b;
+--paper:#f7fafb;
+--white:#fff;
+--ink:#26343b;
+--muted:#66767d;
+--red:#d9783d;
+--gold:#f0a24d;
+--line:#d7e1e3;
+--green:#587a72;
+--shadow:0 16px 46px rgba(35,67,78,.09)
 }
-
 *{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{
+font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+background:var(--paper);
+color:var(--ink)
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
 
-html,body{
-  margin:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family:"Segoe UI",Arial,sans-serif;
-  color:var(--ink);
-  background:#191b1d;
+.app{
+height:100vh;
+display:grid;
+grid-template-rows:62px 3px 1fr 64px
 }
 
-button,input,textarea,select{font:inherit}
-
-/* =====================================================
-   PRESENTATION
-===================================================== */
-
-.presentation{
-  width:100vw;
-  height:100vh;
-  position:relative;
-  overflow:hidden;
-  background:var(--cream);
+header{
+display:flex;
+align-items:center;
+padding:0 28px;
+background:#fff;
+border-bottom:1px solid #e6edef;
+gap:12px
 }
 
-.presentation:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 88% 8%,rgba(194,138,75,.12),transparent 28%),
-    radial-gradient(circle at 8% 92%,rgba(165,75,63,.08),transparent 27%);
+.logo{
+width:40px;
+height:40px;
+border-radius:50%;
+display:grid;
+place-items:center;
+background:var(--red);
+color:#fff;
+font-size:10px;
+font-weight:900
 }
 
-/* HEADER */
-
-.topbar{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:58px;
-  padding:0 34px;
-  display:flex;
-  align-items:center;
-  z-index:100;
-  background:rgba(255,253,249,.95);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(80,65,50,.09);
+.brand b{
+font-size:13px;
+letter-spacing:.12em
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.brand small{
+display:block;
+color:#718188;
+margin-top:2px
 }
 
-.brandmark{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:white;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:-.3px;
-  background:
-    linear-gradient(145deg,var(--red),var(--red2));
-  box-shadow:0 6px 18px rgba(120,54,47,.18);
+.headActions{
+margin-left:auto;
+display:flex;
+gap:10px;
+align-items:center
 }
 
-.brandname{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+.lookupBtn{
+border:1px solid #d6e2e5;
+background:#fff;
+border-radius:999px;
+padding:9px 14px;
+font-weight:750;
+color:#315766
 }
 
-.brandsub{
-  color:#91877c;
-  font-size:10px;
-  margin-top:2px;
+.lookupBtn:hover{
+background:#edf4f6;
+border-color:#a9c1c8
 }
 
-.slide-counter{
-  margin-left:auto;
-  color:#8d847b;
-  font-size:12px;
-  font-weight:700;
+.counter{
+font-size:12px;
+font-weight:800;
+color:#718188
 }
 
-.progress-track{
-  position:absolute;
-  top:58px;
-  left:0;
-  right:0;
-  height:3px;
-  background:#e9e1d7;
-  z-index:101;
-}
+.progress{background:#e4ecee}
 
-.progress-bar{
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,var(--red),var(--gold));
-  transition:width .55s cubic-bezier(.22,.8,.24,1);
+.progress div{
+height:3px;
+background:linear-gradient(90deg,#47717c,var(--orange,#d9783d),#f0a24d);
+transition:.35s
 }
-
-/* SLIDES */
 
 .stage{
-  position:absolute;
-  top:61px;
-  left:0;
-  right:0;
-  bottom:70px;
+position:relative;
+overflow:hidden
 }
 
 .slide{
-  position:absolute;
-  inset:0;
-  padding:5vh 7vw;
-  opacity:0;
-  transform:translateX(70px) scale(.985);
-  pointer-events:none;
-  transition:
-    opacity .55s ease,
-    transform .65s cubic-bezier(.22,.8,.24,1);
-  overflow:auto;
+position:absolute;
+inset:0;
+padding:4.5vh 7vw 3vh;
+overflow:auto;
+opacity:0;
+transform:translateX(45px);
+pointer-events:none;
+transition:.45s
 }
 
 .slide.active{
-  opacity:1;
-  transform:translateX(0) scale(1);
-  pointer-events:auto;
+opacity:1;
+transform:none;
+pointer-events:auto
 }
 
-.slide.exit-left{
-  opacity:0;
-  transform:translateX(-70px) scale(.985);
+.slide.old{transform:translateX(-45px)}
+
+footer{
+display:flex;
+align-items:center;
+padding:0 28px;
+background:#fff;
+border-top:1px solid #e1eaec
 }
 
-/* ANIMATIONS */
-
-.reveal{
-  opacity:0;
-  transform:translateY(22px);
+.round{
+width:40px;
+height:40px;
+border:1px solid var(--line);
+border-radius:50%;
+background:#fff;
+color:#315766
 }
 
-.slide.active .reveal{
-  animation:rise .65s ease forwards;
+.round:hover{background:#edf4f6}
+
+.next{
+margin-left:auto;
+border:0;
+border-radius:999px;
+padding:11px 18px;
+background:#315766;
+color:#fff;
+font-weight:800
 }
 
-.slide.active .d1{animation-delay:.08s}
-.slide.active .d2{animation-delay:.18s}
-.slide.active .d3{animation-delay:.28s}
-.slide.active .d4{animation-delay:.38s}
-.slide.active .d5{animation-delay:.48s}
+.next:hover{background:#274b58}
 
-@keyframes rise{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.chapter{
+margin-left:14px;
+color:#718188;
+font-size:11px
 }
 
-/* TYPOGRAPHY */
+.eyebrow,.kicker{
+color:#d9783d;
+font-size:11px;
+font-weight:900;
+letter-spacing:.18em;
+text-transform:uppercase;
+margin-bottom:12px
+}
 
-.eyebrow{
-  color:var(--red);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  margin-bottom:15px;
+h1,h2,h3{
+margin-top:0;
+font-family:"Segoe UI",Tahoma,Arial,sans-serif
 }
 
 h1{
-  margin:0;
-  max-width:1050px;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(42px,5.2vw,76px);
-  line-height:1.02;
-  font-weight:500;
-  letter-spacing:-.045em;
-  color:#292c2e;
+font-size:clamp(46px,6vw,82px);
+line-height:1.03;
+letter-spacing:-.045em
 }
 
 h2{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(31px,3.4vw,52px);
-  font-weight:500;
-  line-height:1.08;
-  letter-spacing:-.025em;
-  margin:0 0 18px;
+font-size:clamp(30px,3.2vw,48px);
+line-height:1.1;
+letter-spacing:-.035em;
+margin-bottom:18px
 }
 
-h3{
-  margin:0 0 8px;
-  font-size:18px;
-}
+h3{font-size:17px}
 
 .lead{
-  max-width:850px;
-  color:#6c655e;
-  font-size:clamp(17px,1.5vw,22px);
-  line-height:1.62;
-  margin-top:24px;
+font-size:clamp(16px,1.5vw,21px);
+line-height:1.58;
+color:#5f7077;
+max-width:950px
 }
 
-.small{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
+.cover,.module{
+background:
+radial-gradient(circle at 85% 18%,rgba(240,162,77,.17),transparent 27%),
+linear-gradient(120deg,#315766,#47717c);
+color:#fff
 }
 
-/* HERO */
+.cover .eyebrow,.module .eyebrow{
+color:#ffd0a6
+}
+
+.cover p,.module p{
+color:#eef5f6;
+font-size:19px;
+max-width:850px
+}
 
 .hero{
-  padding:0;
-  overflow:hidden;
-  background:
-    linear-gradient(115deg,#22272a 0%,#303335 58%,#5a5148 100%);
+max-width:920px;
+margin-top:5vh
 }
 
-.hero:before{
-  content:"";
-  position:absolute;
-  width:52vw;
-  height:52vw;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:50%;
-  right:-12vw;
-  top:-22vw;
+.goldline{
+width:100px;
+height:3px;
+background:#f0a24d;
+margin:22px 0
 }
 
-.hero:after{
-  content:"";
-  position:absolute;
-  width:36vw;
-  height:36vw;
-  border:1px solid rgba(194,138,75,.22);
-  border-radius:50%;
-  right:5vw;
-  bottom:-22vw;
+.primary{
+border:0;
+background:#d9783d;
+color:#fff;
+border-radius:999px;
+padding:11px 17px;
+font-weight:800;
+margin-top:14px
 }
 
-.hero-inner{
-  position:absolute;
-  z-index:2;
-  left:8vw;
-  top:50%;
-  transform:translateY(-50%);
-  max-width:820px;
+.primary:hover{
+background:#c96730
 }
 
-.hero .eyebrow{color:#d6a568}
-
-.hero h1{
-  color:#fff;
-  font-size:clamp(52px,6.4vw,92px);
+.cards{
+display:grid;
+gap:14px;
+margin-top:22px
 }
 
-.hero .lead{
-  color:#e8e0d7;
-  max-width:700px;
+.cards.two{grid-template-columns:repeat(2,1fr)}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.cards.four{grid-template-columns:repeat(4,1fr)}
+
+article,.callout,.metric{
+background:#fff;
+border:1px solid var(--line);
+border-radius:15px;
+padding:19px;
+box-shadow:var(--shadow)
 }
 
-.hero-line{
-  width:95px;
-  height:3px;
-  background:var(--gold);
-  margin:28px 0;
+article b{
+font-size:27px;
+color:#d9783d
 }
 
-/* CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:30px;
+article p,.metric p{
+font-size:13px;
+color:#687980;
+line-height:1.55
 }
-
-.grid4{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-top:28px;
-}
-
-.card{
-  background:rgba(255,253,249,.93);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
-  box-shadow:0 16px 45px rgba(58,46,35,.06);
-}
-
-.card-num{
-  color:var(--red);
-  font-family:Georgia,serif;
-  font-size:34px;
-  margin-bottom:15px;
-}
-
-.card p{
-  margin:6px 0 0;
-  color:#625c55;
-  line-height:1.55;
-  font-size:14px;
-}
-
-/* QUOTE */
-
-.quote{
-  max-width:980px;
-  margin-top:35px;
-  padding:27px 30px;
-  border-left:4px solid var(--red);
-  background:rgba(255,253,249,.7);
-  font-family:Georgia,serif;
-  font-size:clamp(21px,2vw,30px);
-  line-height:1.5;
-}
-
-/* SPLIT */
-
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-  height:100%;
-}
-
-.visual-panel{
-  min-height:420px;
-  border-radius:28px;
-  background:
-    linear-gradient(145deg,#34383a,#1e2224);
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 30px 70px rgba(32,27,23,.18);
-}
-
-.visual-panel:before{
-  content:"";
-  position:absolute;
-  width:330px;
-  height:330px;
-  border-radius:50%;
-  border:55px solid rgba(194,138,75,.13);
-  right:-95px;
-  top:-100px;
-}
-
-.visual-panel:after{
-  content:"TCCD";
-  position:absolute;
-  bottom:28px;
-  left:35px;
-  color:white;
-  font-family:Georgia,serif;
-  font-size:78px;
-  opacity:.93;
-}
-
-.visual-mini{
-  position:absolute;
-  top:40px;
-  left:38px;
-  color:#d8a45e;
-  font-size:12px;
-  letter-spacing:.17em;
-  font-weight:800;
-}
-
-/* FLOW */
-
-.flow{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:42px;
-}
-
-.node{
-  flex:1;
-  min-height:125px;
-  padding:18px 14px;
-  border-radius:17px;
-  background:#33383b;
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-  box-shadow:0 14px 32px rgba(50,42,34,.08);
-}
-
-.node strong{
-  font-family:Georgia,serif;
-  font-size:22px;
-  margin-bottom:7px;
-}
-
-.node span{
-  font-size:12px;
-  opacity:.8;
-}
-
-.node.red{background:var(--red)}
-.node.gold{background:var(--gold2)}
-
-.arrow{
-  color:#aa9c8c;
-  font-size:27px;
-}
-
-/* STANDARD LIST */
-
-.standard-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:13px;
-  margin-top:28px;
-}
-
-.standard{
-  display:flex;
-  gap:15px;
-  padding:17px 19px;
-  border-radius:14px;
-  background:rgba(255,253,249,.88);
-  border:1px solid var(--line);
-}
-
-.standard-no{
-  width:35px;
-  height:35px;
-  flex:none;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:#eee5d9;
-  color:var(--red);
-  font-weight:800;
-  font-size:12px;
-}
-
-.standard strong{
-  display:block;
-  margin-bottom:4px;
-}
-
-/* LEVELS */
-
-.levels{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:10px;
-  margin-top:38px;
-  align-items:end;
-}
-
-.level{
-  border-radius:17px 17px 8px 8px;
-  background:#fffdfa;
-  border:1px solid var(--line);
-  padding:18px 14px;
-  min-height:150px;
-  position:relative;
-}
-
-.level:nth-child(1){min-height:145px}
-.level:nth-child(2){min-height:175px}
-.level:nth-child(3){min-height:205px}
-.level:nth-child(4){min-height:235px}
-.level:nth-child(5){
-  min-height:265px;
-  background:#34383a;
-  color:white;
-}
-
-.level-number{
-  font-family:Georgia,serif;
-  font-size:42px;
-  color:var(--red);
-}
-
-.level:nth-child(5) .level-number{color:#e3b06b}
-
-.level-title{
-  font-weight:800;
-  margin:8px 0;
-}
-
-.level p{
-  font-size:12px;
-  line-height:1.5;
-  margin:0;
-  color:#70675f;
-}
-
-.level:nth-child(5) p{color:#ddd5cb}
-
-/* BIG NUMBER */
-
-.big-stat{
-  display:flex;
-  align-items:end;
-  gap:20px;
-  margin-top:35px;
-}
-
-.big-number{
-  font-family:Georgia,serif;
-  font-size:clamp(90px,12vw,170px);
-  line-height:.8;
-  color:var(--red);
-}
-
-.big-label{
-  padding-bottom:10px;
-  font-size:20px;
-  color:#645e57;
-  max-width:420px;
-}
-
-/* CALLOUT */
 
 .callout{
-  margin-top:27px;
-  padding:18px 21px;
-  border-radius:13px;
-  border-left:4px solid var(--gold);
-  background:#fff8ec;
-  line-height:1.55;
+margin-top:20px;
+box-shadow:none;
+border-left:4px solid #f0a24d;
+line-height:1.55
 }
 
-.callout.red{
-  border-left-color:var(--red);
-  background:#f8ece9;
+.warn{
+background:#fff6ed;
+border-left-color:#f0a24d
 }
 
-.callout.green{
-  border-left-color:var(--green);
-  background:#edf1eb;
+.ok{
+background:#edf5f2;
+border-left-color:#587a72
 }
 
-/* LOOKUP */
-
-.lookup-panel{
-  max-width:1000px;
-  margin-top:30px;
-  padding:28px;
-  border-radius:20px;
-  background:rgba(255,253,249,.92);
-  border:1px solid var(--line);
+.bad{
+background:#fff0e7;
+border-left-color:#d9783d
 }
 
-.select-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center
 }
+
+.metric span{
+display:block;
+font-size:clamp(58px,8vw,110px);
+font-weight:850;
+color:#d9783d;
+line-height:1
+}
+
+.metric b{font-size:18px}
+
+.metric.accent span{
+color:#f0a24d
+}
+
+.chips{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin:24px 0
+}
+
+.chips span{
+background:#fff;
+border:1px solid var(--line);
+border-radius:999px;
+padding:11px 15px;
+font-weight:700
+}
+
+.flow{
+display:flex;
+align-items:stretch;
+gap:8px;
+margin:28px 0;
+overflow:auto
+}
+
+.flow>span{
+min-width:130px;
+flex:1;
+background:#416774;
+color:#fff;
+border-radius:13px;
+padding:16px;
+text-align:center;
+font-weight:800
+}
+
+.flow>span:nth-of-type(even){
+background:#d9783d
+}
+
+.flow small{
+font-weight:500;
+opacity:.88
+}
+
+.flow i{
+display:grid;
+place-items:center;
+font-style:normal;
+color:#819198;
+font-size:20px
+}
+
+.mc{
+display:grid;
+gap:10px;
+max-width:900px
+}
+
+.mc button{
+background:#fff;
+border:1px solid var(--line);
+padding:14px;
+border-radius:11px;
+text-align:left;
+color:#26343b
+}
+
+.mc button:hover{
+border-color:#789aa5;
+background:#f3f8f9
+}
+
+.mc button.good,.clickcard.good{
+background:#edf5f2;
+border-color:#78907a
+}
+
+.mc button.bad,.clickcard.bad{
+background:#fff0e7;
+border-color:#d9783d
+}
+
+.feedback{
+margin-top:12px;
+min-height:40px
+}
+
+.levels{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+align-items:end;
+margin-top:28px
+}
+
+.levels span{
+background:#fff;
+border:1px solid var(--line);
+border-radius:14px;
+padding:15px;
+min-height:110px
+}
+
+.levels span:nth-child(2){min-height:135px}
+.levels span:nth-child(3){min-height:160px}
+.levels span:nth-child(4){min-height:185px}
+
+.levels span:nth-child(5){
+min-height:210px;
+background:#416774;
+color:#fff
+}
+
+.levels b{
+display:block;
+font-size:32px;
+color:#d9783d
+}
+
+.levels span:nth-child(5) b{
+color:#ffd0a6
+}
+
+.clickcard{cursor:pointer}
+
+.reviewRow{
+display:grid;
+grid-template-columns:190px 1fr 40px;
+gap:12px;
+align-items:center;
+padding:10px 0;
+border-bottom:1px solid var(--line);
+max-width:900px
+}
+
+input[type=range]{
+width:100%;
+accent-color:#d9783d
+}
+
+textarea,input[type=date],select,input[type=text]{
+width:100%;
+border:1px solid var(--line);
+border-radius:10px;
+padding:10px;
+background:#fff;
+color:#26343b
+}
+
+textarea{min-height:75px}
 
 label{
-  display:block;
-  color:#766e65;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  font-weight:800;
-  margin-bottom:7px;
+display:block;
+font-weight:800;
+margin-bottom:8px
 }
 
-select,input,textarea{
-  width:100%;
-  border:1px solid #d7cdbf;
-  border-radius:10px;
-  padding:12px 13px;
-  background:white;
-  color:#383735;
-  outline:none;
+.form small{
+display:block;
+margin-top:8px
 }
 
-select:focus,input:focus,textarea:focus{
-  border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(194,138,75,.12);
+.quizBox{
+max-width:900px;
+background:#fff;
+border:1px solid var(--line);
+border-radius:16px;
+padding:22px
 }
 
-/* QUIZ */
-
-.quiz-card{
-  max-width:920px;
-  margin-top:20px;
-  padding:28px;
-  background:rgba(255,253,249,.94);
-  border:1px solid var(--line);
-  border-radius:20px;
+.quizBox .q{
+font-size:23px;
+font-weight:750;
+margin:15px 0
 }
 
-.question{
-  font-family:Georgia,serif;
-  font-size:clamp(22px,2.4vw,34px);
-  line-height:1.35;
-  margin:18px 0 22px;
+.quizBar{
+height:5px;
+background:#e6edef;
+border-radius:5px;
+overflow:hidden
 }
 
-.answers{
-  display:grid;
-  gap:10px;
+.quizBar i{
+display:block;
+height:100%;
+background:linear-gradient(90deg,#47717c,#d9783d)
 }
 
-.answer{
-  padding:14px 17px;
-  border:1px solid #d9d0c5;
-  border-radius:12px;
-  background:white;
-  cursor:pointer;
-  transition:.2s;
+/* ===== TRA CỨU TCCD ===== */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(31,48,55,.72);
+z-index:100;
+display:none;
+align-items:center;
+justify-content:center;
+padding:22px
 }
 
-.answer:hover{
-  border-color:var(--red);
-  transform:translateX(3px);
+.modal.on{display:flex}
+
+.panel{
+width:min(1180px,96vw);
+height:min(86vh,850px);
+background:#f7fafb;
+border-radius:20px;
+overflow:hidden;
+display:grid;
+grid-template-rows:auto auto 1fr;
+box-shadow:0 30px 90px rgba(21,48,58,.28)
 }
 
-.answer.selected{
-  background:#f5e9e6;
-  border-color:var(--red);
+.panelHead{
+display:flex;
+align-items:center;
+padding:18px 22px;
+background:#fff;
+border-bottom:1px solid var(--line)
 }
 
-.answer.correct{
-  background:#e9f0e6;
-  border-color:var(--green);
+.panelHead small{
+color:#d9783d;
+font-weight:850;
+letter-spacing:.1em
 }
 
-.answer.wrong{
-  background:#f7e5e2;
-  border-color:var(--red);
+.panelHead h3{
+margin:0;
+font-size:22px;
+color:#315766
 }
 
-.quiz-meta{
-  color:#8b8279;
-  font-size:12px;
-  font-weight:700;
+.close{
+margin-left:auto;
+border:0;
+background:#edf3f4;
+border-radius:50%;
+width:38px;
+height:38px;
+color:#315766
 }
 
-/* SELF REVIEW */
-
-.review{
-  max-width:950px;
-  margin-top:25px;
+.filters{
+display:grid;
+grid-template-columns:1.1fr 1.7fr .7fr;
+gap:10px;
+padding:14px 22px;
+background:#fff;
+border-bottom:1px solid var(--line)
 }
 
-.review-row{
-  display:grid;
-  grid-template-columns:230px 1fr 45px;
-  align-items:center;
-  gap:18px;
-  padding:14px 0;
-  border-bottom:1px solid #ded4c8;
+.lookupBody{
+overflow:auto;
+padding:20px 22px
 }
 
-input[type="range"]{
-  padding:0;
-  accent-color:var(--red);
+.roleTitle{
+display:flex;
+gap:12px;
+align-items:flex-start;
+justify-content:space-between
 }
 
-/* PLAN */
-
-.plan-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  max-width:1000px;
-  margin-top:25px;
+.roleTitle h2{
+color:#315766
 }
 
-.plan-box{
-  padding:19px;
-  background:rgba(255,253,249,.9);
-  border:1px solid var(--line);
-  border-radius:15px;
+.badge{
+display:inline-block;
+border-radius:999px;
+background:#edf3f4;
+color:#416774;
+padding:6px 10px;
+font-size:11px;
+font-weight:800;
+margin-right:5px
 }
 
-textarea{
-  min-height:90px;
-  resize:vertical;
+.reqGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin:15px 0
 }
 
-/* BUTTON */
-
-.btn{
-  border:0;
-  border-radius:999px;
-  padding:11px 20px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.2s;
+.req{
+background:#fff;
+border:1px solid var(--line);
+border-radius:12px;
+padding:14px
 }
 
-.btn-dark{
-  color:white;
-  background:#34383a;
+.req>b{
+color:#d9783d
 }
 
-.btn-red{
-  color:white;
-  background:var(--red);
+table{
+width:100%;
+border-collapse:collapse;
+background:#fff;
+font-size:12px
 }
 
-.btn-light{
-  background:#f3ede5;
-  color:#45423e;
-  border:1px solid #d8cec1;
+th,td{
+border:1px solid #dce5e7;
+padding:9px;
+vertical-align:top
 }
 
-.btn:hover{
-  transform:translateY(-1px);
+th{
+background:#3f6875;
+color:#fff;
+position:sticky;
+top:0
 }
 
-/* FOOTER NAV */
-
-.bottom{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:70px;
-  z-index:100;
-  display:flex;
-  align-items:center;
-  padding:0 34px;
-  background:rgba(255,253,249,.96);
-  backdrop-filter:blur(12px);
-  border-top:1px solid rgba(80,65,50,.1);
+td.lv{
+text-align:center;
+font-weight:850;
+color:#d9783d
 }
 
-.nav-btn{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  border:1px solid #d8cec1;
-  background:transparent;
-  cursor:pointer;
-  font-size:18px;
-  color:#484743;
+.sectionRow td{
+background:#edf3f4;
+color:#315766;
+font-weight:850
 }
 
-.nav-btn:hover{
-  background:#eee7de;
+.sourceNote{
+font-size:11px;
+color:#718188;
+margin-top:12px
 }
-
-.bottom-center{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:6px;
-}
-
-.dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#cfc4b7;
-  transition:.2s;
-}
-
-.dot.active{
-  width:20px;
-  border-radius:5px;
-  background:var(--red);
-}
-
-.next-btn{
-  margin-left:auto;
-  border:0;
-  border-radius:999px;
-  background:#34383a;
-  color:white;
-  padding:11px 19px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-/* RESULT */
-
-.result{
-  text-align:center;
-  max-width:780px;
-  margin:4vh auto 0;
-}
-
-.score{
-  font-family:Georgia,serif;
-  color:var(--red);
-  font-size:clamp(90px,12vw,155px);
-  line-height:1;
-}
-
-/* MOBILE */
 
 @media(max-width:850px){
-
-  .topbar{padding:0 18px}
-  .brandsub{display:none}
-
-  .slide{
-    padding:35px 24px;
-  }
-
-  h1{font-size:42px}
-  h2{font-size:34px}
-
-  .grid,.grid4,
-  .standard-list,
-  .plan-grid,
-  .select-grid{
-    grid-template-columns:1fr;
-  }
-
-  .split{
-    grid-template-columns:1fr;
-    height:auto;
-  }
-
-  .visual-panel{
-    min-height:250px;
-  }
-
-  .flow{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .arrow{
-    transform:rotate(90deg);
-    text-align:center;
-  }
-
-  .levels{
-    grid-template-columns:1fr;
-    align-items:stretch;
-  }
-
-  .level,
-  .level:nth-child(n){
-    min-height:auto;
-  }
-
-  .review-row{
-    grid-template-columns:1fr;
-  }
-
-  .bottom-center{display:none}
+.slide{padding:28px 20px}
+.cards.two,.cards.three,.cards.four,.split,.filters,.reqGrid{
+grid-template-columns:1fr
 }
-</style>
-</head>
-
-<body>
-
-<div class="presentation">
-
-  <!-- HEADER -->
-  <div class="topbar">
-    <div class="brand">
-      <div class="brandmark">PVEP</div>
-      <div>
-        <div class="brandname">PVEP Learning</div>
-        <div class="brandsub">Tiêu chuẩn chức danh</div>
-      </div>
-    </div>
-
-    <div class="slide-counter">
-      <span id="currentNo">01</span> / <span id="totalNo"></span>
-    </div>
-  </div>
-
-  <div class="progress-track">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-
-  <!-- SLIDES -->
-  <main class="stage">
-
-    <!-- 1 -->
-    <section class="slide hero active">
-      <div class="hero-inner">
-        <div class="eyebrow reveal d1">PVEP · E-LEARNING</div>
-
-        <h1 class="reveal d2">
-          Tiêu chuẩn<br>chức danh
-        </h1>
-
-        <div class="hero-line reveal d3"></div>
-
-        <p class="lead reveal d4">
-          Hiểu đúng tiêu chuẩn · Biết cách tra cứu ·
-          Chủ động phát triển năng lực để đáp ứng yêu cầu công việc.
-        </p>
-
-        <button class="btn btn-red reveal d5"
-                style="margin-top:22px"
-                onclick="nextSlide()">
-          Bắt đầu →
-        </button>
-      </div>
-    </section>
-
-    <!-- 2 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">01 · KHỞI ĐỘNG</div>
-
-      <h2 class="reveal d2">
-        Vì sao mỗi CBNV nên hiểu<br>Tiêu chuẩn chức danh?
-      </h2>
-
-      <p class="lead reveal d3">
-        TCCD không chỉ là một bộ tiêu chuẩn phục vụ công tác nhân sự.
-        Đây còn là “bản đồ yêu cầu” giúp mỗi người hiểu vị trí của mình
-        cần những gì và cần phát triển điều gì tiếp theo.
-      </p>
-
-      <div class="grid reveal d4">
-        <div class="card">
-          <div class="card-num">01</div>
-          <h3>Biết chuẩn</h3>
-          <p>Hiểu yêu cầu của chính chức danh và bậc chức danh đang đảm nhiệm.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-num">02</div>
-          <h3>Hiểu khoảng cách</h3>
-          <p>Đối chiếu yêu cầu của vị trí với năng lực và hồ sơ hiện tại.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-num">03</div>
-          <h3>Chủ động phát triển</h3>
-          <p>Xác định nội dung cần học, thực hành và tích lũy minh chứng.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3 -->
-    <section class="slide">
-      <div class="split">
-
-        <div>
-          <div class="eyebrow reveal d1">KHÁI NIỆM</div>
-
-          <h2 class="reveal d2">
-            TCCD là chuẩn của<br>một vị trí công việc
-          </h2>
-
-          <p class="lead reveal d3">
-            Tiêu chuẩn chức danh quy định các điều kiện, tiêu chí
-            mà cá nhân cần đáp ứng khi thực hiện công tác nhân sự
-            như tuyển dụng, giao việc, xếp bậc, đào tạo và phát triển.
-          </p>
-
-          <div class="callout red reveal d4">
-            <strong>Điểm cần nhớ:</strong><br>
-            Khi tra cứu TCCD, chúng ta đang xem
-            <b>yêu cầu của vị trí</b>, không phải đưa ra nhận xét
-            cảm tính về một cá nhân.
-          </div>
-        </div>
-
-        <div class="visual-panel reveal d3">
-          <div class="visual-mini">
-            POSITION STANDARD · PVEP
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 4 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">CẤU TRÚC TCCD</div>
-
-      <h2 class="reveal d2">
-        Một chức danh được nhìn từ nhiều nhóm tiêu chuẩn
-      </h2>
-
-      <div class="standard-list">
-
-        <div class="standard reveal d2">
-          <div class="standard-no">01</div>
-          <div>
-            <strong>Bằng cấp</strong>
-            <span class="small">Trình độ học vấn, bằng cấp, chứng nhận hoặc chứng chỉ phù hợp.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d2">
-          <div class="standard-no">02</div>
-          <div>
-            <strong>Kinh nghiệm</strong>
-            <span class="small">Kinh nghiệm chuyên môn và kinh nghiệm quản lý khi có yêu cầu.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d3">
-          <div class="standard-no">03</div>
-          <div>
-            <strong>Kiến thức</strong>
-            <span class="small">Kiến thức chuyên môn từ nền tảng đến chuyên sâu.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d3">
-          <div class="standard-no">04</div>
-          <div>
-            <strong>Kỹ năng</strong>
-            <span class="small">Tiếng Việt, giao tiếp, đàm phán, tin học và công nghệ số.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d4">
-          <div class="standard-no">05</div>
-          <div>
-            <strong>Năng lực chung</strong>
-            <span class="small">Dữ liệu, báo cáo, tư duy, phương pháp luận, thái độ nghề nghiệp.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d4">
-          <div class="standard-no">06</div>
-          <div>
-            <strong>Năng lực lãnh đạo</strong>
-            <span class="small">Áp dụng đối với các chức danh quản lý.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d5">
-          <div class="standard-no">07</div>
-          <div>
-            <strong>Ngoại ngữ</strong>
-            <span class="small">Yêu cầu theo chức danh và tính chất sử dụng trong công việc.</span>
-          </div>
-        </div>
-
-        <div class="standard reveal d5">
-          <div class="standard-no">08</div>
-          <div>
-            <strong>Điều kiện liên quan</strong>
-            <span class="small">Các yêu cầu khác theo tiêu chuẩn chức danh và quy định hiện hành.</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 5 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">CÁCH TRA CỨU</div>
-
-      <h2 class="reveal d2">
-        Đừng bắt đầu bằng việc đọc cả bảng TCCD
-      </h2>
-
-      <p class="lead reveal d3">
-        Hãy đi theo một đường dẫn đơn giản.
-      </p>
-
-      <div class="flow reveal d4">
-
-        <div class="node red">
-          <strong>01</strong>
-          <span>Nhóm chức danh</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node">
-          <strong>02</strong>
-          <span>Tên chức danh</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node gold">
-          <strong>03</strong>
-          <span>Bậc chức danh</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node">
-          <strong>04</strong>
-          <span>Đối chiếu tiêu chuẩn</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node red">
-          <strong>05</strong>
-          <span>Xác định khoảng cách</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 6 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">BẬC CHỨC DANH</div>
-
-      <h2 class="reveal d2">
-        Cùng tên chức danh,<br>yêu cầu có thể khác theo bậc
-      </h2>
-
-      <p class="lead reveal d3">
-        Bậc chức danh phản ánh mức độ yêu cầu về công việc và năng lực.
-        Bậc cao hơn không đơn thuần là “làm nhiều hơn” mà thường gắn với
-        mức độ phức tạp, tính độc lập và trách nhiệm cao hơn.
-      </p>
-
-      <div class="quote reveal d4">
-        Vì vậy, tra đúng <b>tên chức danh</b> nhưng sai
-        <b>bậc chức danh</b> vẫn có thể dẫn đến đối chiếu sai tiêu chuẩn.
-      </div>
-    </section>
-
-    <!-- 7 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">KIẾN THỨC CHUYÊN MÔN</div>
-
-      <h2 class="reveal d2">
-        05 cấp độ – từ nền tảng đến dẫn dắt
-      </h2>
-
-      <div class="levels">
-
-        <div class="level reveal d1">
-          <div class="level-number">1</div>
-          <div class="level-title">Nền tảng</div>
-          <p>Hiểu và thực hiện công việc cơ bản theo hướng dẫn.</p>
-        </div>
-
-        <div class="level reveal d2">
-          <div class="level-number">2</div>
-          <div class="level-title">Vận dụng</div>
-          <p>Thực hiện công việc tương đối độc lập và xử lý tình huống quen thuộc.</p>
-        </div>
-
-        <div class="level reveal d3">
-          <div class="level-number">3</div>
-          <div class="level-title">Thành thạo</div>
-          <p>Vận dụng tốt kiến thức và xử lý các vấn đề chuyên môn phức tạp hơn.</p>
-        </div>
-
-        <div class="level reveal d4">
-          <div class="level-number">4</div>
-          <div class="level-title">Chuyên sâu</div>
-          <p>Phân tích, tư vấn và giải quyết các vấn đề khó trong lĩnh vực.</p>
-        </div>
-
-        <div class="level reveal d5">
-          <div class="level-number">5</div>
-          <div class="level-title">Dẫn dắt</div>
-          <p>Định hướng chuyên môn, xây dựng phương pháp và phát triển năng lực cho người khác.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 8 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">KỸ NĂNG & NĂNG LỰC</div>
-
-      <h2 class="reveal d2">
-        Không chỉ “biết” – mà phải thể hiện được trong công việc
-      </h2>
-
-      <div class="grid4">
-
-        <div class="card reveal d2">
-          <div class="card-num">A</div>
-          <h3>Giao tiếp</h3>
-          <p>Trao đổi, trình bày, thuyết phục và phối hợp hiệu quả.</p>
-        </div>
-
-        <div class="card reveal d3">
-          <div class="card-num">B</div>
-          <h3>Dữ liệu & báo cáo</h3>
-          <p>Quản lý dữ liệu, tổng hợp thông tin và tạo báo cáo phục vụ công việc.</p>
-        </div>
-
-        <div class="card reveal d4">
-          <div class="card-num">C</div>
-          <h3>Công nghệ số</h3>
-          <p>Sử dụng công cụ văn phòng, phần mềm chuyên ngành, dữ liệu và AI phù hợp.</p>
-        </div>
-
-        <div class="card reveal d5">
-          <div class="card-num">D</div>
-          <h3>Tư duy</h3>
-          <p>Phân tích, giải quyết vấn đề và lựa chọn phương pháp phù hợp.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 9 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">CÔNG NGHỆ SỐ & AI</div>
-
-      <h2 class="reveal d2">
-        AI là công cụ hỗ trợ.<br>Trách nhiệm vẫn thuộc về con người.
-      </h2>
-
-      <p class="lead reveal d3">
-        Năng lực ứng dụng công nghệ số không chỉ là biết sử dụng phần mềm.
-        Ở mức cao hơn, người lao động cần biết lựa chọn công cụ, khai thác dữ liệu
-        và ứng dụng AI phù hợp với yêu cầu công việc.
-      </p>
-
-      <div class="callout red reveal d4">
-        <strong>Nguyên tắc:</strong>
-        kiểm tra đầu ra, bảo đảm tính chính xác, phù hợp và chịu trách nhiệm
-        đối với sản phẩm công việc do mình thực hiện.
-      </div>
-    </section>
-
-    <!-- 10 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">NGOẠI NGỮ</div>
-
-      <h2 class="reveal d2">
-        Không nên nhìn ngoại ngữ chỉ như một chứng chỉ
-      </h2>
-
-      <div class="split">
-
-        <div>
-          <p class="lead reveal d3">
-            Quy chế sử dụng chứng chỉ ngoại ngữ làm căn cứ tham chiếu,
-            đồng thời yêu cầu ngoại ngữ cần gắn với mức độ sử dụng thực tế
-            của từng chức danh.
-          </p>
-
-          <div class="big-stat reveal d4">
-            <div class="big-number">500</div>
-            <div class="big-label">
-              TOEIC là mức tối thiểu được nêu trong hệ thống quy định chung,
-              trừ trường hợp chức danh yêu cầu mức cao hơn.
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="card reveal d3" style="padding:30px">
-            <div class="eyebrow">NĂNG LỰC THỰC TẾ</div>
-
-            <h3 style="font-family:Georgia,serif;font-size:30px">
-              Nghe · Nói · Đọc · Viết
-            </h3>
-
-            <p>
-              Với những vị trí thường xuyên sử dụng tiếng Anh,
-              cần quan tâm đến khả năng làm việc thực tế bằng ngoại ngữ,
-              không chỉ điểm số chứng chỉ.
-            </p>
-          </div>
-
-          <div class="callout reveal d4">
-            Một số chức danh có thể yêu cầu mức ngoại ngữ cao hơn
-            theo TCCD chi tiết.
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 11 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">ĐIỀU KIỆN ĐẠT</div>
-
-      <h2 class="reveal d2">
-        Chuyên môn tốt chưa đồng nghĩa<br>mặc nhiên đạt TCCD
-      </h2>
-
-      <div class="big-stat reveal d3">
-        <div class="big-number">80%</div>
-        <div class="big-label">
-          Ngưỡng đánh giá kiến thức và kỹ năng được sử dụng
-          trong việc xác định kết quả TCCD.
-        </div>
-      </div>
-
-      <div class="grid reveal d4">
-
-        <div class="card">
-          <div class="card-num">✓</div>
-          <h3>Đạt</h3>
-          <p>
-            Đáp ứng các tiêu chí hồ sơ và kết quả đánh giá kiến thức,
-            kỹ năng đạt mức yêu cầu.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-num">!</div>
-          <h3>Chưa đạt</h3>
-          <p>
-            Có tiêu chí hồ sơ không đáp ứng hoặc kết quả đánh giá
-            kiến thức, kỹ năng chưa đạt ngưỡng.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-num">↗</div>
-          <h3>Phát triển</h3>
-          <p>
-            Khoảng cách được sử dụng làm một đầu vào để xác định
-            nội dung đào tạo và phát triển.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 12 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">TRA CỨU TCCD</div>
-
-      <h2 class="reveal d2">
-        Thử tra cứu chức danh của bạn
-      </h2>
-
-      <p class="lead reveal d3">
-        Đây là prototype giao diện. Khi đưa dữ liệu TCCD chi tiết vào,
-        lựa chọn Ban – chức danh – bậc sẽ hiển thị tiêu chuẩn tương ứng.
-      </p>
-
-      <div class="lookup-panel reveal d4">
-
-        <div class="select-grid">
-
-          <div>
-            <label>Ban / Đơn vị</label>
-            <select id="department">
-              <option>Chọn Ban / Đơn vị</option>
-              <option>Ban QTNNL</option>
-              <option>Ban Thăm dò</option>
-              <option>Ban CNM</option>
-              <option>Ban PTKT</option>
-              <option>Ban QLDA</option>
-              <option>Ban TCĐT</option>
-              <option>Ban CL & QTRR</option>
-            </select>
-          </div>
-
-          <div>
-            <label>Nhóm chức danh</label>
-            <select id="jobGroup">
-              <option>Chọn nhóm chức danh</option>
-              <option>Lãnh đạo Ban</option>
-              <option>Lãnh đạo Phòng</option>
-              <option>Chuyên viên / Kỹ sư</option>
-              <option>Nhân viên</option>
-            </select>
-          </div>
-
-          <div>
-            <label>Bậc chức danh</label>
-            <select id="grade">
-              <option>Chọn bậc</option>
-              <option>Bậc 3</option>
-              <option>Bậc 4</option>
-              <option>Bậc 5</option>
-              <option>Bậc 6</option>
-              <option>Bậc 7</option>
-              <option>Bậc 8</option>
-              <option>Bậc 9</option>
-              <option>Bậc 10</option>
-            </select>
-          </div>
-
-        </div>
-
-        <button class="btn btn-red"
-                style="margin-top:20px"
-                onclick="demoLookup()">
-          Xem tiêu chuẩn →
-        </button>
-
-        <div id="lookupResult"></div>
-
-      </div>
-    </section>
-
-    <!-- 13 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">TỰ RÀ SOÁT</div>
-
-      <h2 class="reveal d2">
-        Tôi đang ở đâu so với yêu cầu?
-      </h2>
-
-      <p class="lead reveal d3">
-        Hãy tự nhìn lại một số nhóm năng lực. Hoạt động này phục vụ học tập,
-        không thay thế kết quả đánh giá TCCD chính thức.
-      </p>
-
-      <div class="review reveal d4">
-
-        <div class="review-row">
-          <strong>Kiến thức chuyên môn</strong>
-          <input type="range" min="1" max="5" value="3"
-                 oninput="this.nextElementSibling.innerText=this.value">
-          <b>3</b>
-        </div>
-
-        <div class="review-row">
-          <strong>Ngoại ngữ</strong>
-          <input type="range" min="1" max="5" value="3"
-                 oninput="this.nextElementSibling.innerText=this.value">
-          <b>3</b>
-        </div>
-
-        <div class="review-row">
-          <strong>Giao tiếp</strong>
-          <input type="range" min="1" max="5" value="3"
-                 oninput="this.nextElementSibling.innerText=this.value">
-          <b>3</b>
-        </div>
-
-        <div class="review-row">
-          <strong>Dữ liệu & báo cáo</strong>
-          <input type="range" min="1" max="5" value="3"
-                 oninput="this.nextElementSibling.innerText=this.value">
-          <b>3</b>
-        </div>
-
-        <div class="review-row">
-          <strong>Công nghệ số & AI</strong>
-          <input type="range" min="1" max="5" value="3"
-                 oninput="this.nextElementSibling.innerText=this.value">
-          <b>3</b>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 14 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">TỪ CHUẨN ĐẾN PHÁT TRIỂN</div>
-
-      <h2 class="reveal d2">
-        Khoảng cách không phải là điểm kết thúc
-      </h2>
-
-      <div class="flow reveal d3">
-
-        <div class="node red">
-          <strong>Chuẩn</strong>
-          <span>TCCD yêu cầu gì?</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node">
-          <strong>Hiện tại</strong>
-          <span>Tôi đang ở đâu?</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node gold">
-          <strong>Khoảng cách</strong>
-          <span>Điều gì cần phát triển?</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node">
-          <strong>Hành động</strong>
-          <span>Học & thực hành</span>
-        </div>
-
-        <div class="arrow">→</div>
-
-        <div class="node red">
-          <strong>Minh chứng</strong>
-          <span>Kết quả công việc</span>
-        </div>
-
-      </div>
-
-      <div class="quote reveal d4">
-        Biết chuẩn → hiểu mình → lựa chọn ưu tiên →
-        học và thực hành → tạo minh chứng.
-      </div>
-    </section>
-
-    <!-- 15 -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">KẾ HOẠCH CÁ NHÂN</div>
-
-      <h2 class="reveal d2">
-        Chọn 1–2 ưu tiên thay vì cố phát triển mọi thứ cùng lúc
-      </h2>
-
-      <div class="plan-grid reveal d3">
-
-        <div class="plan-box">
-          <label>Năng lực tôi muốn ưu tiên</label>
-          <textarea id="plan1"
-          placeholder="Ví dụ: sử dụng tiếng Anh trong công việc..."></textarea>
-        </div>
-
-        <div class="plan-box">
-          <label>Hành động cụ thể</label>
-          <textarea id="plan2"
-          placeholder="Tôi sẽ học hoặc thực hành như thế nào?"></textarea>
-        </div>
-
-        <div class="plan-box">
-          <label>Minh chứng dự kiến</label>
-          <textarea id="plan3"
-          placeholder="Sản phẩm công việc, chứng chỉ, kết quả dự án..."></textarea>
-        </div>
-
-        <div class="plan-box">
-          <label>Mốc rà soát</label>
-          <input id="planDate" type="date">
-
-          <button class="btn btn-red"
-                  style="margin-top:14px"
-                  onclick="savePlan()">
-            Lưu kế hoạch
-          </button>
-
-          <div id="planMessage"
-               class="small"
-               style="margin-top:10px"></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 16 QUIZ -->
-    <section class="slide">
-      <div class="eyebrow reveal d1">KIỂM TRA CUỐI KHÓA</div>
-
-      <h2 class="reveal d2">
-        15 câu · Ngưỡng hoàn thành 80%
-      </h2>
-
-      <p class="lead reveal d3">
-        Bài kiểm tra giúp bạn rà soát mức độ hiểu nội dung khóa học.
-        Kết quả không phải kết quả đánh giá TCCD cá nhân.
-      </p>
-
-      <button class="btn btn-red reveal d4"
-              style="margin-top:25px"
-              onclick="beginQuiz()">
-        Bắt đầu 15 câu →
-      </button>
-    </section>
-
-    <!-- 17 QUIZ ENGINE -->
-    <section class="slide">
-      <div class="eyebrow">KIỂM TRA CUỐI KHÓA</div>
-      <div id="quizArea"></div>
-    </section>
-
-    <!-- 18 -->
-    <section class="slide hero">
-      <div class="hero-inner">
-
-        <div class="eyebrow reveal d1">HOÀN THÀNH</div>
-
-        <h1 class="reveal d2">
-          Biết chuẩn.<br>
-          Hiểu mình.<br>
-          Chủ động phát triển.
-        </h1>
-
-        <div class="hero-line reveal d3"></div>
-
-        <p class="lead reveal d4">
-          Tiêu chuẩn chức danh có ý nghĩa nhất khi được biến thành
-          hành động phát triển cụ thể trong công việc hằng ngày.
-        </p>
-
-        <button class="btn btn-red reveal d5"
-                style="margin-top:22px"
-                onclick="goToSlide(0)">
-          Xem lại từ đầu
-        </button>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- BOTTOM -->
-  <div class="bottom">
-
-    <button class="nav-btn" onclick="prevSlide()" title="Slide trước">
-      ←
-    </button>
-
-    <div class="bottom-center" id="dots"></div>
-
-    <button class="next-btn" onclick="nextSlide()">
-      Tiếp theo →
-    </button>
-
-  </div>
-
+.flow{align-items:stretch}
+.levels{
+grid-template-columns:1fr;
+align-items:stretch
+}
+.levels span:nth-child(n){min-height:auto}
+.lookupBtn{display:none}
+.reviewRow{grid-template-columns:1fr}
+}
+</style></head><body>
+
+<div class="app">
+<header>
+<div class="logo">PVEP</div>
+<div class="brand">
+<b>PVEP LEARNING</b>
+<small>Tiêu chuẩn chức danh</small>
+</div>
+
+<div class="headActions">
+<button class="lookupBtn" onclick="openLookup()">⌕ Tra cứu 230 chức danh</button>
+<div class="counter"><span id="cur">01</span> / 48</div>
+</div>
+</header>
+
+<div class="progress"><div id="bar"></div></div>
+
+<main class="stage" id="stage"></main>
+
+<footer>
+<button class="round" onclick="prev()">←</button>
+<div class="chapter" id="chapter">Module 1 · Nền tảng</div>
+<button class="next" onclick="next()">Tiếp tục →</button>
+</footer>
+</div>
+
+<div class="modal" id="lookup">
+<div class="panel">
+
+<div class="panelHead">
+<div>
+<small>TRA CỨU DỮ LIỆU TCCD NGUỒN</small>
+<h3>Tra cứu chức danh theo đơn vị và bậc</h3>
+</div>
+<button class="close" onclick="closeLookup()">×</button>
+</div>
+
+<div class="filters">
+<select id="unitSel"></select>
+<select id="roleSel"></select>
+<select id="gradeSel"></select>
+</div>
+
+<div class="lookupBody" id="lookupBody"></div>
+</div>
 </div>
 
 <script>
+  /* =========================================================
+   DỮ LIỆU 48 SLIDE
+========================================================= */
 
-/* =====================================================
-   SLIDE ENGINE
-===================================================== */
+const slides = [
 
-const slides = Array.from(document.querySelectorAll(".slide"));
-let current = 0;
+/* ===================== 01 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide cover active">
+  <div class="hero">
+    <div class="eyebrow">PVEP · E-LEARNING</div>
+    <h1>Tiêu chuẩn<br>chức danh</h1>
+    <div class="goldline"></div>
+    <p>
+      Hiểu đúng tiêu chuẩn · Biết cách tra cứu ·
+      Chủ động phát triển năng lực để đáp ứng yêu cầu công việc.
+    </p>
+    <button class="primary" onclick="next()">Bắt đầu →</button>
+  </div>
+</section>`
+},
 
-const totalNo = document.getElementById("totalNo");
-const currentNo = document.getElementById("currentNo");
-const progressBar = document.getElementById("progressBar");
-const dots = document.getElementById("dots");
+/* ===================== 02 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">01 · KHỞI ĐỘNG</div>
+  <h2>Khóa học này giúp bạn<br>trả lời 4 câu hỏi</h2>
 
-totalNo.textContent = String(slides.length).padStart(2,"0");
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>TCCD là gì?</h3>
+      <p>Hiểu vai trò của Tiêu chuẩn chức danh trong hệ thống quản trị nguồn nhân lực.</p>
+    </article>
 
-slides.forEach((_,i)=>{
-  const dot=document.createElement("span");
-  dot.className="dot";
-  if(i===0) dot.classList.add("active");
-  dots.appendChild(dot);
-});
+    <article>
+      <b>02</b>
+      <h3>Chuẩn của tôi?</h3>
+      <p>Biết cách xác định đúng chức danh, bậc và các yêu cầu tương ứng.</p>
+    </article>
 
-function updateUI(){
+    <article>
+      <b>03</b>
+      <h3>Tôi đang ở đâu?</h3>
+      <p>Biết cách nhìn nhận khoảng cách giữa yêu cầu chức danh và năng lực hiện tại.</p>
+    </article>
 
-  currentNo.textContent=String(current+1).padStart(2,"0");
+    <article>
+      <b>04</b>
+      <h3>Tôi cần làm gì?</h3>
+      <p>Chuyển khoảng cách năng lực thành hành động đào tạo và phát triển.</p>
+    </article>
+  </div>
+</section>`
+},
 
-  progressBar.style.width=
-    ((current+1)/slides.length*100)+"%";
+/* ===================== 03 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">KHÁI NIỆM</div>
 
-  document.querySelectorAll(".dot").forEach((d,i)=>{
-    d.classList.toggle("active",i===current);
-  });
+  <div class="split">
+    <div>
+      <h2>TCCD là chuẩn của<br>một vị trí công việc</h2>
+
+      <p class="lead">
+        Tiêu chuẩn chức danh xác định các điều kiện và yêu cầu
+        mà người đảm nhiệm một chức danh cần đáp ứng.
+      </p>
+
+      <div class="callout">
+        Khi đọc TCCD, hãy đặt câu hỏi:
+        <b>“Vị trí này yêu cầu gì?”</b>
+        thay vì bắt đầu bằng
+        <b>“Người đang giữ vị trí này có gì?”</b>
+      </div>
+    </div>
+
+    <div class="metric">
+      <span>TCCD</span>
+      <b>Chuẩn của chức danh</b>
+      <p>
+        Là căn cứ để kết nối yêu cầu vị trí với tuyển dụng,
+        bố trí, đánh giá, đào tạo và phát triển nguồn nhân lực.
+      </p>
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 04 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">MỤC ĐÍCH</div>
+  <h2>TCCD không đứng riêng lẻ</h2>
+
+  <p class="lead">
+    TCCD tạo ra một ngôn ngữ chung để nhiều hoạt động nhân sự
+    cùng nhìn về yêu cầu của vị trí.
+  </p>
+
+  <div class="flow">
+    <span>Tuyển dụng<br><small>Đúng yêu cầu đầu vào</small></span>
+    <i>→</i>
+    <span>Bố trí<br><small>Đúng người · đúng việc</small></span>
+    <i>→</i>
+    <span>Đánh giá<br><small>So với chuẩn chức danh</small></span>
+    <i>→</i>
+    <span>Đào tạo<br><small>Bù khoảng cách năng lực</small></span>
+    <i>→</i>
+    <span>Phát triển<br><small>Chuẩn bị bước tiếp theo</small></span>
+  </div>
+</section>`
+},
+
+/* ===================== 05 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">ĐỌC ĐÚNG TCCD</div>
+  <h2>Ba thông tin phải xác định đúng trước tiên</h2>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Đơn vị / lĩnh vực</h3>
+      <p>Xác định đúng bảng TCCD áp dụng cho lĩnh vực công việc.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Chức danh</h3>
+      <p>Tra đúng tên chức danh đang đảm nhiệm hoặc chức danh cần đối chiếu.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Bậc chức danh</h3>
+      <p>Cùng một chức danh nhưng yêu cầu năng lực có thể thay đổi theo bậc.</p>
+    </article>
+  </div>
+
+  <div class="callout warn">
+    <b>Lưu ý:</b> đúng tên chức danh nhưng chọn sai bậc vẫn có thể dẫn đến
+    đối chiếu sai yêu cầu.
+  </div>
+</section>`
+},
+
+/* ===================== 06 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">CẤU TRÚC</div>
+  <h2>Một TCCD gồm nhiều nhóm yêu cầu</h2>
+
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>Bằng cấp</h3>
+      <p>Trình độ và chuyên ngành phù hợp.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Kinh nghiệm</h3>
+      <p>Kinh nghiệm chuyên môn và quản lý khi có yêu cầu.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Kiến thức</h3>
+      <p>Kiến thức chung và chuyên môn theo lĩnh vực.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>Kỹ năng</h3>
+      <p>Giao tiếp, công nghệ, công cụ và kỹ năng cần thiết.</p>
+    </article>
+
+    <article>
+      <b>05</b>
+      <h3>Năng lực chung</h3>
+      <p>Dữ liệu, báo cáo, thái độ nghề nghiệp và tư duy.</p>
+    </article>
+
+    <article>
+      <b>06</b>
+      <h3>Năng lực lãnh đạo</h3>
+      <p>Áp dụng đối với các chức danh quản lý.</p>
+    </article>
+
+    <article>
+      <b>07</b>
+      <h3>Ngoại ngữ</h3>
+      <p>Yêu cầu ngoại ngữ theo chức danh và công việc.</p>
+    </article>
+
+    <article>
+      <b>08</b>
+      <h3>Sức khỏe</h3>
+      <p>Điều kiện sức khỏe theo quy định áp dụng.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 07 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">TCCD & QUẢN TRỊ NHÂN SỰ</div>
+  <h2>Một bộ chuẩn – nhiều ứng dụng</h2>
+
+  <div class="split">
+    <div>
+      <div class="chips">
+        <span>Tuyển dụng</span>
+        <span>Bố trí nhân sự</span>
+        <span>Đánh giá</span>
+        <span>Đào tạo</span>
+        <span>Phát triển nghề nghiệp</span>
+        <span>Chính sách nhân sự</span>
+      </div>
+    </div>
+
+    <div class="callout ok">
+      <b>Điểm cốt lõi</b><br><br>
+      TCCD giúp các quyết định nhân sự có một cơ sở chung:
+      yêu cầu thực tế của chức danh và mức độ đáp ứng của người lao động.
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 08 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">TRÁCH NHIỆM</div>
+  <h2>TCCD có ý nghĩa khi được sử dụng trong thực tế</h2>
+
+  <div class="cards three">
+    <article>
+      <b>LĐ</b>
+      <h3>Lãnh đạo</h3>
+      <p>
+        Xác định yêu cầu, định hướng phát triển, giao việc và tạo cơ hội
+        để nhân sự nâng cao năng lực.
+      </p>
+    </article>
+
+    <article>
+      <b>HR</b>
+      <h3>QTNNL</h3>
+      <p>
+        Quản trị hệ thống tiêu chuẩn, tổ chức đánh giá và kết nối kết quả
+        với các hoạt động nhân sự.
+      </p>
+    </article>
+
+    <article>
+      <b>CBNV</b>
+      <h3>Người lao động</h3>
+      <p>
+        Hiểu chuẩn của mình, chủ động học tập, thực hành và tạo minh chứng
+        năng lực trong công việc.
+      </p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 09 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">TƯƠNG TÁC</div>
+  <h2>Theo bạn, TCCD mô tả điều gì?</h2>
+
+  <div class="mc" id="mc9">
+    <button onclick="miniAnswer(this,false,'fb9')">
+      A. Đánh giá cảm tính của người quản lý về một nhân viên
+    </button>
+
+    <button onclick="miniAnswer(this,true,'fb9')">
+      B. Các yêu cầu cần đáp ứng đối với một chức danh
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb9')">
+      C. Chỉ mô tả bằng cấp của người lao động
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb9')">
+      D. Chỉ dùng để xác định mức lương
+    </button>
+  </div>
+
+  <div class="feedback" id="fb9"></div>
+</section>`
+},
+
+/* ===================== 10 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">THỰC HÀNH TRA CỨU</div>
+  <h2>5 bước để tìm đúng tiêu chuẩn của bạn</h2>
+
+  <div class="flow">
+    <span>1<br><small>Chọn đơn vị</small></span>
+    <i>→</i>
+    <span>2<br><small>Chọn chức danh</small></span>
+    <i>→</i>
+    <span>3<br><small>Chọn bậc</small></span>
+    <i>→</i>
+    <span>4<br><small>Đọc yêu cầu</small></span>
+    <i>→</i>
+    <span>5<br><small>Xác định khoảng cách</small></span>
+  </div>
+
+  <button class="primary" onclick="openLookup()">
+    ⌕ Mở công cụ tra cứu TCCD
+  </button>
+
+  <div class="callout">
+    Công cụ tra cứu sử dụng dữ liệu TCCD đã được đưa trực tiếp vào website.
+    Bạn không cần mở từng bảng Excel để tìm thủ công.
+  </div>
+</section>`
+},
+
+/* ===================== 11 ===================== */
+{
+chapter:"Module 1 · Nền tảng",
+html:`
+<section class="slide">
+  <div class="eyebrow">TỔNG KẾT MODULE 1</div>
+  <h2>4 điều cần nhớ trước khi đi tiếp</h2>
+
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>Chuẩn vị trí</h3>
+      <p>TCCD mô tả yêu cầu của chức danh.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Tra đúng</h3>
+      <p>Đúng đơn vị, chức danh và bậc.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Nhiều tiêu chí</h3>
+      <p>Không chỉ có kiến thức hoặc bằng cấp.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>Để phát triển</h3>
+      <p>TCCD giúp nhận diện khoảng cách năng lực.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 12 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 02</div>
+    <h1>Đọc đúng<br>yêu cầu TCCD</h1>
+    <div class="goldline"></div>
+    <p>
+      Từ bằng cấp và kinh nghiệm đến kiến thức, kỹ năng,
+      năng lực chung và cấp độ yêu cầu.
+    </p>
+  </div>
+</section>`
+},
+
+/* ===================== 13 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">BẰNG CẤP</div>
+  <h2>Đọc yêu cầu bằng cấp như thế nào?</h2>
+
+  <div class="split">
+    <div>
+      <p class="lead">
+        Bằng cấp là một trong các điều kiện hồ sơ của chức danh.
+        Khi tra cứu cần đọc đầy đủ cả trình độ và nhóm chuyên ngành phù hợp.
+      </p>
+
+      <div class="callout warn">
+        Không nên chỉ nhìn cụm từ <b>“đại học trở lên”</b>
+        mà bỏ qua yêu cầu về chuyên ngành hoặc lĩnh vực liên quan.
+      </div>
+    </div>
+
+    <div class="cards two">
+      <article>
+        <b>01</b>
+        <h3>Trình độ</h3>
+        <p>Ví dụ: đại học hoặc trên đại học theo yêu cầu chức danh.</p>
+      </article>
+
+      <article>
+        <b>02</b>
+        <h3>Chuyên ngành</h3>
+        <p>Đối chiếu đúng nhóm ngành được quy định cho chức danh.</p>
+      </article>
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 14 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">KINH NGHIỆM</div>
+  <h2>Kinh nghiệm không chỉ là “đã làm bao nhiêu năm”</h2>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Kinh nghiệm chuyên môn</h3>
+      <p>
+        Thời gian thực tế làm việc trong lĩnh vực chuyên môn liên quan.
+      </p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Kinh nghiệm quản lý</h3>
+      <p>
+        Áp dụng với những chức danh có yêu cầu kinh nghiệm quản lý.
+      </p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Theo bậc</h3>
+      <p>
+        Với một số chức danh, số năm kinh nghiệm thay đổi theo bậc.
+      </p>
+    </article>
+  </div>
+
+  <div class="callout">
+    Khi sử dụng công cụ tra cứu, hệ thống sẽ hiển thị
+    yêu cầu kinh nghiệm tương ứng với đúng bậc đã chọn.
+  </div>
+</section>`
+},
+
+/* ===================== 15 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">TỪ ĐIỂN NĂNG LỰC</div>
+  <h2>Từ tên năng lực đến yêu cầu của chức danh</h2>
+
+  <div class="flow">
+    <span>Từ điển năng lực<br><small>Năng lực là gì?</small></span>
+    <i>→</i>
+    <span>Mã năng lực<br><small>Ví dụ KN.05</small></span>
+    <i>→</i>
+    <span>TCCD<br><small>Chức danh cần gì?</small></span>
+    <i>→</i>
+    <span>Cấp độ<br><small>Cần ở mức nào?</small></span>
+    <i>→</i>
+    <span>Đánh giá<br><small>Hiện tại ở đâu?</small></span>
+  </div>
+
+  <div class="callout ok">
+    <b>Từ điển năng lực</b> giải thích nội hàm năng lực và các cấp độ.
+    <b>TCCD</b> xác định chức danh cụ thể cần năng lực nào và ở cấp độ nào.
+  </div>
+</section>`
+},
+
+/* ===================== 16 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">NHÓM KỸ NĂNG</div>
+  <h2>Một số kỹ năng dùng chung trong hệ thống</h2>
+
+  <div class="cards three">
+    <article>
+      <b>KN.01</b>
+      <h3>Sử dụng tiếng Việt</h3>
+      <p>
+        Khả năng sử dụng tiếng Việt phù hợp trong trao đổi
+        và thực hiện công việc.
+      </p>
+    </article>
+
+    <article>
+      <b>KN.02</b>
+      <h3>Kỹ năng giao tiếp</h3>
+      <p>
+        Truyền đạt, trao đổi và tương tác hiệu quả trong công việc.
+      </p>
+    </article>
+
+    <article>
+      <b>KN.03</b>
+      <h3>Kỹ năng đàm phán</h3>
+      <p>
+        Trao đổi và xử lý các tình huống cần thương lượng.
+      </p>
+    </article>
+
+    <article>
+      <b>KN.04</b>
+      <h3>Tin học & phần mềm</h3>
+      <p>
+        Sử dụng công cụ văn phòng và phần mềm chuyên ngành.
+      </p>
+    </article>
+
+    <article>
+      <b>KN.05</b>
+      <h3>Ứng dụng công nghệ số</h3>
+      <p>
+        Ứng dụng công nghệ số như AI, IoT, Cloud phù hợp với công việc.
+      </p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 17 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">NĂNG LỰC CHUNG</div>
+  <h2>Những năng lực hỗ trợ thực hiện công việc hiệu quả</h2>
+
+  <div class="cards four">
+    <article>
+      <b>NLC.01</b>
+      <h3>Quản lý dữ liệu</h3>
+      <p>Tổ chức, sử dụng và quản trị dữ liệu phục vụ công việc.</p>
+    </article>
+
+    <article>
+      <b>NLC.02</b>
+      <h3>Tổng hợp thông tin, báo cáo</h3>
+      <p>Tổng hợp, phân tích và trình bày thông tin phục vụ quản trị.</p>
+    </article>
+
+    <article>
+      <b>NLC.03</b>
+      <h3>Thái độ & trách nhiệm</h3>
+      <p>Thể hiện trách nhiệm nghề nghiệp trong thực hiện nhiệm vụ.</p>
+    </article>
+
+    <article>
+      <b>NLC.04</b>
+      <h3>Tư duy phương pháp luận</h3>
+      <p>Tiếp cận vấn đề có hệ thống và lựa chọn phương pháp phù hợp.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 18 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">NĂNG LỰC LÃNH ĐẠO</div>
+  <h2>5 nhóm năng lực đối với chức danh quản lý</h2>
+
+  <div class="cards three">
+    <article>
+      <b>NLLĐ.01</b>
+      <h3>Quản lý công việc theo mục tiêu</h3>
+      <p>Tổ chức công việc hướng tới mục tiêu và kết quả.</p>
+    </article>
+
+    <article>
+      <b>NLLĐ.02</b>
+      <h3>Ra quyết định & xử lý vấn đề</h3>
+      <p>Phân tích tình huống và lựa chọn giải pháp phù hợp.</p>
+    </article>
+
+    <article>
+      <b>NLLĐ.03</b>
+      <h3>Làm việc nhóm & gắn kết</h3>
+      <p>Tạo sự phối hợp và gắn kết trong đội ngũ.</p>
+    </article>
+
+    <article>
+      <b>NLLĐ.04</b>
+      <h3>Kiểm tra & giám sát</h3>
+      <p>Theo dõi việc thực hiện và kiểm soát kết quả công việc.</p>
+    </article>
+
+    <article>
+      <b>NLLĐ.05</b>
+      <h3>Tạo động lực & huấn luyện</h3>
+      <p>Phát triển nhân viên thông qua định hướng và coaching.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 19 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">NGOẠI NGỮ</div>
+  <h2>Đọc đúng yêu cầu ngoại ngữ</h2>
+
+  <div class="split">
+    <div class="metric">
+      <span>500</span>
+      <b>TOEIC</b>
+      <p>
+        Mức tối thiểu được quy định trong hệ thống TCCD chung;
+        từng chức danh có thể có yêu cầu cao hơn theo tính chất công việc.
+      </p>
+    </div>
+
+    <div>
+      <p class="lead">
+        Khi đối chiếu một chức danh cụ thể, hãy sử dụng đúng
+        yêu cầu ngoại ngữ hiển thị trong dữ liệu TCCD của chức danh đó.
+      </p>
+
+      <div class="callout warn">
+        Website <b>không tự nâng điểm ngoại ngữ</b>.
+        Công cụ tra cứu hiển thị giá trị có trong dữ liệu nguồn.
+      </div>
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 20 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">TƯƠNG TÁC</div>
+  <h2>Điều nào sau đây là đúng?</h2>
+
+  <div class="mc">
+    <button onclick="miniAnswer(this,false,'fb20')">
+      A. Từ điển năng lực và TCCD là cùng một tài liệu
+    </button>
+
+    <button onclick="miniAnswer(this,true,'fb20')">
+      B. Từ điển mô tả năng lực; TCCD xác định chức danh cần năng lực nào và cấp độ nào
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb20')">
+      C. Mọi chức danh đều cần tất cả năng lực ở cấp độ 5
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb20')">
+      D. Bậc chức danh và cấp độ năng lực là một khái niệm
+    </button>
+  </div>
+
+  <div class="feedback" id="fb20"></div>
+</section>`
+},
+
+/* ===================== 21 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">BẬC ≠ CẤP ĐỘ</div>
+  <h2>Hai khái niệm rất dễ nhầm</h2>
+
+  <div class="cards two">
+    <article>
+      <b>BẬC</b>
+      <h3>Bậc chức danh</h3>
+      <p>
+        Thể hiện bậc của chức danh trong hệ thống chức danh.
+        Một chức danh chuyên viên/kỹ sư có thể có nhiều bậc.
+      </p>
+    </article>
+
+    <article>
+      <b>LEVEL</b>
+      <h3>Cấp độ năng lực</h3>
+      <p>
+        Thể hiện mức độ yêu cầu đối với một kiến thức,
+        kỹ năng hoặc năng lực cụ thể.
+      </p>
+    </article>
+  </div>
+
+  <div class="callout">
+    Ví dụ: một chức danh ở <b>bậc 8</b> không có nghĩa
+    tất cả năng lực đều phải ở <b>cấp độ 8</b>.
+    Hệ thống năng lực sử dụng các cấp độ riêng.
+  </div>
+</section>`
+},
+
+/* ===================== 22 ===================== */
+{
+chapter:"Module 2 · Đọc chuẩn năng lực",
+html:`
+<section class="slide">
+  <div class="eyebrow">THỬ PHÂN BIỆT</div>
+  <h2>“Cấp 4” trong yêu cầu KN.05 nói về điều gì?</h2>
+
+  <div class="mc">
+    <button onclick="miniAnswer(this,false,'fb22')">
+      A. Người lao động đang giữ chức danh bậc 4
+    </button>
+
+    <button onclick="miniAnswer(this,true,'fb22')">
+      B. Mức độ yêu cầu của năng lực KN.05
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb22')">
+      C. Người lao động có 4 năm kinh nghiệm
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb22')">
+      D. Chức danh thuộc nhóm lãnh đạo cấp 4
+    </button>
+  </div>
+
+  <div class="feedback" id="fb22"></div>
+</section>`
+},
+
+/* ===================== 23 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 03</div>
+    <h1>Chuẩn thay đổi<br>theo vai trò</h1>
+    <div class="goldline"></div>
+    <p>
+      Cùng thuộc PVEP nhưng yêu cầu đối với Lãnh đạo Ban,
+      Lãnh đạo Phòng, Chuyên viên/Kỹ sư và Nhân viên không giống nhau.
+    </p>
+  </div>
+</section>`
+},
+
+/* ===================== 24 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide">
+  <div class="eyebrow">LÃNH ĐẠO BAN</div>
+  <h2>Từ chuyên môn đến định hướng và phát triển đội ngũ</h2>
+
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>Định hướng</h3>
+      <p>Định hướng và tổ chức thực hiện nhiệm vụ của lĩnh vực phụ trách.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Phát triển nhân sự</h3>
+      <p>Xây dựng và phát triển năng lực đội ngũ.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Giao tiếp cấp cao</h3>
+      <p>Giao tiếp, phối hợp và đàm phán trong phạm vi trách nhiệm.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>Số hóa & dữ liệu</h3>
+      <p>Khai thác công nghệ, dữ liệu và công cụ phục vụ quản trị.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 25 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide">
+  <div class="eyebrow">LÃNH ĐẠO PHÒNG</div>
+  <h2>Biến định hướng thành tổ chức thực hiện</h2>
+
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>Tổ chức thực hiện</h3>
+      <p>Triển khai kế hoạch và tổ chức công việc của Phòng.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Phân tích & đề xuất</h3>
+      <p>Phân tích vấn đề và tham mưu giải pháp thuộc lĩnh vực phụ trách.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Quản lý nhóm</h3>
+      <p>Phân công, kiểm tra, phối hợp và hỗ trợ nhân viên.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>Coaching</h3>
+      <p>Hướng dẫn và phát triển năng lực của thành viên trong Phòng.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 26 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide">
+  <div class="eyebrow">CHUYÊN VIÊN / KỸ SƯ</div>
+  <h2>Trọng tâm là năng lực thực thi chuyên môn</h2>
+
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>Chuyên môn</h3>
+      <p>Nắm và vận dụng kiến thức chuyên môn của lĩnh vực.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Chủ động thực hiện</h3>
+      <p>Tổ chức công việc, nghiên cứu và xử lý nhiệm vụ được giao.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Phân tích</h3>
+      <p>Phân tích thông tin và đề xuất giải pháp phù hợp.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>Phối hợp & báo cáo</h3>
+      <p>Làm việc nhóm, trình bày, báo cáo và soạn thảo văn bản.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 27 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide">
+  <div class="eyebrow">NHÂN VIÊN</div>
+  <h2>Chuẩn tập trung vào thực hiện đúng và ổn định</h2>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Quy trình</h3>
+      <p>Nắm yêu cầu và thực hiện đúng quy trình, hướng dẫn công việc.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Nghiệp vụ hỗ trợ</h3>
+      <p>Thực hiện nhiệm vụ hành chính, kỹ thuật hoặc dịch vụ theo vị trí.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Công cụ</h3>
+      <p>Sử dụng đúng công cụ, thiết bị hoặc phần mềm cần thiết.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 28 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide">
+  <div class="eyebrow">TƯƠNG TÁC</div>
+  <h2>Nhóm nào thường có yêu cầu năng lực lãnh đạo?</h2>
+
+  <div class="mc">
+    <button onclick="miniAnswer(this,true,'fb28')">
+      A. Các chức danh quản lý
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb28')">
+      B. Chỉ nhân viên mới tuyển
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb28')">
+      C. Mọi chức danh đều giống nhau
+    </button>
+
+    <button onclick="miniAnswer(this,false,'fb28')">
+      D. Chỉ chức danh công nghệ thông tin
+    </button>
+  </div>
+
+  <div class="feedback" id="fb28"></div>
+</section>`
+},
+
+/* ===================== 29 ===================== */
+{
+chapter:"Module 3 · Chuẩn theo nhóm chức danh",
+html:`
+<section class="slide">
+  <div class="eyebrow">ĐIỀU KIỆN ĐẠT</div>
+  <h2>Không chỉ nhìn vào một tiêu chí</h2>
+
+  <div class="split">
+    <div class="metric">
+      <span>≥80%</span>
+      <b>Kiến thức / kỹ năng</b>
+      <p>
+        Kết quả đánh giá kiến thức và kỹ năng phải đạt
+        ngưỡng yêu cầu theo quy định.
+      </p>
+    </div>
+
+    <div>
+      <div class="callout ok">
+        <b>Đồng thời:</b><br>
+        các điều kiện hồ sơ áp dụng cho chức danh như bằng cấp,
+        kinh nghiệm, ngoại ngữ, sức khỏe phải đáp ứng yêu cầu.
+      </div>
+
+      <div class="callout bad">
+        Chỉ cần có tiêu chí điều kiện không đáp ứng thì
+        không thể kết luận đạt TCCD chỉ vì điểm chuyên môn cao.
+      </div>
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 30 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 04</div>
+    <h1>Từ tiêu chuẩn<br>đến hành vi công việc</h1>
+    <div class="goldline"></div>
+    <p>
+      Ngoại ngữ, giao tiếp, dữ liệu và công nghệ số
+      chỉ có ý nghĩa khi được thể hiện trong công việc thực tế.
+    </p>
+  </div>
+</section>`
+},
+
+/* ===================== 31 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">NGOẠI NGỮ</div>
+  <h2>Chứng chỉ là một căn cứ – khả năng làm việc mới là mục tiêu</h2>
+
+  <div class="cards four">
+    <article>
+      <b>L</b>
+      <h3>Listening</h3>
+      <p>Hiểu trao đổi, cuộc họp và nội dung công việc bằng tiếng Anh.</p>
+    </article>
+
+    <article>
+      <b>S</b>
+      <h3>Speaking</h3>
+      <p>Trao đổi và trình bày công việc trong môi trường quốc tế.</p>
+    </article>
+
+    <article>
+      <b>R</b>
+      <h3>Reading</h3>
+      <p>Đọc tài liệu, tiêu chuẩn, email và hồ sơ chuyên môn.</p>
+    </article>
+
+    <article>
+      <b>W</b>
+      <h3>Writing</h3>
+      <p>Viết email, báo cáo và nội dung công việc phù hợp.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 32 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">NGOẠI NGỮ & TCCD</div>
+  <h2>Luôn ưu tiên yêu cầu của chức danh cụ thể</h2>
+
+  <div class="split">
+    <div class="metric">
+      <span>500</span>
+      <b>TOEIC – mức chung</b>
+      <p>
+        Mức tối thiểu trong quy định chung hiện hành.
+      </p>
+    </div>
+
+    <div>
+      <div class="callout">
+        Một chức danh hoặc nhóm công việc có thể có yêu cầu cao hơn
+        khi quy định chi tiết xác định như vậy.
+      </div>
+
+      <div class="callout warn">
+        Vì thế, khi cần biết chuẩn của mình,
+        <b>không suy đoán từ chức danh của người khác</b> —
+        hãy tra đúng dữ liệu TCCD.
+      </div>
+
+      <button class="primary" onclick="openLookup()">
+        Tra cứu yêu cầu của chức danh
+      </button>
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 33 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">4 KỸ NĂNG</div>
+  <h2>Cùng là tiếng Anh nhưng nhu cầu sử dụng có thể khác nhau</h2>
+
+  <div class="cards two">
+    <article>
+      <b>Nhóm A</b>
+      <h3>Sử dụng thường xuyên</h3>
+      <p>
+        Làm việc với đối tác, đàm phán, họp quốc tế hoặc xử lý
+        tài liệu chuyên môn thường xuyên cần chú trọng đầy đủ
+        khả năng sử dụng ngoại ngữ trong công việc.
+      </p>
+    </article>
+
+    <article>
+      <b>Nhóm B</b>
+      <h3>Sử dụng theo nhu cầu</h3>
+      <p>
+        Với vị trí ít sử dụng ngoại ngữ hơn, trọng tâm phát triển
+        cần gắn với kỹ năng thực sự cần cho công việc.
+      </p>
+    </article>
+  </div>
+
+  <div class="callout">
+    Mục tiêu cuối cùng là <b>năng lực thực thi</b>,
+    không phải học ngoại ngữ tách rời khỏi bối cảnh công việc.
+  </div>
+</section>`
+},
+
+/* ===================== 34 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">KN.01</div>
+  <h2>Sử dụng tiếng Việt cũng là một kỹ năng nghề nghiệp</h2>
+
+  <p class="lead">
+    Trong môi trường công việc, sử dụng tiếng Việt không chỉ là
+    “nói và viết đúng”, mà còn liên quan đến khả năng truyền đạt
+    rõ ràng, phù hợp với đối tượng và mục đích.
+  </p>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Văn bản</h3>
+      <p>Soạn thảo rõ ràng, chính xác và phù hợp thể thức.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Báo cáo</h3>
+      <p>Trình bày thông tin cô đọng, logic và có trọng tâm.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Trình bày</h3>
+      <p>Diễn đạt vấn đề phù hợp với người nghe và bối cảnh.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 35 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">TÌNH HUỐNG</div>
+  <h2>Email nào thể hiện cách giao tiếp công việc tốt hơn?</h2>
+
+  <div class="cards two">
+    <article class="clickcard"
+      onclick="scenario(this,false,'fb35')">
+      <b>A</b>
+      <h3>“Gửi anh file. Anh xem giúp.”</h3>
+      <p>
+        Nội dung rất ngắn nhưng không nêu mục đích,
+        yêu cầu xử lý hoặc thời hạn.
+      </p>
+    </article>
+
+    <article class="clickcard"
+      onclick="scenario(this,true,'fb35')">
+      <b>B</b>
+      <h3>“Kính gửi anh…”</h3>
+      <p>
+        Nêu rõ tài liệu gửi kèm, nội dung cần góp ý
+        và mốc thời gian cần phản hồi.
+      </p>
+    </article>
+  </div>
+
+  <div class="feedback" id="fb35"></div>
+</section>`
+},
+
+/* ===================== 36 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">CẤP ĐỘ KỸ NĂNG</div>
+  <h2>Cấp độ cao hơn không chỉ là “làm nhanh hơn”</h2>
+
+  <div class="levels">
+    <span>
+      <b>1</b>
+      <strong>Nền tảng</strong><br>
+      <small>Thực hiện theo hướng dẫn.</small>
+    </span>
+
+    <span>
+      <b>2</b>
+      <strong>Vận dụng</strong><br>
+      <small>Thực hiện tương đối độc lập.</small>
+    </span>
+
+    <span>
+      <b>3</b>
+      <strong>Thành thạo</strong><br>
+      <small>Xử lý tình huống đa dạng hơn.</small>
+    </span>
+
+    <span>
+      <b>4</b>
+      <strong>Chuyên sâu</strong><br>
+      <small>Phân tích, tư vấn và xử lý vấn đề khó.</small>
+    </span>
+
+    <span>
+      <b>5</b>
+      <strong>Dẫn dắt</strong><br>
+      <small>Định hướng, phát triển phương pháp và hỗ trợ người khác.</small>
+    </span>
+  </div>
+</section>`
+},
+
+/* ===================== 37 ===================== */
+{
+chapter:"Module 4 · Năng lực trong công việc",
+html:`
+<section class="slide">
+  <div class="eyebrow">KN.05 & NLC.01</div>
+  <h2>Công nghệ số + dữ liệu = năng lực làm việc mới</h2>
+
+  <div class="cards two">
+    <article>
+      <b>KN.05</b>
+      <h3>Ứng dụng công nghệ số</h3>
+      <p>
+        Khai thác các công cụ số như AI, IoT, Cloud và giải pháp
+        phù hợp để hỗ trợ thực hiện công việc.
+      </p>
+    </article>
+
+    <article>
+      <b>NLC.01</b>
+      <h3>Quản lý dữ liệu</h3>
+      <p>
+        Thu thập, tổ chức, quản lý và sử dụng dữ liệu
+        có hệ thống để phục vụ công việc và ra quyết định.
+      </p>
+    </article>
+  </div>
+
+  <div class="callout warn">
+    <b>AI hỗ trợ con người.</b>
+    Người sử dụng vẫn phải kiểm tra đầu ra, bảo đảm độ chính xác,
+    phù hợp và chịu trách nhiệm đối với sản phẩm công việc.
+  </div>
+</section>`
+},
+
+/* ===================== 38 ===================== */
+{
+chapter:"Module 5 · Phát triển theo TCCD",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 05</div>
+    <h1>Biến khoảng cách<br>thành phát triển</h1>
+    <div class="goldline"></div>
+    <p>
+      Đánh giá TCCD không phải điểm kết thúc.
+      Giá trị lớn nhất là biết mình cần phát triển điều gì tiếp theo.
+    </p>
+  </div>
+</section>`
+},
+
+/* ===================== 39 ===================== */
+{
+chapter:"Module 5 · Phát triển theo TCCD",
+html:`
+<section class="slide">
+  <div class="eyebrow">KHOẢNG CÁCH NĂNG LỰC</div>
+  <h2>Từ “chưa đạt” đến câu hỏi “cần phát triển gì?”</h2>
+
+  <div class="flow">
+    <span>Chuẩn TCCD<br><small>Yêu cầu</small></span>
+    <i>−</i>
+    <span>Năng lực hiện tại<br><small>Thực tế</small></span>
+    <i>=</i>
+    <span>Khoảng cách<br><small>Gap</small></span>
+    <i>→</i>
+    <span>Phát triển<br><small>Hành động</small></span>
+  </div>
+
+  <div class="callout ok">
+    Khoảng cách có thể liên quan đến kiến thức,
+    kỹ năng, ngoại ngữ, kinh nghiệm hoặc điều kiện hồ sơ.
+    Vì vậy giải pháp phát triển cũng không chỉ có một hình thức.
+  </div>
+</section>`
+},
+
+/* ===================== 40 ===================== */
+{
+chapter:"Module 5 · Phát triển theo TCCD",
+html:`
+<section class="slide">
+  <div class="eyebrow">CÁCH PHÁT TRIỂN</div>
+  <h2>Không phải khoảng cách nào cũng giải quyết bằng một khóa học</h2>
+
+  <div class="cards four">
+    <article>
+      <b>01</b>
+      <h3>Đào tạo</h3>
+      <p>Khóa học phù hợp với kiến thức hoặc kỹ năng cần bổ sung.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>OJT</h3>
+      <p>Học thông qua công việc và nhiệm vụ thực tế.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Mentoring / Coaching</h3>
+      <p>Nhận hướng dẫn và phản hồi từ người có kinh nghiệm.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>Giao việc phát triển</h3>
+      <p>Tham gia nhiệm vụ, dự án hoặc vai trò giúp hình thành năng lực.</p>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 41 ===================== */
+{
+chapter:"Module 5 · Phát triển theo TCCD",
+html:`
+<section class="slide">
+  <div class="eyebrow">ỨNG DỤNG KẾT QUẢ</div>
+  <h2>Kết quả TCCD là một đầu vào của quản trị nhân sự</h2>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Đào tạo & phát triển</h3>
+      <p>Xác định nội dung và phương thức phát triển phù hợp.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>Bố trí & phát triển nghề nghiệp</h3>
+      <p>Tham khảo khi xem xét mức độ phù hợp và hướng phát triển tiếp theo.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>Chính sách nhân sự</h3>
+      <p>
+        Kết quả TCCD có thể được sử dụng làm căn cứ trong các hoạt động
+        nhân sự theo quy định của Tổng công ty.
+      </p>
+    </article>
+  </div>
+
+  <div class="callout warn">
+    Không nên hiểu kết quả TCCD như một quyết định nhân sự độc lập,
+    tách khỏi các quy định và quy trình có liên quan.
+  </div>
+</section>`
+},
+
+/* ===================== 42 ===================== */
+{
+chapter:"Module 5 · Phát triển theo TCCD",
+html:`
+<section class="slide">
+  <div class="eyebrow">TỰ RÀ SOÁT</div>
+  <h2>Nhóm nào tôi cần ưu tiên phát triển?</h2>
+
+  <p class="lead">
+    Kéo thanh từ 1 đến 5 theo cảm nhận hiện tại.
+    Đây là hoạt động học tập, không thay thế đánh giá TCCD chính thức.
+  </p>
+
+  <div id="selfReview">
+    ${[
+      "Kiến thức chuyên môn",
+      "Kỹ năng giao tiếp",
+      "Dữ liệu & báo cáo",
+      "Công nghệ số & AI",
+      "Ngoại ngữ",
+      "Tư duy / giải quyết vấn đề"
+    ].map((x,i)=>`
+      <div class="reviewRow">
+        <b>${x}</b>
+        <input type="range" min="1" max="5" value="3"
+          data-name="${x}"
+          oninput="this.nextElementSibling.textContent=this.value">
+        <strong>3</strong>
+      </div>
+    `).join("")}
+  </div>
+
+  <button class="primary" onclick="reviewResult()">
+    Xem gợi ý ưu tiên
+  </button>
+
+  <div id="reviewFeedback" class="feedback"></div>
+</section>`
+},
+
+/* ===================== 43 ===================== */
+{
+chapter:"Module 5 · Phát triển theo TCCD",
+html:`
+<section class="slide">
+  <div class="eyebrow">KẾ HOẠCH HÀNH ĐỘNG</div>
+  <h2>Chọn ít nhưng làm thật</h2>
+
+  <div class="cards two form">
+    <article>
+      <label>1. Năng lực tôi muốn ưu tiên</label>
+      <textarea id="planPriority"
+        placeholder="Ví dụ: KN.05 – Ứng dụng công nghệ số"></textarea>
+    </article>
+
+    <article>
+      <label>2. Hành động cụ thể</label>
+      <textarea id="planAction"
+        placeholder="Tôi sẽ học hoặc thực hành như thế nào?"></textarea>
+    </article>
+
+    <article>
+      <label>3. Minh chứng dự kiến</label>
+      <textarea id="planEvidence"
+        placeholder="Sản phẩm công việc, kết quả dự án, chứng chỉ..."></textarea>
+    </article>
+
+    <article>
+      <label>4. Mốc rà soát</label>
+      <input type="date" id="planDate">
+      <button class="primary" onclick="savePlan()">Lưu kế hoạch</button>
+      <small id="planMsg"></small>
+    </article>
+  </div>
+</section>`
+},
+
+/* ===================== 44 ===================== */
+{
+chapter:"Kiểm tra cuối khóa",
+html:`
+<section class="slide">
+  <div class="eyebrow">FINAL QUIZ</div>
+  <h2>Cùng kiểm tra lại<br>những gì bạn vừa học</h2>
+
+  <div class="split">
+    <div>
+      <p class="lead">
+        Bài kiểm tra gồm <b>15 câu</b>.
+        Mỗi câu có một đáp án đúng.
+      </p>
+
+      <div class="chips">
+        <span>15 câu</span>
+        <span>Ngưỡng 80%</span>
+        <span>12/15 để hoàn thành</span>
+      </div>
+
+      <button class="primary" onclick="startQuiz()">
+        Bắt đầu bài kiểm tra →
+      </button>
+    </div>
+
+    <div class="callout">
+      <b>Lưu ý:</b><br><br>
+      Kết quả quiz chỉ phản ánh mức độ hiểu nội dung khóa học,
+      <b>không phải</b> kết quả đánh giá TCCD chính thức của cá nhân.
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 45 ===================== */
+{
+chapter:"Kiểm tra cuối khóa",
+html:`
+<section class="slide">
+  <div class="eyebrow">KIỂM TRA CUỐI KHÓA</div>
+
+  <div class="quizBox">
+    <div class="quizBar">
+      <i id="quizProgress" style="width:6.67%"></i>
+    </div>
+
+    <div id="quizMeta"
+      style="margin-top:14px;color:#718188;font-weight:800">
+      Câu 1 / 15
+    </div>
+
+    <div class="q" id="quizQuestion"></div>
+
+    <div class="mc" id="quizAnswers"></div>
+
+    <div style="margin-top:18px;text-align:right">
+      <button class="primary"
+        id="quizNext"
+        onclick="quizNextQuestion()"
+        disabled>
+        Câu tiếp theo →
+      </button>
+    </div>
+  </div>
+</section>`
+},
+
+/* ===================== 46 ===================== */
+{
+chapter:"Kết quả",
+html:`
+<section class="slide">
+  <div class="eyebrow">KẾT QUẢ</div>
+
+  <div id="finalResult">
+    <h2>Hoàn thành bài kiểm tra</h2>
+
+    <p class="lead">
+      Kết quả của bạn sẽ hiển thị tại đây sau khi trả lời đủ 15 câu.
+    </p>
+
+    <button class="primary" onclick="startQuiz()">
+      Làm bài kiểm tra
+    </button>
+  </div>
+</section>`
+},
+
+/* ===================== 47 ===================== */
+{
+chapter:"Kế hoạch cá nhân",
+html:`
+<section class="slide">
+  <div class="eyebrow">SAU KHÓA HỌC</div>
+  <h2>Điều quan trọng nhất là bước tiếp theo của bạn</h2>
+
+  <div class="flow">
+    <span>Tra chuẩn<br><small>Biết yêu cầu</small></span>
+    <i>→</i>
+    <span>Tự nhìn lại<br><small>Hiểu hiện tại</small></span>
+    <i>→</i>
+    <span>Chọn ưu tiên<br><small>1–2 năng lực</small></span>
+    <i>→</i>
+    <span>Thực hành<br><small>Trong công việc</small></span>
+    <i>→</i>
+    <span>Minh chứng<br><small>Kết quả thực tế</small></span>
+  </div>
+
+  <div class="callout ok">
+    <b>Gợi ý:</b>
+    quay lại công cụ tra cứu, chọn đúng chức danh và bậc của mình,
+    sau đó lựa chọn một yêu cầu cần ưu tiên phát triển.
+  </div>
+
+  <button class="primary" onclick="openLookup()">
+    ⌕ Tra cứu lại TCCD
+  </button>
+</section>`
+},
+
+/* ===================== 48 ===================== */
+{
+chapter:"Hoàn thành",
+html:`
+<section class="slide cover">
+  <div class="hero">
+    <div class="eyebrow">HOÀN THÀNH KHÓA HỌC</div>
+
+    <h1>
+      Biết chuẩn.<br>
+      Hiểu mình.<br>
+      Chủ động phát triển.
+    </h1>
+
+    <div class="goldline"></div>
+
+    <p>
+      Tiêu chuẩn chức danh có ý nghĩa nhất khi được biến thành
+      hành động phát triển cụ thể trong công việc hằng ngày.
+    </p>
+
+    <button class="primary" onclick="openLookup()">
+      ⌕ Tra cứu TCCD
+    </button>
+
+    <button class="primary"
+      style="margin-left:8px;background:#fff;color:#315766"
+      onclick="go(0)">
+      Xem lại từ đầu
+    </button>
+  </div>
+</section>`
 }
 
-function goToSlide(index){
+];
 
-  if(index<0) index=0;
-  if(index>=slides.length) index=slides.length-1;
 
-  slides.forEach((s,i)=>{
-    s.classList.remove("active","exit-left");
+/* =========================================================
+   HIỂN THỊ 48 SLIDE
+========================================================= */
 
-    if(i<index){
-      s.classList.add("exit-left");
+const stage = document.getElementById("stage");
+
+stage.innerHTML = slides.map(x => x.html).join("");
+
+const slideEls = Array.from(
+  document.querySelectorAll("#stage .slide")
+);
+
+let current = 0;
+
+function renderSlide(){
+
+  slideEls.forEach((s,i)=>{
+    s.classList.remove("active","old");
+
+    if(i < current){
+      s.classList.add("old");
+    }
+
+    if(i === current){
+      s.classList.add("active");
     }
   });
 
-  current=index;
-  slides[current].classList.add("active");
+  document.getElementById("cur").textContent =
+    String(current + 1).padStart(2,"0");
 
-  updateUI();
-}
+  document.getElementById("bar").style.width =
+    ((current + 1) / slideEls.length * 100) + "%";
 
-function nextSlide(){
-  if(current<slides.length-1){
-    goToSlide(current+1);
+  document.getElementById("chapter").textContent =
+    slides[current].chapter || "";
+
+  if(current === 44){
+    renderQuizQuestion();
+  }
+
+  if(current === 45){
+    renderFinalResult();
   }
 }
 
-function prevSlide(){
-  if(current>0){
-    goToSlide(current-1);
+function go(n){
+
+  if(n < 0) n = 0;
+
+  if(n >= slideEls.length){
+    n = slideEls.length - 1;
+  }
+
+  current = n;
+  renderSlide();
+}
+
+function next(){
+  if(current < slideEls.length - 1){
+    current++;
+    renderSlide();
+  }
+}
+
+function prev(){
+  if(current > 0){
+    current--;
+    renderSlide();
   }
 }
 
 document.addEventListener("keydown",e=>{
 
-  if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName)){
+  const tag =
+    document.activeElement &&
+    document.activeElement.tagName;
+
+  if(["INPUT","TEXTAREA","SELECT"].includes(tag)){
     return;
   }
 
-  if(e.key==="ArrowRight" || e.key===" " || e.key==="PageDown"){
-    nextSlide();
+  if(
+    e.key === "ArrowRight" ||
+    e.key === "PageDown"
+  ){
+    next();
   }
 
-  if(e.key==="ArrowLeft" || e.key==="PageUp"){
-    prevSlide();
+  if(
+    e.key === "ArrowLeft" ||
+    e.key === "PageUp"
+  ){
+    prev();
   }
 
-  if(e.key==="Home"){
-    goToSlide(0);
+  if(e.key === "Home"){
+    go(0);
   }
 
-  if(e.key==="End"){
-    goToSlide(slides.length-1);
+  if(e.key === "End"){
+    go(slideEls.length - 1);
   }
 });
 
-updateUI();
 
+/* =========================================================
+   TƯƠNG TÁC NHANH
+========================================================= */
 
-/* =====================================================
-   DEMO LOOKUP
-===================================================== */
+function miniAnswer(button,correct,target){
 
-function demoLookup(){
+  const box = button.parentElement;
 
-  const department=document.getElementById("department").value;
-  const group=document.getElementById("jobGroup").value;
-  const grade=document.getElementById("grade").value;
+  box.querySelectorAll("button").forEach(x=>{
+    x.disabled = true;
+  });
 
-  const result=document.getElementById("lookupResult");
+  const feedback = document.getElementById(target);
 
-  if(
-    department.startsWith("Chọn") ||
-    group.startsWith("Chọn") ||
-    grade.startsWith("Chọn")
-  ){
-    result.innerHTML=`
-      <div class="callout red">
-        Hãy chọn đủ <b>Ban/Đơn vị → Nhóm chức danh → Bậc chức danh</b>.
+  if(correct){
+
+    button.classList.add("good");
+
+    feedback.innerHTML = `
+      <div class="callout ok">
+        <b>Chính xác.</b>
+        TCCD mô tả yêu cầu đối với chức danh/vị trí
+        và là căn cứ để đối chiếu mức độ đáp ứng.
       </div>
     `;
-    return;
+
+  }else{
+
+    button.classList.add("bad");
+
+    feedback.innerHTML = `
+      <div class="callout bad">
+        <b>Chưa chính xác.</b>
+        Hãy xem lại nội dung ngay trước câu hỏi này.
+      </div>
+    `;
   }
+}
 
-  result.innerHTML=`
-    <div class="callout green" style="margin-top:22px">
-      <strong>${department} · ${group} · ${grade}</strong><br><br>
+function scenario(card,correct,target){
 
-      Đây là vị trí dành cho dữ liệu <b>TCCD chi tiết thực tế</b>.
-      Khi tích hợp Phụ lục TCCD chi tiết, hệ thống sẽ tự hiển thị:
-      Bằng cấp · Kinh nghiệm · Kiến thức · Kỹ năng ·
-      Năng lực chung · Năng lực lãnh đạo (nếu có) · Ngoại ngữ.
+  const box = card.parentElement;
+
+  box.querySelectorAll(".clickcard").forEach(x=>{
+    x.style.pointerEvents = "none";
+  });
+
+  const feedback = document.getElementById(target);
+
+  if(correct){
+
+    card.classList.add("good");
+
+    feedback.innerHTML = `
+      <div class="callout ok">
+        <b>Đúng.</b>
+        Giao tiếp công việc hiệu quả cần giúp người nhận
+        hiểu rõ bối cảnh, nội dung cần xử lý và thời hạn.
+      </div>
+    `;
+
+  }else{
+
+    card.classList.add("bad");
+
+    feedback.innerHTML = `
+      <div class="callout bad">
+        <b>Chưa tối ưu.</b>
+        Email quá ngắn có thể khiến người nhận không rõ
+        cần xem nội dung gì, phản hồi gì và khi nào cần hoàn thành.
+      </div>
+    `;
+  }
+}
+
+
+/* =========================================================
+   TỰ RÀ SOÁT
+========================================================= */
+
+function reviewResult(){
+
+  const ranges =
+    Array.from(
+      document.querySelectorAll(
+        "#selfReview input[type=range]"
+      )
+    );
+
+  const result = ranges
+    .map(r=>({
+      name:r.dataset.name,
+      value:Number(r.value)
+    }))
+    .sort((a,b)=>a.value-b.value);
+
+  const lowest = result[0].value;
+
+  const priorities =
+    result
+      .filter(x=>x.value===lowest)
+      .slice(0,2);
+
+  document.getElementById("reviewFeedback").innerHTML = `
+    <div class="callout ok">
+      <b>Gợi ý ưu tiên:</b><br>
+      ${priorities.map(x =>
+        "• " + x.name + " — mức tự đánh giá " + x.value + "/5"
+      ).join("<br>")}
       <br><br>
-
-      <span class="small">
-        Prototype không tự tạo tiêu chuẩn chưa có trong dữ liệu nguồn.
-      </span>
+      Đây chỉ là gợi ý phục vụ học tập.
+      Hãy đối chiếu tiếp với cấp độ yêu cầu thực tế
+      của chức danh trong công cụ tra cứu TCCD.
     </div>
   `;
 }
 
 
-/* =====================================================
-   DEVELOPMENT PLAN
-===================================================== */
+/* =========================================================
+   KẾ HOẠCH PHÁT TRIỂN CÁ NHÂN
+========================================================= */
 
 function savePlan(){
 
-  const data={
-    priority:document.getElementById("plan1").value,
-    action:document.getElementById("plan2").value,
-    evidence:document.getElementById("plan3").value,
-    date:document.getElementById("planDate").value
+  const plan = {
+    priority:
+      document.getElementById("planPriority").value,
+
+    action:
+      document.getElementById("planAction").value,
+
+    evidence:
+      document.getElementById("planEvidence").value,
+
+    date:
+      document.getElementById("planDate").value
   };
 
   localStorage.setItem(
-    "PVEP_TCCD_PLAN",
-    JSON.stringify(data)
+    "PVEP_TCCD_DEVELOPMENT_PLAN",
+    JSON.stringify(plan)
   );
 
-  document.getElementById("planMessage").innerHTML=
-    "✓ Đã lưu trên trình duyệt của thiết bị này.";
+  document.getElementById("planMsg").innerHTML =
+    "✓ Đã lưu kế hoạch trên trình duyệt của thiết bị này.";
 }
 
 function loadPlan(){
 
-  const raw=localStorage.getItem("PVEP_TCCD_PLAN");
+  const raw =
+    localStorage.getItem(
+      "PVEP_TCCD_DEVELOPMENT_PLAN"
+    );
 
   if(!raw) return;
 
   try{
 
-    const d=JSON.parse(raw);
+    const p = JSON.parse(raw);
 
-    document.getElementById("plan1").value=d.priority||"";
-    document.getElementById("plan2").value=d.action||"";
-    document.getElementById("plan3").value=d.evidence||"";
-    document.getElementById("planDate").value=d.date||"";
+    const a =
+      document.getElementById("planPriority");
+
+    const b =
+      document.getElementById("planAction");
+
+    const c =
+      document.getElementById("planEvidence");
+
+    const d =
+      document.getElementById("planDate");
+
+    if(a) a.value = p.priority || "";
+    if(b) b.value = p.action || "";
+    if(c) c.value = p.evidence || "";
+    if(d) d.value = p.date || "";
+
+  }catch(e){}
+}
+
+
+/* =========================================================
+   QUIZ 15 CÂU
+========================================================= */
+
+const QUIZ = [
+
+{
+q:"Tiêu chuẩn chức danh chủ yếu mô tả điều gì?",
+options:[
+"Ý kiến của người quản lý về một nhân viên",
+"Yêu cầu đối với một chức danh/vị trí",
+"Kết quả công việc của một tháng",
+"Mức lương của người lao động"
+],
+answer:1
+},
+
+{
+q:"Khi tra cứu TCCD, tổ hợp thông tin nào cần xác định đúng?",
+options:[
+"Chỉ tên Ban/Đơn vị",
+"Chỉ bằng cấp",
+"Đơn vị/lĩnh vực, chức danh và bậc chức danh",
+"Chỉ số năm kinh nghiệm"
+],
+answer:2
+},
+
+{
+q:"TCCD có phải chỉ gồm yêu cầu về bằng cấp không?",
+options:[
+"Có",
+"Không",
+"Chỉ đối với kỹ sư",
+"Chỉ đối với lãnh đạo"
+],
+answer:1
+},
+
+{
+q:"Nội dung nào thuộc nhóm kinh nghiệm?",
+options:[
+"Số năm kinh nghiệm chuyên môn",
+"Điểm ngoại ngữ",
+"Kỹ năng giao tiếp",
+"Quản lý dữ liệu"
+],
+answer:0
+},
+
+{
+q:"KN.02 trong Từ điển năng lực là:",
+options:[
+"Kỹ năng giao tiếp",
+"Quản lý dữ liệu",
+"Tư duy phương pháp luận",
+"Ra quyết định"
+],
+answer:0
+},
+
+{
+q:"NLC.01 là năng lực nào?",
+options:[
+"Quản lý dữ liệu",
+"Kỹ năng đàm phán",
+"Sử dụng tiếng Việt",
+"Tạo động lực"
+],
+answer:0
+},
+
+{
+q:"Năng lực lãnh đạo được áp dụng chủ yếu đối với:",
+options:[
+"Mọi chức danh giống nhau",
+"Các chức danh quản lý",
+"Chỉ nhân viên mới",
+"Chỉ người làm CNTT"
+],
+answer:1
+},
+
+{
+q:"Mức TOEIC tối thiểu được nêu trong Quy chế TCCD chung là:",
+options:[
+"350",
+"450",
+"500",
+"700"
+],
+answer:2
+},
+
+{
+q:"Nếu TCCD chi tiết của một chức danh yêu cầu ngoại ngữ cao hơn mức chung thì:",
+options:[
+"Vẫn chỉ áp dụng mức chung",
+"Áp dụng yêu cầu của chức danh theo TCCD",
+"Không cần đánh giá ngoại ngữ",
+"Chỉ đánh giá kỹ năng đọc"
+],
+answer:1
+},
+
+{
+q:"KN.05 liên quan đến nội dung nào?",
+options:[
+"Ứng dụng công nghệ số",
+"Chỉ kỹ năng Word",
+"Chỉ quản lý nhân sự",
+"Chỉ tiếng Anh"
+],
+answer:0
+},
+
+{
+q:"Bậc chức danh và cấp độ năng lực có phải cùng một khái niệm không?",
+options:[
+"Có",
+"Không",
+"Chỉ giống nhau với lãnh đạo",
+"Chỉ giống nhau với chuyên viên"
+],
+answer:1
+},
+
+{
+q:"Ngưỡng đánh giá kiến thức/kỹ năng dùng để xác định đạt yêu cầu là:",
+options:[
+"50%",
+"60%",
+"70%",
+"80%"
+],
+answer:3
+},
+
+{
+q:"Nếu một tiêu chí điều kiện bắt buộc của chức danh không đáp ứng thì cách hiểu phù hợp là:",
+options:[
+"Vẫn mặc nhiên đạt nếu chuyên môn tốt",
+"Không thể chỉ dựa vào điểm chuyên môn để kết luận đạt TCCD",
+"Tự động được miễn tiêu chí đó",
+"Không cần xem TCCD nữa"
+],
+answer:1
+},
+
+{
+q:"Khoảng cách giữa yêu cầu chức danh và năng lực hiện tại có thể được sử dụng để:",
+options:[
+"Xác định nhu cầu đào tạo và phát triển",
+"Tự động tăng lương",
+"Thay thế mọi quy trình nhân sự",
+"Không có mục đích cụ thể"
+],
+answer:0
+},
+
+{
+q:"Thông điệp phù hợp nhất sau khóa học là:",
+options:[
+"Chỉ cần đạt bài kiểm tra",
+"Biết chuẩn, hiểu mình và chủ động phát triển",
+"Chỉ cần có bằng cấp phù hợp",
+"Chỉ lãnh đạo cần quan tâm TCCD"
+],
+answer:1
+}
+
+];
+
+let quizIndex = 0;
+let quizSelected = null;
+let quizUserAnswers = [];
+
+function startQuiz(){
+
+  quizIndex = 0;
+  quizSelected = null;
+  quizUserAnswers = [];
+
+  go(44);
+
+  setTimeout(
+    renderQuizQuestion,
+    30
+  );
+}
+
+function renderQuizQuestion(){
+
+  const qEl =
+    document.getElementById("quizQuestion");
+
+  const aEl =
+    document.getElementById("quizAnswers");
+
+  const meta =
+    document.getElementById("quizMeta");
+
+  const prog =
+    document.getElementById("quizProgress");
+
+  const nextBtn =
+    document.getElementById("quizNext");
+
+  if(!qEl || !aEl || !meta || !prog){
+    return;
+  }
+
+  if(quizIndex >= QUIZ.length){
+    finishQuiz();
+    return;
+  }
+
+  const q = QUIZ[quizIndex];
+
+  quizSelected = null;
+
+  meta.textContent =
+    `Câu ${quizIndex + 1} / ${QUIZ.length}`;
+
+  prog.style.width =
+    ((quizIndex + 1) / QUIZ.length * 100) + "%";
+
+  qEl.textContent = q.q;
+
+  aEl.innerHTML =
+    q.options.map((option,i)=>`
+      <button
+        onclick="selectQuizAnswer(${i},this)">
+        <b>${String.fromCharCode(65+i)}.</b>
+        ${option}
+      </button>
+    `).join("");
+
+  if(nextBtn){
+
+    nextBtn.disabled = true;
+
+    nextBtn.textContent =
+      quizIndex === QUIZ.length - 1
+      ? "Xem kết quả"
+      : "Câu tiếp theo →";
+  }
+}
+
+function selectQuizAnswer(index,button){
+
+  quizSelected = index;
+
+  document
+    .querySelectorAll("#quizAnswers button")
+    .forEach(x=>{
+      x.classList.remove("good","bad");
+      x.style.background = "#fff";
+      x.style.borderColor = "#d7e1e3";
+    });
+
+  button.style.background = "#eef5f6";
+  button.style.borderColor = "#47717c";
+
+  document.getElementById("quizNext").disabled = false;
+}
+
+function quizNextQuestion(){
+
+  if(quizSelected === null){
+    return;
+  }
+
+  quizUserAnswers[quizIndex] =
+    quizSelected;
+
+  quizIndex++;
+
+  if(quizIndex >= QUIZ.length){
+
+    finishQuiz();
+
+  }else{
+
+    renderQuizQuestion();
+  }
+}
+
+function finishQuiz(){
+
+  let score = 0;
+
+  QUIZ.forEach((q,i)=>{
+
+    if(quizUserAnswers[i] === q.answer){
+      score++;
+    }
+
+  });
+
+  const percent =
+    Math.round(
+      score / QUIZ.length * 100
+    );
+
+  const passed =
+    score >= 12;
+
+  localStorage.setItem(
+    "PVEP_TCCD_QUIZ_RESULT",
+    JSON.stringify({
+      score,
+      percent,
+      passed,
+      completedAt:
+        new Date().toISOString()
+    })
+  );
+
+  go(45);
+
+  setTimeout(
+    renderFinalResult,
+    30
+  );
+}
+
+function renderFinalResult(){
+
+  const target =
+    document.getElementById("finalResult");
+
+  if(!target) return;
+
+  const raw =
+    localStorage.getItem(
+      "PVEP_TCCD_QUIZ_RESULT"
+    );
+
+  if(!raw){
+
+    target.innerHTML = `
+      <h2>Hoàn thành bài kiểm tra</h2>
+
+      <p class="lead">
+        Kết quả của bạn sẽ hiển thị tại đây
+        sau khi trả lời đủ 15 câu.
+      </p>
+
+      <button class="primary"
+        onclick="startQuiz()">
+        Làm bài kiểm tra
+      </button>
+    `;
+
+    return;
+  }
+
+  try{
+
+    const r =
+      JSON.parse(raw);
+
+    target.innerHTML = `
+
+      <div class="split">
+
+        <div class="metric">
+          <span>${r.score}/15</span>
+          <b>${r.percent}%</b>
+
+          <p>
+            ${r.passed
+              ? "Đạt ngưỡng hoàn thành bài kiểm tra."
+              : "Chưa đạt ngưỡng 80% của bài kiểm tra."}
+          </p>
+        </div>
+
+        <div>
+
+          <h2>
+            ${r.passed
+              ? "Bạn đã hoàn thành bài kiểm tra"
+              : "Hãy xem lại nội dung chính"}
+          </h2>
+
+          <div class="callout ${r.passed ? "ok":"bad"}">
+
+            <b>
+              ${r.passed
+                ? "Đạt yêu cầu"
+                : "Chưa đạt yêu cầu"}
+            </b>
+
+            <br><br>
+
+            ${
+              r.passed
+              ? "Bạn đã trả lời đúng ít nhất 12/15 câu."
+              : "Bạn cần đạt ít nhất 12/15 câu để hoàn thành bài kiểm tra."
+            }
+
+          </div>
+
+          <button class="primary"
+            onclick="startQuiz()">
+            Làm lại quiz
+          </button>
+
+          <button class="primary"
+            style="background:#416774;margin-left:6px"
+            onclick="go(46)">
+            Tiếp tục →
+          </button>
+
+        </div>
+
+      </div>
+    `;
 
   }catch(e){}
 }
 
 loadPlan();
+renderSlide();
 
 
-/* =====================================================
-   QUIZ
-===================================================== */
+/* =========================================================
+   PHẦN TIẾP THEO:
+   DỮ LIỆU 230 CHỨC DANH + CÔNG CỤ TRA CỨU THẬT
+========================================================= */
+  /* =========================================================
+   DỮ LIỆU TCCD THẬT — 230 CHỨC DANH
+   Dữ liệu JSON được nén GZIP + Base64 để file gọn hơn
+========================================================= */
 
-const quiz=[
+</script>
 
-{
- q:"Tiêu chuẩn chức danh chủ yếu mô tả điều gì?",
- options:[
-  "Ý kiến của người quản lý về nhân viên",
-  "Yêu cầu đối với một vị trí chức danh",
-  "Kết quả công việc hằng tháng",
-  "Mức lương của người lao động"
- ],
- answer:1
-},
+<!-- DỮ LIỆU 230 CHỨC DANH TCCD -->
+<script src="tccd-data.js"></script>
 
-{
- q:"Khi tra cứu TCCD, cần xác định đúng những yếu tố nào?",
- options:[
-  "Chỉ tên Ban",
-  "Chỉ bằng cấp",
-  "Nhóm chức danh, tên chức danh và bậc chức danh",
-  "Chỉ số năm kinh nghiệm"
- ],
- answer:2
-},
+<script>
 
-{
- q:"TCCD có phải chỉ gồm yêu cầu về bằng cấp không?",
- options:[
-  "Có",
-  "Không",
-  "Chỉ đối với kỹ sư",
-  "Chỉ đối với lãnh đạo"
- ],
- answer:1
-},
+/* =========================================================
+   TRA CỨU TCCD THỰC TẾ
+========================================================= */
 
-{
- q:"Nội dung nào thuộc nhóm kinh nghiệm?",
- options:[
-  "Số năm kinh nghiệm chuyên môn",
-  "Điểm ngoại ngữ",
-  "Kỹ năng giao tiếp",
-  "Quản lý dữ liệu"
- ],
- answer:0
-},
+const unitSel = document.getElementById("unitSel");
+const roleSel = document.getElementById("roleSel");
+const gradeSel = document.getElementById("gradeSel");
+const lookupBody = document.getElementById("lookupBody");
+const lookup = document.getElementById("lookup");
 
-{
- q:"Kỹ năng giao tiếp thuộc nhóm nào?",
- options:[
-  "Bằng cấp",
-  "Kinh nghiệm",
-  "Kỹ năng",
-  "Sức khỏe"
- ],
- answer:2
-},
 
-{
- q:"Quản lý dữ liệu và tổng hợp báo cáo thuộc nhóm nào?",
- options:[
-  "Năng lực chung",
-  "Bằng cấp",
-  "Ngoại ngữ",
-  "Kinh nghiệm"
- ],
- answer:0
-},
+/* =========================================================
+   KHỞI TẠO DANH SÁCH ĐƠN VỊ
+========================================================= */
 
-{
- q:"Năng lực lãnh đạo được áp dụng chủ yếu đối với:",
- options:[
-  "Mọi chức danh giống nhau",
-  "Các chức danh quản lý",
-  "Chỉ nhân viên mới",
-  "Chỉ người làm CNTT"
- ],
- answer:1
-},
+const units = [...new Set(TCCD.map(x => x.unit))];
 
-{
- q:"Mức TOEIC tối thiểu được nêu trong Quy chế chung là:",
- options:[
-  "350",
-  "450",
-  "500",
-  "700"
- ],
- answer:2
-},
+unitSel.innerHTML = units
+  .map(x => `<option>${esc(x)}</option>`)
+  .join("");
 
-{
- q:"Đối với chức danh có yêu cầu sử dụng ngoại ngữ cao hơn:",
- options:[
-  "Vẫn chỉ áp dụng một mức giống nhau",
-  "Có thể áp dụng mức cao hơn theo TCCD",
-  "Không cần đánh giá ngoại ngữ",
-  "Chỉ đánh giá đọc"
- ],
- answer:1
-},
 
-{
- q:"Khi sử dụng AI trong công việc, cách hiểu phù hợp nhất là:",
- options:[
-  "Không cần kiểm tra kết quả",
-  "AI thay người dùng chịu trách nhiệm",
-  "Người dùng cần kiểm tra đầu ra và chịu trách nhiệm về công việc",
-  "Không được sử dụng AI"
- ],
- answer:2
-},
+/* =========================================================
+   CHỌN ĐƠN VỊ → CHỨC DANH
+========================================================= */
 
-{
- q:"Chuyên môn tốt có đủ để mặc nhiên kết luận đạt TCCD không?",
- options:[
-  "Có",
-  "Không",
-  "Chỉ đối với kỹ sư",
-  "Chỉ đối với lãnh đạo"
- ],
- answer:1
-},
+function rolesForUnit(){
 
-{
- q:"Ngưỡng điểm đánh giá kiến thức và kỹ năng được sử dụng là:",
- options:[
-  "50%",
-  "60%",
-  "70%",
-  "80%"
- ],
- answer:3
-},
+  const roles = TCCD.filter(
+    x => x.unit === unitSel.value
+  );
 
-{
- q:"Khoảng cách giữa yêu cầu chức danh và năng lực hiện tại có thể dùng để:",
- options:[
-  "Xác định nhu cầu đào tạo và phát triển",
-  "Tự động tăng lương",
-  "Thay thế mọi quy trình nhân sự",
-  "Không có mục đích cụ thể"
- ],
- answer:0
-},
+  roleSel.innerHTML = roles.map(x => {
 
-{
- q:"Phần tự rà soát trên website này có ý nghĩa gì?",
- options:[
-  "Thay thế đánh giá TCCD chính thức",
-  "Hỗ trợ người học suy nghĩ về nhu cầu phát triển",
-  "Tự động công nhận đạt TCCD",
-  "Là quyết định nhân sự"
- ],
- answer:1
-},
+    const index = TCCD.indexOf(x);
 
-{
- q:"Thông điệp phù hợp nhất sau khóa học là:",
- options:[
-  "Chỉ cần đạt bài kiểm tra",
-  "Biết chuẩn, hiểu mình và chủ động phát triển",
-  "Chỉ cần có bằng cấp phù hợp",
-  "Chỉ lãnh đạo cần quan tâm TCCD"
- ],
- answer:1
+    return `
+      <option value="${index}">
+        ${esc(x.title)}
+        ${x.code ? " · " + esc(x.code) : ""}
+      </option>
+    `;
+
+  }).join("");
+
+  roleChange();
 }
 
-];
 
-let quizIndex=0;
-let quizAnswers=[];
+/* =========================================================
+   CHỌN CHỨC DANH → BẬC
+========================================================= */
 
-function beginQuiz(){
+function roleChange(){
 
-  quizIndex=0;
-  quizAnswers=[];
+  const r = TCCD[Number(roleSel.value)];
 
-  goToSlide(16);
+  if(!r) return;
 
-  renderQuestion();
+  gradeSel.innerHTML = r.grades
+    .map(g => `
+      <option value="${g}">
+        Bậc ${g}
+      </option>
+    `)
+    .join("");
+
+  renderRole();
 }
 
-function renderQuestion(){
 
-  const area=document.getElementById("quizArea");
+/* =========================================================
+   LẤY GIÁ TRỊ THEO BẬC
+========================================================= */
 
-  if(quizIndex>=quiz.length){
-    showQuizResult();
-    return;
+function valAt(arr, grade){
+
+  if(!arr) return "—";
+
+  const index = rGradeIndex(grade);
+
+  if(index < 0) return "—";
+
+  return arr[index] !== undefined &&
+         arr[index] !== null &&
+         arr[index] !== ""
+         ? arr[index]
+         : "—";
+}
+
+
+function rGradeIndex(grade){
+
+  const r = TCCD[Number(roleSel.value)];
+
+  if(!r || !Array.isArray(r.grades)){
+    return -1;
   }
 
-  const q=quiz[quizIndex];
-
-  area.innerHTML=`
-
-    <div class="quiz-card">
-
-      <div class="quiz-meta">
-        CÂU ${quizIndex+1} / ${quiz.length}
-      </div>
-
-      <div class="question">
-        ${q.q}
-      </div>
-
-      <div class="answers">
-
-        ${q.options.map((option,i)=>`
-
-          <div class="answer"
-               onclick="selectAnswer(${i},this)">
-
-            <strong>
-              ${String.fromCharCode(65+i)}.
-            </strong>
-
-            ${option}
-
-          </div>
-
-        `).join("")}
-
-      </div>
-
-      <div style="
-        display:flex;
-        justify-content:flex-end;
-        margin-top:22px">
-
-        <button
-          id="quizNext"
-          class="btn btn-red"
-          onclick="nextQuestion()"
-          disabled>
-
-          ${quizIndex===quiz.length-1
-            ? "Xem kết quả"
-            : "Câu tiếp theo →"}
-
-        </button>
-
-      </div>
-
-    </div>
-  `;
+  return r.grades.indexOf(Number(grade));
 }
 
-function selectAnswer(index,element){
 
-  document.querySelectorAll(".answer")
-    .forEach(x=>x.classList.remove("selected"));
+/* =========================================================
+   HIỂN THỊ CHI TIẾT CHỨC DANH
+========================================================= */
 
-  element.classList.add("selected");
+function renderRole(){
 
-  quizAnswers[quizIndex]=index;
+  const r = TCCD[Number(roleSel.value)];
 
-  document.getElementById("quizNext").disabled=false;
-}
+  if(!r) return;
 
-function nextQuestion(){
+  const grade = Number(gradeSel.value);
 
-  if(quizAnswers[quizIndex]===undefined) return;
+  const gradeIndex =
+    r.grades.indexOf(grade);
 
-  quizIndex++;
 
-  renderQuestion();
-}
+  /* -------------------------
+     KINH NGHIỆM
+  ------------------------- */
 
-function showQuizResult(){
+  let experienceHTML = "";
 
-  let score=0;
+  if(Array.isArray(r.experience)){
 
-  quiz.forEach((q,i)=>{
-    if(quizAnswers[i]===q.answer){
-      score++;
-    }
-  });
+    experienceHTML = r.experience.map(item => {
 
-  const percent=Math.round(score/quiz.length*100);
-  const pass=score>=12;
+      let value = "—";
 
-  document.getElementById("quizArea").innerHTML=`
+      if(
+        Array.isArray(item.values) &&
+        gradeIndex >= 0 &&
+        item.values[gradeIndex] !== undefined &&
+        item.values[gradeIndex] !== null &&
+        item.values[gradeIndex] !== ""
+      ){
+        value = item.values[gradeIndex];
+      }
 
-    <div class="result">
+      let displayValue = value;
 
-      <div class="eyebrow">
-        KẾT QUẢ
-      </div>
+      if(
+        value !== "—" &&
+        typeof value === "number"
+      ){
+        displayValue = `${value} năm`;
+      }
 
-      <div class="score">
-        ${score}/15
-      </div>
+      return `
+        <div style="margin-bottom:10px">
+          <b>${esc(item.label || "Kinh nghiệm")}</b>
+          <br>
+          ${esc(displayValue)}
+        </div>
+      `;
 
-      <h2>
-        ${pass
-          ? "Bạn đã hoàn thành bài kiểm tra"
-          : "Bạn chưa đạt ngưỡng 80%"}
-      </h2>
+    }).join("");
 
-      <p class="lead"
-         style="margin-left:auto;margin-right:auto">
+  }
 
-        Kết quả:
-        <strong>${percent}%</strong>
+  if(!experienceHTML){
+    experienceHTML = "—";
+  }
 
-      </p>
 
-      <div class="callout ${pass ? "green":"red"}"
-           style="text-align:left">
+  /* -------------------------
+     NGOẠI NGỮ
+  ------------------------- */
+
+  let foreign = "—";
+
+  if(
+    Array.isArray(r.foreign) &&
+    gradeIndex >= 0 &&
+    r.foreign[gradeIndex] !== undefined &&
+    r.foreign[gradeIndex] !== null &&
+    r.foreign[gradeIndex] !== ""
+  ){
+    foreign = r.foreign[gradeIndex];
+  }
+
+
+  /* -------------------------
+     CÁC TIÊU CHÍ NĂNG LỰC
+  ------------------------- */
+
+  let rows = "";
+  let lastSection = "";
+
+  if(Array.isArray(r.criteria)){
+
+    r.criteria.forEach(c => {
+
+      if(
+        c.section &&
+        c.section !== lastSection
+      ){
+
+        rows += `
+          <tr class="sectionRow">
+            <td colspan="4">
+              ${esc(c.section)}
+            </td>
+          </tr>
+        `;
+
+        lastSection = c.section;
+      }
+
+
+      let level = "—";
+
+      if(
+        Array.isArray(c.levels) &&
+        gradeIndex >= 0 &&
+        c.levels[gradeIndex] !== undefined &&
+        c.levels[gradeIndex] !== null &&
+        c.levels[gradeIndex] !== ""
+      ){
+        level = c.levels[gradeIndex];
+      }
+
+
+      rows += `
+        <tr>
+
+          <td>
+            ${esc(c.no || "")}
+          </td>
+
+          <td>
+            ${esc(c.name || "")}
+          </td>
+
+          <td>
+            ${esc(c.code || "")}
+          </td>
+
+          <td class="lv">
+            ${esc(level)}
+          </td>
+
+        </tr>
+      `;
+
+    });
+  }
+
+
+  /* -------------------------
+     RENDER
+  ------------------------- */
+
+  lookupBody.innerHTML = `
+
+    <div class="roleTitle">
+
+      <div>
+
+        <span class="badge">
+          ${esc(r.unit)}
+        </span>
+
+        <span class="badge">
+          Bậc ${grade}
+        </span>
+
+        <h2 style="margin-top:14px">
+          ${esc(r.title)}
+        </h2>
 
         ${
-          pass
-          ?
-          "<strong>Đạt yêu cầu bài kiểm tra.</strong><br>Bạn đã trả lời đúng ít nhất 12/15 câu."
-          :
-          "<strong>Chưa đạt yêu cầu bài kiểm tra.</strong><br>Hãy xem lại các nội dung chính trước khi thực hiện lại."
+          r.code
+          ? `<p><b>Mã chức danh:</b> ${esc(r.code)}</p>`
+          : ""
         }
 
       </div>
 
-      <p class="small" style="margin-top:18px">
-        Kết quả này phản ánh mức độ hiểu nội dung khóa học,
-        không phải kết quả đánh giá TCCD chính thức.
-      </p>
+    </div>
 
-      <div style="margin-top:22px">
 
-        <button class="btn btn-light"
-                onclick="quizIndex=0;quizAnswers=[];renderQuestion()">
-          Làm lại
-        </button>
+    <div class="reqGrid">
 
-        <button class="btn btn-red"
-                onclick="goToSlide(17)">
-          Hoàn thành →
-        </button>
+      <div class="req">
+
+        <b>I. Bằng cấp</b>
+
+        <p>
+          ${
+            r.degree
+            ? esc(r.degree)
+            : "Không có thông tin riêng trong dữ liệu nguồn."
+          }
+        </p>
+
+      </div>
+
+
+      <div class="req">
+
+        <b>II. Kinh nghiệm</b>
+
+        <div style="margin-top:10px">
+          ${experienceHTML}
+        </div>
+
+      </div>
+
+
+      <div class="req">
+
+        <b>Sức khỏe</b>
+
+        <p>
+          ${
+            r.health
+            ? esc(r.health)
+            : "Theo yêu cầu trong bảng TCCD nguồn."
+          }
+        </p>
+
+      </div>
+
+
+      <div class="req">
+
+        <b>Ngoại ngữ</b>
+
+        <p>
+
+          ${
+            foreign !== "—"
+            ? `TOEIC tương đương:
+               <strong>${esc(foreign)}</strong>`
+            : "Không có giá trị riêng tại bậc này."
+          }
+
+        </p>
 
       </div>
 
     </div>
+
+
+    <h3 style="
+      margin-top:28px;
+      color:#315766
+    ">
+      Kiến thức · Kỹ năng · Năng lực
+    </h3>
+
+
+    <div style="
+      overflow:auto;
+      border-radius:12px
+    ">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th style="width:70px">
+              STT
+            </th>
+
+            <th>
+              Năng lực / kiến thức / kỹ năng
+            </th>
+
+            <th style="width:120px">
+              Mã
+            </th>
+
+            <th style="width:120px">
+              Cấp độ yêu cầu
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+          ${rows}
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <div class="sourceNote">
+
+      <b>Nguồn:</b>
+      Bộ TCCD chi tiết do PVEP cung cấp
+      · Sheet: ${esc(r.sheet || "")}.
+
+      <br>
+
+      Dữ liệu trong phần tra cứu được hiển thị
+      theo giá trị của bảng nguồn,
+      không tự thay đổi tiêu chuẩn của chức danh.
+
+    </div>
+
   `;
 }
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function esc(value){
+
+  return String(value ?? "")
+    .replace(
+      /[&<>"']/g,
+      char => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+      })[char]
+    );
+}
+
+
+/* =========================================================
+   MỞ / ĐÓNG TRA CỨU
+========================================================= */
+
+function openLookup(){
+
+  lookup.classList.add("on");
+
+  if(!roleSel.options.length){
+    rolesForUnit();
+  }
+
+  renderRole();
+}
+
+
+function closeLookup(){
+
+  lookup.classList.remove("on");
+}
+
+
+/* =========================================================
+   SỰ KIỆN
+========================================================= */
+
+unitSel.addEventListener(
+  "change",
+  rolesForUnit
+);
+
+roleSel.addEventListener(
+  "change",
+  roleChange
+);
+
+gradeSel.addEventListener(
+  "change",
+  renderRole
+);
+
+
+lookup.addEventListener(
+  "click",
+  e => {
+
+    if(e.target === lookup){
+      closeLookup();
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  e => {
+
+    if(
+      e.key === "Escape" &&
+      lookup.classList.contains("on")
+    ){
+      closeLookup();
+    }
+
+  }
+);
+
+
+/* =========================================================
+   KHỞI TẠO TRA CỨU
+========================================================= */
+
+rolesForUnit();
+
+
+/* =========================================================
+   KIỂM TRA DỮ LIỆU
+========================================================= */
+
+console.log(
+  "PVEP TCCD:",
+  TCCD.length,
+  "chức danh đã được nạp."
+);
+
+
+/* =========================================================
+   KHỞI ĐỘNG E-LEARNING
+========================================================= */
+
+renderSlide();
 
 </script>
 
