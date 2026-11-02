@@ -3591,6 +3591,13 @@ html:`
     sau đó lựa chọn một yêu cầu cần ưu tiên phát triển.
   </div>
 
+  <div class="callout warn">
+    <b>Lưu ý:</b>
+    Danh mục chức danh phải phù hợp với Sơ đồ tổ chức (Org Chart) đã được phê duyệt.
+    Chức danh dùng để tra cứu và xác định tiêu chuẩn cần đúng với tên chức danh
+    trên Sơ đồ tổ chức của đơn vị/dự án.
+  </div>
+
   <button class="primary" onclick="openLookup()">
     ⌕ Tra cứu lại TCCD
   </button>
@@ -3599,12 +3606,10 @@ html:`
 
 /* ===================== 48 ===================== */
 {
-chapter:"Hoàn thành",
+chapter:"Tổng kết",
 html:`
 <section class="slide cover">
   <div class="hero">
-    <div class="eyebrow">HOÀN THÀNH KHÓA HỌC</div>
-
     <h1>
       Biết chuẩn.<br>
       Hiểu mình.<br>
@@ -3642,7 +3647,7 @@ html:`
     <div class="goldline"></div>
     <p>
       Chức danh tại các dự án được xác định theo Org Chart đã phê duyệt.
-      Module gồm 4 hợp phần: PVEP-HCM, PVEP-NCS, PVEP-KM và PVEP-Cửu Long.
+      Module gồm 4 hợp phần: PVEP-HCM, PVEP-NCS, Chi nhánh Khánh Mỹ (PVEP-KM) và PVEP-Cửu Long.
     </p>
   </div>
 </section>`
@@ -3689,17 +3694,17 @@ html:`<section class="slide ocSlide" id="oc-struct-ncs"></section>`
 chapter:"Hợp phần 6.2 · PVEP-NCS · Danh mục chức danh",
 html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-ncs"></section>`
 },
-/* ===================== HỢP PHẦN 6.3 · PVEP-KM ===================== */
+/* ===================== HỢP PHẦN 6.3 · PVEP-Khánh Mỹ ===================== */
 {
-chapter:"Hợp phần 6.3 · PVEP-KM",
+chapter:"Hợp phần 6.3 · PVEP-Khánh Mỹ",
 html:`<section class="slide module ocCover" id="oc-cover-km"></section>`
 },
 {
-chapter:"Hợp phần 6.3 · PVEP-KM · Cơ cấu tổ chức",
+chapter:"Hợp phần 6.3 · PVEP-Khánh Mỹ · Cơ cấu tổ chức",
 html:`<section class="slide ocSlide" id="oc-struct-km"></section>`
 },
 {
-chapter:"Hợp phần 6.3 · PVEP-KM · Danh mục chức danh",
+chapter:"Hợp phần 6.3 · PVEP-Khánh Mỹ · Danh mục chức danh",
 html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-km"></section>`
 },
 /* ===================== HỢP PHẦN 6.4 · PVEP-Cửu Long ===================== */
@@ -5034,50 +5039,62 @@ window.PROJECT_OC = [
 /* ===================== 6.1 · PVEP-HCM ===================== */
 {
 id:"hcm", code:"6.1", name:"PVEP-HCM", color:"#4A568D",
-title:"Org Chart dự án PVEP-HCM",
-scope:"Lô 01/10&02/10 · Lô 01/97&02/97",
-year:"2026",
-source:"2026 Org. Chart to Mngr PVEP-HCM — cập nhật 25/08/2026 (2026 Approved position)",
-total:"111",
-totalNote:"định biên được duyệt 2026 (104 đã có người · 7 vị trí trống)",
+title:"2027 Project Organization Chart PVEP-HCM (đề xuất)",
+scope:"Lô 01/10&02/10 · Lô 01/97&02/97 · Lô 09-2/10",
+year:"2027",
+source:"PVEP-HCM 2027 Org. Chart — Ver.1 (họp 18/09/2026, cập nhật 19/09/2026), bản đề xuất",
+total:"123",
+totalNote:"vị trí đề xuất 2027 (tăng 12 so với 111 vị trí năm 2026)",
 lang:"en",
 mgmt:[["General Manager",1],["Deputy General Manager",2]],
 units:[
-{name:"Operation Dept.", vn:"Phòng Vận hành", hc:"28", groups:[
-  {g:"Quản lý phòng", items:[["Operation Manager",1],["Deputy Operation Manager",1,1],["Technical Assistant",1],["Sr. Cost Control",1]]},
-  {g:"Điều phối & kỹ thuật", items:[["Operation Coordinator",1],["Marine Coordinator",1],["Lifting Officer",1,1],["Sr. Production/Process",1],["Production Engineer & DCC",1],["Well Intervention Engineer",1],["Sr. E&I Engineer",1,1],["Sr. Construction Engineer",1]]},
-  {g:"Offshore Team", items:[["OIM",2],["WHP P&P Supervisor",2],["WHP M&R Supervisor",2],["WHP E&I Supervisor",2],["P&P Technician",2],["M&R Technician",4],["E&I Technician",2]]}]},
-{name:"VungTau Base", vn:"Căn cứ Vũng Tàu", hc:"3", groups:[
-  {g:"Căn cứ", items:[["Base Superintendent",1],["Sr. Mechanical QA&QC Engineer",1],["Material Assistant",1]]}]},
-{name:"Subsurface Dept.", vn:"Phòng Địa chất – Công nghệ mỏ", hc:"19", groups:[
-  {g:"Quản lý phòng", items:[["Subsurface Manager",1],["Deputy Subsurface Manager",1],["Technical Assistant",1]]},
-  {g:"G&G Team", items:[["G&G Team Leader",1],["Sr. Petrophysicist",1],["Petrophysicist",1],["Sr. Dev. Geologist",1,1],["Sr. Modelling Geologist",1],["Sr. Geologist",1],["Sr. Geophysicist",2],["Geophysicist",1]]},
-  {g:"RE&PE Team", items:[["RE&PE Team Leader",1],["Reservoir Surveillance",1],["Sr. Reservoir Engineer",2],["Reservoir Engineer",1],["Sr. Petroleum Engineer",1],["Petroleum Engineer",1]]}]},
-{name:"Drilling Dept.", vn:"Phòng Khoan", hc:"12", groups:[
+{name:"Operation Dept.", vn:"Phòng Vận hành", hc:"33", groups:[
+  {g:"Quản lý phòng", items:[["Operation Manager",1],["Deputy Operation Manager",1,1],["Technical Assistant",1]]},
+  {g:"Điều phối & kỹ thuật", items:[["Operation Coordinator",1],["Marine Coordinator",1],["Sr. Production/Process",1],["Production Engineer & DCC",1],["Sr. E&I Engineer",1,1],["Sr. Maintenance Engineer",1],["Maintenance Engineer",1,1,"new"]]},
+  {g:"Offshore Team", items:[["OIM",2],["WHP P&P Supervisor",2],["WHP M&R Supervisor",2],["WHP E&I Supervisor",2],["P&P Technician",2],["M&R Technician",4],["E&I Technician",2]]},
+  {g:"Offshore Team – KNV", items:[["KNV P&P Supervisor",1,1,"new"],["KNV M&R Supervisor",1,1,"new"],["KNV E&I Supervisor",1,1,"new"],["KNV P&P Technician",1,1,"new"],["KNV M&R Technician",2,2,"new"],["KNV E&I Technician",1,1,"new"]]}],
+  note:"So với 2026: thêm 8 vị trí (01 Maintenance Engineer và 07 vị trí offshore cho KNV); Sr. Construction Engineer đổi thành Sr. Maintenance Engineer; Well Intervention Engineer chuyển sang Subsurface; Sr. Cost Control chuyển sang Planning & Governance; bỏ ô Lifting Officer."},
+{name:"VungTau Base", vn:"Căn cứ Vũng Tàu", hc:"4", groups:[
+  {g:"Căn cứ", items:[["Base Superintendent",1],["Sr. Mechanical QA&QC Engineer",1],["Material Specialist",1],["Warehouse Specialist",1,1,"new"]]}],
+  note:"Material Assistant được nâng thành Material Specialist; thêm mới 01 Warehouse Specialist."},
+{name:"Subsurface Dept.", vn:"Phòng Địa chất – Công nghệ mỏ", hc:"21", groups:[
+  {g:"Quản lý phòng", items:[["Subsurface Manager",1],["Deputy Subsurface Manager",2],["Technical Assistant",1]]},
+  {g:"G&G", items:[["Sr. Petrophysicist",1],["Petrophysicist",1],["Sr. Dev. Geologist",1,1],["Sr. Geologist",1],["Sr. Modelling Geologist",1],["Sr. Geophysicist",2],["Geophysicist",1],["Sr. Geologist (9 months)",1,1,"new"],["Sr. Geophysics (9 months)",1,1,"new"]]},
+  {g:"RE&PE", items:[["Sr. Reservoir Engineer",2],["Reservoir Engineer",1],["Reservoir Surveillance",1],["Sr. Petroleum Engineer",1],["Sr. Well Intervention Engineer",1],["Petroleum Engineer",1]]}],
+  note:"2 Team Leader (G&G, RE&PE) chuyển thành 2 Deputy Subsurface Manager; bỏ 01 ô Deputy Subsurface Manager cũ. 2 vị trí mới (Sr. Geologist, Sr. Geophysics – 9 tháng) dành cho Lô 09-2/10. Well Intervention Engineer chuyển từ Operation sang."},
+{name:"Drilling Dept.", vn:"Phòng Khoan", hc:"13", groups:[
   {g:"Quản lý phòng", items:[["Drilling Manager",1],["Deputy Drilling Manager",1],["Technical Assistant",1]]},
   {g:"HSE", items:[["HSE Team Leader",1],["HSE Coordinator",1],["Sr. HSE Engineer",1],["Environment Engineer",1]]},
-  {g:"Khoan & Hoàn thiện giếng", items:[["Sr. Drilling Engineer",3],["Sr. Completion Engineer",1],["Drilling Engineer",1]]}]},
+  {g:"Khoan & Hoàn thiện giếng", items:[["Sr. Drilling Engineer",3],["Sr. Completion Engineer",1],["Drilling Engineer",2,1,"new"]]}],
+  note:"Sơ đồ thể hiện ô mới là “Drilling Engineer”; bảng Summary ghi “Sr. Drilling engineer”. Bài học theo ô trên sơ đồ."},
 {name:"Development Dept.", vn:"Phòng Phát triển mỏ", hc:"8", groups:[
   {g:"Quản lý", items:[["Project Manager",1],["Deputy Project Manager",1]]},
   {g:"Facilities", items:[["Lead Facilities",1],["Sr. Process Engineer",1,1],["Process & Tie-in Engineer",1]]},
-  {g:"Project Service", items:[["Lead Project Service",1],["Sr. Project Engineer",1,1],["Project Engineer",1]]}],
-  note:"PMT Team theo sheet riêng: PVEP 11 (gồm 4 staff tại Dev office, 6 box vacant); PMT/Outsource 14 (2026), dự kiến 17."},
-{name:"Admin & HR Dept.", vn:"Phòng Hành chính – Nhân sự", hc:"14", groups:[
-  {g:"Quản lý phòng", items:[["ADM & HR Manager",1],["Deputy ADM & HR Manager",2],["Executive Assistant",1],["Receptionist",1]]},
+  {g:"Project Service", items:[["Lead Project Service",1],["Sr. Project Engineer",1,1],["Project Engineer",1]]}]},
+{name:"Admin & HR Dept.", vn:"Phòng Hành chính – Nhân sự", hc:"10", groups:[
+  {g:"Quản lý phòng", items:[["ADM & HR Manager",1],["Deputy ADM & HR Manager",1],["Executive Assistant",1],["Receptionist",1]]},
   {g:"Nhân sự", items:[["Sr. HR Officer",2],["HR Officer",1]]},
-  {g:"Công nghệ thông tin", items:[["IT Engineer",1],["IS Engineer",1]]},
-  {g:"Hành chính – Kế hoạch", items:[["Sr. ADM Officer",2],["ADM Officer",1],["Sr. Planning Officer",1]]}]},
-{name:"F & A Dept.", vn:"Phòng Tài chính – Kế toán", hc:"10", groups:[
+  {g:"Hành chính", items:[["Sr. ADM Officer",2],["ADM Officer",1]]}],
+  note:"4 vị trí chuyển sang Phòng Planning & Governance: 01 Deputy Manager, 01 IT Engineer, 01 IS Engineer, 01 Sr. Planning Officer."},
+{name:"F & A Dept.", vn:"Phòng Tài chính – Kế toán", hc:"11", groups:[
   {g:"Quản lý phòng", items:[["F&A Manager",1],["Deputy F&A Manager",1]]},
-  {g:"Kế toán", items:[["Sr. Accountant",4],["Accountant",4]]}]},
+  {g:"Kế toán", items:[["Sr. Accountant",5,1],["Accountant",4,1,"new"]]}],
+  note:"Thêm mới 01 Accountant; 01 Accountant được nâng thành Sr. Accountant; 01 Sr. Accountant trống do nghỉ hưu từ 01/01/2027."},
 {name:"Procurement Dept.", vn:"Phòng Mua sắm", hc:"14", groups:[
-  {g:"Quản lý phòng", items:[["Procurement Manager",1],["Procurement/Contract Coordinator",1]]},
-  {g:"Procurement", items:[["Sr. Procurement Officer",3],["Procurement Officer",5]]},
-  {g:"Contract", items:[["Sr. Contract Officer",2,1],["Contract Officer",2]]}]}
+  {g:"Quản lý phòng", items:[["Procurement Manager",1],["Procurement/ Contract Coord.",1]]},
+  {g:"Procurement", items:[["Sr. Procurement Officer",4],["Procurement Officer",4]]},
+  {g:"Contract", items:[["Sr. Contract Officer",2,2],["Contract Officer",2]]}],
+  note:"01 Procurement Officer được nâng thành Sr. Procurement Officer."},
+{name:"Planning & Governance Dept.", vn:"Phòng Kế hoạch & Quản trị (phòng mới)", hc:"6", groups:[
+  {g:"Quản lý phòng", items:[["Planning & Governance Manager",1]]},
+  {g:"Kế hoạch – Chi phí – Rủi ro", items:[["Sr. Planning & Risk Management Officer",1],["Sr. Cost Controller",1]]},
+  {g:"IT / ERP", items:[["Sr. IT Engineer",1],["IS Engineer",1],["Sr. ERP Officer",1,1,"new"]]}],
+  note:"Phòng mới năm 2027: 2 vị trí từ ADM & HR, 1 vị trí từ Operation (Sr. Cost Control), thêm mới 01 Sr. ERP Officer; IT Engineer được nâng thành Sr. IT Engineer."}
 ],
 notes:[
-  "Phân bổ chi phí giữa hai Lô thể hiện trong Org Chart nguồn (ví dụ 0,5/0,5) không làm thay đổi số vị trí.",
-  "Vị trí trống theo bảng Summary of Project Staff: Deputy Operation Manager, Lifting Officer, Sr. E&I Engineer, Sr. Dev. Geologist, Sr. Process Engineer, Sr. Project Engineer, Sr. Contract Officer."
+  "Đây là bản đề xuất 2027 (Ver.1), thay cho Org Chart 2026 dùng trước đó.",
+  "So với 2026: thêm 14 vị trí mới, bỏ 2 ô (Deputy Subsurface Manager cũ, Lifting Officer), tăng ròng 12 vị trí; lập mới Phòng Planning & Governance.",
+  "Phân bổ chi phí giữa các Lô (ví dụ 0,5/0,5) không làm thay đổi số vị trí."
 ]
 },
 
@@ -5108,7 +5125,7 @@ units:[
   {g:"Khoan (3)", items:[["KSC Khoan thực địa",2]]},
   {g:"Khoan (4)", items:[["CVC kiểm soát chi phí",1]]}]},
 {name:"Phòng Điều hành sản xuất", hc:"23", groups:[
-  {g:"Quản lý phòng", items:[["Trưởng phòng ĐHSX",1],["Phó Trưởng phòng ĐHSX phụ trách Hàng hải",2,1],["Phó Trưởng phòng ĐHSX phụ trách Bảo trì",1],["CV kiểm soát tài liệu và ngân sách",1]]},
+  {g:"Quản lý phòng", items:[["Trưởng phòng ĐHSX",1],["Phó Trưởng phòng ĐHSX phụ trách Hàng hải",1],["Phó Trưởng phòng ĐHSX phụ trách Khai thác",1,1],["Phó Trưởng phòng ĐHSX phụ trách Bảo trì",1],["CV kiểm soát tài liệu và ngân sách",1]]},
   {g:"Hàng hải", items:[["KSC Hàng hải",2,1],["KSC Kết cấu",2],["KS Kết cấu",1]]},
   {g:"Khai thác", items:[["KSC Khai thác",2],["KS Khai thác",1]]},
   {g:"Bảo trì", items:[["KSC Tự động hóa",2],["KSC Cơ khí Bảo trì",3],["KS Cơ khí Bảo trì",2],["KSC Điện",2],["KS Điện",1]]}]},
@@ -5145,16 +5162,15 @@ units:[
   {g:"Office", items:[["KS Thông tin",2],["KSC Giám sát An toàn",2],["Bác sỹ Quản trị giàn",2],["KS Vật tư - Thủ kho",2]]}]}
 ],
 notes:[
-  "Các vị trí giàn bố trí theo ca nên mỗi chức danh thường có 2 người trở lên.",
-  "Org Chart nguồn ghi “Phó Trưởng phòng ĐHSX phụ trách Hàng hải” cho cả 2 ô Phó Trưởng phòng (1 ô đang trống); bài học giữ nguyên tên như sơ đồ."
+  "Các vị trí giàn bố trí theo ca nên mỗi chức danh thường có 2 người trở lên."
 ]
 },
 
-/* ===================== 6.3 · PVEP-KM ===================== */
+/* ===================== 6.3 · PVEP-KHÁNH MỸ ===================== */
 {
-id:"km", code:"6.3", name:"PVEP-KM", color:"#B95D50",
-title:"Nhân sự dự án PVEP-KM năm 2027",
-scope:"Chi nhánh PVEP-KM",
+id:"km", code:"6.3", name:"PVEP-Khánh Mỹ", color:"#B95D50",
+title:"Nhân sự dự án Chi nhánh Khánh Mỹ năm 2027",
+scope:"Chi nhánh Khánh Mỹ (PVEP-KM)",
 year:"2027",
 source:"SDTC 2027 PVEP KM — Nhân sự dự án dự kiến năm 2027",
 total:"65",
