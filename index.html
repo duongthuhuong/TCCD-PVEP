@@ -1794,6 +1794,154 @@ article b,.metric b{color:#4A568D}
   .tocList{grid-template-columns:1fr}
 }
 
+
+/* =========================================================
+   MODULE 6 · ORG CHART CÁC DỰ ÁN
+========================================================= */
+.ocSlide{--pc:#4A568D}
+.ocSlide h2{margin-bottom:6px;font-size:clamp(30px,3.4vw,48px)}
+.ocCatSlide.active{display:flex;flex-direction:column}
+.ocCatSlide .ocCat{flex:1 1 auto;height:auto;min-height:0}
+.ocSub{margin:0 0 14px;color:#4E586D;font-size:14px;line-height:1.5;max-width:1000px}
+.ocSub b{color:#303866}
+
+/* Cover của hợp phần */
+.ocCover .hero{max-width:980px}
+.ocCover h1{font-size:clamp(46px,6vw,84px)}
+.ocFacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.ocFacts span{
+  min-width:128px;padding:12px 16px;border-radius:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);
+  color:#F0F2F8;font-size:12px;line-height:1.35
+}
+.ocFacts b{display:block;font-size:26px;color:#fff;letter-spacing:-.02em}
+.ocSource{margin-top:18px !important;font-size:13px !important;opacity:.85}
+.ocCover .primary{margin-top:22px}
+
+/* Tổng quan 4 dự án */
+.ocProjects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:6px 0 16px}
+.ocProj{
+  text-align:left;border:1px solid #B7C0D2;border-top:6px solid var(--pc);
+  background:#E4E7F2;border-radius:8px;padding:16px 16px 14px;color:#20263D;
+  display:flex;flex-direction:column;gap:6px;transition:.2s
+}
+.ocProj:hover{background:#D6DBEA;transform:translateY(-2px)}
+.ocProj small{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--pc)}
+.ocProj strong{font-size:21px;color:#303866;line-height:1.15}
+.ocProj em{font-style:normal;font-size:12px;color:#4E586D;line-height:1.4;min-height:34px}
+.ocProj .ocNums{display:flex;gap:14px;margin-top:4px;padding-top:9px;border-top:1px dashed #AEB8CE}
+.ocProj .ocNums span{font-size:11px;color:#4E586D;line-height:1.2}
+.ocProj .ocNums b{display:block;font-size:19px;color:#303866}
+.ocProj i{font-style:normal;font-size:12px;font-weight:800;color:var(--pc);margin-top:2px}
+
+.ocSearch{
+  background:#E4E7F2;border:1px solid #B7C0D2;border-radius:8px;padding:14px 16px
+}
+.ocSearch label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}
+.ocSearch input[type=text]{width:100%;padding:11px 13px;border-radius:7px;border:1px solid #AAB6CD;background:#F2F4FA}
+.ocResults{margin-top:10px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-height:24vh;overflow:auto}
+.ocResults button{
+  display:flex;justify-content:space-between;gap:10px;align-items:center;text-align:left;
+  padding:8px 11px;border:1px solid #C3CADB;border-left:4px solid var(--pc);border-radius:6px;
+  background:#F2F4FA;color:#20263D;font-size:13px
+}
+.ocResults button:hover{background:#DDE2EF}
+.ocResults button span{font-size:11px;color:#596077;text-align:right}
+.ocResults .ocEmpty{grid-column:1/-1;font-size:13px;color:#596077;padding:4px 2px}
+
+/* Cơ cấu tổ chức */
+.ocTree{display:flex;flex-direction:column;align-items:center;margin-top:8px}
+.ocTopRow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.ocBox{
+  min-width:190px;padding:11px 16px;border-radius:8px;text-align:center;
+  background:var(--pc);color:#fff;font-weight:800;font-size:14px;line-height:1.3
+}
+.ocBox small{display:block;font-weight:600;font-size:11px;opacity:.85;margin-top:2px}
+.ocBox.sub{background:#E4E7F2;color:#303866;border:1px solid var(--pc)}
+.ocBox.sub small{color:#4E586D;opacity:1}
+.ocStem{width:2px;height:16px;background:var(--pc);opacity:.6}
+.ocClusters{width:100%;border-top:2px solid color-mix(in srgb,var(--pc) 55%,transparent);padding-top:10px;display:flex;flex-direction:column;gap:9px}
+.ocCluster h4{
+  margin:0 0 5px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#A94F42
+}
+.ocTiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:8px}
+.ocTile{
+  text-align:left;padding:10px 12px;border-radius:7px;border:1px solid #B7C0D2;border-left:5px solid var(--pc);
+  background:#E4E7F2;color:#20263D;display:flex;flex-direction:column;gap:2px;transition:.2s;min-height:70px;padding-top:8px;padding-bottom:8px
+}
+.ocTile:hover{background:#D6DBEA;transform:translateY(-1px)}
+.ocTile b{font-size:13.5px;color:#303866;line-height:1.25}
+.ocTile small{font-size:11.5px;color:#596077;line-height:1.3}
+.ocTile span{margin-top:auto;font-size:11.5px;color:#4E586D}
+.ocTile span strong{color:var(--pc);font-size:16px}
+.ocNotes{margin-top:14px;font-size:13px;line-height:1.55}
+.ocNotes ul{margin:4px 0 0;padding-left:18px}
+
+/* Danh mục chức danh */
+.ocCat{
+  display:grid;grid-template-columns:270px minmax(0,1fr);gap:14px;
+  height:calc(100vh - 290px);min-height:340px
+}
+.ocUnits{display:flex;flex-direction:column;gap:6px;overflow:auto;padding-right:4px}
+.ocUnits h5{margin:6px 0 1px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#A94F42}
+.ocUnits button{
+  text-align:left;padding:8px 10px;border-radius:7px;border:1px solid #B7C0D2;background:#E4E7F2;color:#20263D;
+  display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center
+}
+.ocUnits button:hover{background:#D6DBEA}
+.ocUnits button.on{background:var(--pc);border-color:var(--pc);color:#fff}
+.ocUnits button b{font-size:12.5px;line-height:1.25}
+.ocUnits button small{grid-column:1;font-size:11px;opacity:.8;line-height:1.25}
+.ocUnits button i{grid-row:1/span 2;grid-column:2;font-style:normal;font-weight:900;font-size:14px}
+.ocPanel{
+  background:#E9ECF5;border:1px solid #B7C0D2;border-radius:8px;overflow:auto;padding:14px 16px 16px;min-width:0
+}
+.ocPanelHead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:flex-start;
+  padding-bottom:10px;border-bottom:1px solid #C3CADB;margin-bottom:10px}
+.ocPanelHead h3{margin:0;font-size:19px;color:#303866}
+.ocPanelHead p{margin:2px 0 0;font-size:12.5px;color:#596077}
+.ocStats{display:flex;gap:6px;flex-wrap:wrap}
+.ocStats span{padding:5px 9px;border-radius:5px;background:#D7DCEB;font-size:11.5px;color:#3C4678}
+.ocStats b{font-size:14px;color:#303866}
+.ocGroup{margin-top:10px}
+.ocGroup h4{margin:0 0 6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--pc)}
+.ocList{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 8px}
+.ocList li{
+  display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center;
+  padding:7px 10px;border-radius:6px;background:#F3F4F9;border:1px solid #D2D7E5;font-size:13px;color:#20263D
+}
+.ocList li.hit{outline:2px solid #C96754;background:#F6E4DF}
+.ocList li em{grid-column:1;font-style:normal;font-size:11px;color:#68708A}
+.ocList .n{grid-row:1/span 2;grid-column:2;font-weight:900;color:#303866;font-size:13px;text-align:right;white-space:nowrap}
+.ocList .n.one{color:#8A91A8;font-weight:700;font-size:12px}
+.ocList .tags{grid-column:1;display:flex;flex-wrap:wrap;gap:4px}
+.ocTag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10.5px;font-weight:700;line-height:1.5}
+.ocTag.vac{background:#F0DCC8;color:#8C4B2B}
+.ocTag.kn{background:#D8DCEC;color:#3C4678}
+.ocTag.new{background:#CFE4DF;color:#2E6A60}
+.ocTag.y28{background:#E3DDEF;color:#5A4E86}
+.ocTag.con{background:#E6E2D6;color:#5F5A47}
+.ocUnitNote{margin-top:12px;font-size:12.5px;line-height:1.5;padding:8px 11px;border-left:4px solid var(--pc);background:#DFE3EF;border-radius:4px}
+.ocLegend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;font-size:11.5px;color:#596077;align-items:center}
+
+@media(max-width:1100px){
+  .ocProjects{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ocList{grid-template-columns:1fr}
+}
+@media(max-width:850px){
+  .ocCat{grid-template-columns:1fr;height:auto}
+  .ocCatSlide.active{display:block}
+  .ocUnits{flex-direction:row;overflow-x:auto;overflow-y:hidden;padding-bottom:4px}
+  .ocUnits h5{display:none}
+  .ocUnits button{min-width:190px}
+  .ocPanel{max-height:none}
+  .ocResults{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .ocProjects{grid-template-columns:1fr}
+  .ocTiles{grid-template-columns:1fr 1fr}
+}
+
 </style></head><body>
 
 <div class="app">
@@ -1807,7 +1955,7 @@ article b,.metric b{color:#4A568D}
 <div class="headActions">
 <button class="lookupBtn" onclick="goContents()">Mục lục</button>
 <button class="lookupBtn" onclick="openLookup()">⌕ Tra cứu 230 chức danh</button>
-<div class="counter"><span id="cur">01</span> / 48</div>
+<div class="counter"><span id="cur">01</span> / <span id="total">62</span></div>
 </div>
 </header>
 
@@ -3482,7 +3630,91 @@ html:`
   </div>
 </section>`
 }
-
+,
+/* ===================== MODULE 6 · ORG CHART CÁC DỰ ÁN ===================== */
+{
+chapter:"Module 6 · Org Chart các dự án",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 06</div>
+    <h1>Org Chart<br>các dự án</h1>
+    <div class="goldline"></div>
+    <p>
+      Chức danh tại các dự án được xác định theo Org Chart đã phê duyệt.
+      Module gồm 4 hợp phần: PVEP-HCM, PVEP-NCS, PVEP-KM và PVEP-Cửu Long.
+    </p>
+  </div>
+</section>`
+},
+{
+chapter:"Module 6 · Org Chart các dự án · Tổng quan",
+html:`
+<section class="slide ocSlide" id="oc-overview">
+  <div class="eyebrow">MODULE 06 · TỔNG QUAN</div>
+  <h2>4 dự án · 4 hợp phần Org Chart</h2>
+  <p class="ocSub">Mỗi hợp phần gồm: cơ cấu tổ chức và danh mục chức danh theo từng phòng / đơn vị.
+  Tên chức danh được giữ nguyên như trên Org Chart nguồn.</p>
+  <div class="ocProjects" id="ocProjects"></div>
+  <div class="ocSearch">
+    <label for="ocQuery">⌕ Tìm chức danh trên cả 4 Org Chart</label>
+    <input type="text" id="ocQuery" placeholder="Nhập tên chức danh, ví dụ: Drilling Engineer, KSC Khoan, Kế toán…" autocomplete="off">
+    <div class="ocResults" id="ocResults"></div>
+  </div>
+</section>`
+},
+/* ===================== HỢP PHẦN 6.1 · PVEP-HCM ===================== */
+{
+chapter:"Hợp phần 6.1 · PVEP-HCM",
+html:`<section class="slide module ocCover" id="oc-cover-hcm"></section>`
+},
+{
+chapter:"Hợp phần 6.1 · PVEP-HCM · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-hcm"></section>`
+},
+{
+chapter:"Hợp phần 6.1 · PVEP-HCM · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-hcm"></section>`
+},
+/* ===================== HỢP PHẦN 6.2 · PVEP-NCS ===================== */
+{
+chapter:"Hợp phần 6.2 · PVEP-NCS",
+html:`<section class="slide module ocCover" id="oc-cover-ncs"></section>`
+},
+{
+chapter:"Hợp phần 6.2 · PVEP-NCS · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-ncs"></section>`
+},
+{
+chapter:"Hợp phần 6.2 · PVEP-NCS · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-ncs"></section>`
+},
+/* ===================== HỢP PHẦN 6.3 · PVEP-KM ===================== */
+{
+chapter:"Hợp phần 6.3 · PVEP-KM",
+html:`<section class="slide module ocCover" id="oc-cover-km"></section>`
+},
+{
+chapter:"Hợp phần 6.3 · PVEP-KM · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-km"></section>`
+},
+{
+chapter:"Hợp phần 6.3 · PVEP-KM · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-km"></section>`
+},
+/* ===================== HỢP PHẦN 6.4 · PVEP-Cửu Long ===================== */
+{
+chapter:"Hợp phần 6.4 · PVEP-Cửu Long",
+html:`<section class="slide module ocCover" id="oc-cover-cl"></section>`
+},
+{
+chapter:"Hợp phần 6.4 · PVEP-Cửu Long · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-cl"></section>`
+},
+{
+chapter:"Hợp phần 6.4 · PVEP-Cửu Long · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-cl"></section>`
+}
 ];
 
 
@@ -4788,5 +5020,610 @@ renderSlide();
 
 </script>
 
+<!-- MODULE 6 · ORG CHART CÁC DỰ ÁN -->
+<script>
+/* =========================================================
+   DỮ LIỆU ORG CHART CÁC DỰ ÁN — MODULE 6
+   Chức danh giữ nguyên theo Org Chart nguồn (không dịch, không gộp tên khác nhau).
+   Mỗi chức danh: [tên, số vị trí, số vị trí trống/TBA, nhãn, tên tiếng Anh (nếu nguồn có)]
+   Nhãn: kn = kiêm nhiệm/sử dụng nhân sự vị trí khác (không tính định biên)
+         new = vị trí mới/kích hoạt 2027 · y28 = bổ sung năm 2028 · con = nhà thầu
+========================================================= */
+window.PROJECT_OC = [
+
+/* ===================== 6.1 · PVEP-HCM ===================== */
+{
+id:"hcm", code:"6.1", name:"PVEP-HCM", color:"#4A568D",
+title:"Org Chart dự án PVEP-HCM",
+scope:"Lô 01/10&02/10 · Lô 01/97&02/97",
+year:"2026",
+source:"2026 Org. Chart to Mngr PVEP-HCM — cập nhật 25/08/2026 (2026 Approved position)",
+total:"111",
+totalNote:"định biên được duyệt 2026 (104 đã có người · 7 vị trí trống)",
+lang:"en",
+mgmt:[["General Manager",1],["Deputy General Manager",2]],
+units:[
+{name:"Operation Dept.", vn:"Phòng Vận hành", hc:"28", groups:[
+  {g:"Quản lý phòng", items:[["Operation Manager",1],["Deputy Operation Manager",1,1],["Technical Assistant",1],["Sr. Cost Control",1]]},
+  {g:"Điều phối & kỹ thuật", items:[["Operation Coordinator",1],["Marine Coordinator",1],["Lifting Officer",1,1],["Sr. Production/Process",1],["Production Engineer & DCC",1],["Well Intervention Engineer",1],["Sr. E&I Engineer",1,1],["Sr. Construction Engineer",1]]},
+  {g:"Offshore Team", items:[["OIM",2],["WHP P&P Supervisor",2],["WHP M&R Supervisor",2],["WHP E&I Supervisor",2],["P&P Technician",2],["M&R Technician",4],["E&I Technician",2]]}]},
+{name:"VungTau Base", vn:"Căn cứ Vũng Tàu", hc:"3", groups:[
+  {g:"Căn cứ", items:[["Base Superintendent",1],["Sr. Mechanical QA&QC Engineer",1],["Material Assistant",1]]}]},
+{name:"Subsurface Dept.", vn:"Phòng Địa chất – Công nghệ mỏ", hc:"19", groups:[
+  {g:"Quản lý phòng", items:[["Subsurface Manager",1],["Deputy Subsurface Manager",1],["Technical Assistant",1]]},
+  {g:"G&G Team", items:[["G&G Team Leader",1],["Sr. Petrophysicist",1],["Petrophysicist",1],["Sr. Dev. Geologist",1,1],["Sr. Modelling Geologist",1],["Sr. Geologist",1],["Sr. Geophysicist",2],["Geophysicist",1]]},
+  {g:"RE&PE Team", items:[["RE&PE Team Leader",1],["Reservoir Surveillance",1],["Sr. Reservoir Engineer",2],["Reservoir Engineer",1],["Sr. Petroleum Engineer",1],["Petroleum Engineer",1]]}]},
+{name:"Drilling Dept.", vn:"Phòng Khoan", hc:"12", groups:[
+  {g:"Quản lý phòng", items:[["Drilling Manager",1],["Deputy Drilling Manager",1],["Technical Assistant",1]]},
+  {g:"HSE", items:[["HSE Team Leader",1],["HSE Coordinator",1],["Sr. HSE Engineer",1],["Environment Engineer",1]]},
+  {g:"Khoan & Hoàn thiện giếng", items:[["Sr. Drilling Engineer",3],["Sr. Completion Engineer",1],["Drilling Engineer",1]]}]},
+{name:"Development Dept.", vn:"Phòng Phát triển mỏ", hc:"8", groups:[
+  {g:"Quản lý", items:[["Project Manager",1],["Deputy Project Manager",1]]},
+  {g:"Facilities", items:[["Lead Facilities",1],["Sr. Process Engineer",1,1],["Process & Tie-in Engineer",1]]},
+  {g:"Project Service", items:[["Lead Project Service",1],["Sr. Project Engineer",1,1],["Project Engineer",1]]}],
+  note:"PMT Team theo sheet riêng: PVEP 11 (gồm 4 staff tại Dev office, 6 box vacant); PMT/Outsource 14 (2026), dự kiến 17."},
+{name:"Admin & HR Dept.", vn:"Phòng Hành chính – Nhân sự", hc:"14", groups:[
+  {g:"Quản lý phòng", items:[["ADM & HR Manager",1],["Deputy ADM & HR Manager",2],["Executive Assistant",1],["Receptionist",1]]},
+  {g:"Nhân sự", items:[["Sr. HR Officer",2],["HR Officer",1]]},
+  {g:"Công nghệ thông tin", items:[["IT Engineer",1],["IS Engineer",1]]},
+  {g:"Hành chính – Kế hoạch", items:[["Sr. ADM Officer",2],["ADM Officer",1],["Sr. Planning Officer",1]]}]},
+{name:"F & A Dept.", vn:"Phòng Tài chính – Kế toán", hc:"10", groups:[
+  {g:"Quản lý phòng", items:[["F&A Manager",1],["Deputy F&A Manager",1]]},
+  {g:"Kế toán", items:[["Sr. Accountant",4],["Accountant",4]]}]},
+{name:"Procurement Dept.", vn:"Phòng Mua sắm", hc:"14", groups:[
+  {g:"Quản lý phòng", items:[["Procurement Manager",1],["Procurement/Contract Coordinator",1]]},
+  {g:"Procurement", items:[["Sr. Procurement Officer",3],["Procurement Officer",5]]},
+  {g:"Contract", items:[["Sr. Contract Officer",2,1],["Contract Officer",2]]}]}
+],
+notes:[
+  "Phân bổ chi phí giữa hai Lô thể hiện trong Org Chart nguồn (ví dụ 0,5/0,5) không làm thay đổi số vị trí.",
+  "Vị trí trống theo bảng Summary of Project Staff: Deputy Operation Manager, Lifting Officer, Sr. E&I Engineer, Sr. Dev. Geologist, Sr. Process Engineer, Sr. Project Engineer, Sr. Contract Officer."
+]
+},
+
+/* ===================== 6.2 · PVEP-NCS ===================== */
+{
+id:"ncs", code:"6.2", name:"PVEP-NCS", color:"#4F847F",
+title:"Sơ đồ tổ chức PVEP-NCS 2027",
+scope:"Lô 05.1a · Lô 10/11 và 10&11-1",
+year:"2027",
+source:"OC NCS 2027 (tiếng Việt) — Sơ đồ tổ chức PVEP-NCS 2027",
+total:"314",
+totalNote:"vị trí trên sơ đồ: 179 khối văn phòng + 135 Giàn Đại Hùng 01",
+lang:"vi",
+mgmt:[["Giám đốc",1],["Phó giám đốc",3]],
+units:[
+{name:"Phòng Địa chất – Công nghệ mỏ", hc:"38", groups:[
+  {g:"Quản lý phòng", items:[["Trưởng phòng ĐC-CNM",1],["Phó Trưởng phòng ĐC-CNM",2]]},
+  {g:"Địa vật lý", items:[["KSC Địa vật lý",4,1],["KS Địa vật lý",4],["KSC Địa vật lý giếng khoan",3,2]]},
+  {g:"Địa chất", items:[["Trưởng nhóm Địa chất",1],["KSC Địa chất",3,1],["KSC Địa chất điều hành",1],["KS Địa chất",3]]},
+  {g:"Hỗ trợ kỹ thuật", items:[["CVC kiểm soát Ngân sách",1],["Thư ký Kỹ thuật",1],["Trợ lý Kỹ thuật",1]]},
+  {g:"Công nghệ mỏ", items:[["Trưởng nhóm Công nghệ mỏ",1],["KSC công nghệ mỏ",5,2],["KS công nghệ mỏ",1],["KSC can thiệp giếng",2]]},
+  {g:"Địa chất mô hình", items:[["Sr. Model Geologist",1,1],["KSC Địa chất mô hình",2,1],["KS Địa chất mô hình",1]]}]},
+{name:"Phòng Khoan", hc:"16", groups:[
+  {g:"Quản lý phòng", items:[["Trưởng phòng Khoan",1],["Phó phòng Khoan",1]]},
+  {g:"Khoan (1)", items:[["Giám sát Khoan",4,1]]},
+  {g:"Hoàn thiện (1)", items:[["Giám sát Hoàn thiện giếng",1,1],["KSC Hoàn thiện giếng",1]]},
+  {g:"Khoan (2)", items:[["KSC Khoan",4],["KS Khoan",1]]},
+  {g:"Khoan (3)", items:[["KSC Khoan thực địa",2]]},
+  {g:"Khoan (4)", items:[["CVC kiểm soát chi phí",1]]}]},
+{name:"Phòng Điều hành sản xuất", hc:"23", groups:[
+  {g:"Quản lý phòng", items:[["Trưởng phòng ĐHSX",1],["Phó Trưởng phòng ĐHSX phụ trách Hàng hải",2,1],["Phó Trưởng phòng ĐHSX phụ trách Bảo trì",1],["CV kiểm soát tài liệu và ngân sách",1]]},
+  {g:"Hàng hải", items:[["KSC Hàng hải",2,1],["KSC Kết cấu",2],["KS Kết cấu",1]]},
+  {g:"Khai thác", items:[["KSC Khai thác",2],["KS Khai thác",1]]},
+  {g:"Bảo trì", items:[["KSC Tự động hóa",2],["KSC Cơ khí Bảo trì",3],["KS Cơ khí Bảo trì",2],["KSC Điện",2],["KS Điện",1]]}]},
+{name:"Căn cứ Hậu cần & Vật tư", hc:"8", groups:[
+  {g:"Căn cứ", items:[["Trưởng Căn cứ",1],["Phó Trưởng Căn cứ",1],["KSC vật tư- Thủ kho",1],["CVC quản lý thiết bị",1],["CVC điều độ",1],["CV căn cứ HC-VT",2],["Chuyên viên HC-VT",1,1]]}]},
+{name:"Phòng Phát triển mỏ", hc:"22", groups:[
+  {g:"Quản lý phòng", items:[["Trưởng phòng Phát triển mỏ",1],["Phó Trưởng phòng Phát triển mỏ",2,1]]},
+  {g:"Dịch vụ", items:[["KSC Dự án",1],["Thư ký dự án",1],["KS Dự án",2,1],["KSC Kế hoạch và Quản lý rủi ro",1,1],["CV Kiểm soát Kế hoạch và Chi phí",1]]},
+  {g:"Kỹ thuật – Kết cấu, đường ống, vật tư", items:[["Trưởng BP Kết cấu",1],["KSC đường ống ngầm",1],["KSC Điện",1],["KSC Kết cấu",1],["KSC QA/QC",1,1],["KSC Kiểm tra không phá hủy",1,1],["KSC Vật tư",1]]},
+  {g:"Kỹ thuật – Công nghệ, thiết bị", items:[["Trưởng BP Công nghệ",1],["Kỹ sư Công nghệ",1,1],["Trưởng bộ phận Thiết bị",1],["KSC cơ khí",1],["KSC Cơ khí và Đường ống công nghệ",1,1],["Kỹ sư chính điều khiển tự động và viễn thông",1,1]]}]},
+{name:"Phòng An toàn – Sức khỏe – Môi trường", hc:"7", groups:[
+  {g:"ATSKMT", items:[["Trưởng phòng ATSKMT",1],["Kỹ sư chính ATSKMT",3,1],["Kỹ sư ATSKMT",1],["Kỹ sư Môi trường",1],["Chuyên viên Hệ thống & ISO",1]]}]},
+{name:"Phòng Thương mại Đấu thầu", hc:"18", groups:[
+  {g:"Quản lý phòng", items:[["Trưởng phòng Thương mại Đấu thầu",1]]},
+  {g:"Thương mại đấu thầu", items:[["CVC thương mại",8,3],["CV thương mại",7,3]]},
+  {g:"Pháp chế", items:[["CVC pháp lý",1],["CV pháp lý",1]]}]},
+{name:"Phòng Kế toán Kế hoạch", hc:"26", groups:[
+  {g:"Quản lý phòng", items:[["Kế toán trưởng kiêm trưởng phòng KTKH",1],["Phó phòng",2]]},
+  {g:"Kế toán", items:[["CVC Kế toán",13,1],["CV Kế toán",2],["CVC Kế toán Vật tư",2],["CV Kế toán Vật tư",2]]},
+  {g:"Kế hoạch", items:[["CVC Kinh tế",2],["CV Kinh tế",2,1]]}]},
+{name:"Phòng Hành chính Nhân sự", hc:"17", groups:[
+  {g:"Quản lý phòng", items:[["Trưởng phòng Hành Chính - Nhân sự",1],["Phó phòng Hành Chính - Nhân sự",2]]},
+  {g:"Nhân sự", items:[["CVC Nhân sự",2],["CVC Bảo hiểm xã hội",1]]},
+  {g:"Hành chính", items:[["CVC Hành chính",2,1],["CV Hành chính",2],["CVC Văn phòng",1],["CVC Lưu trữ",1],["CV Văn phòng",1]]},
+  {g:"Công nghệ thông tin", items:[["KSC Công nghệ thông tin",2],["KS quản trị mạng và chuyển đổi số",1,1],["KSC CNTT&Viễn thông",1,1]]}]},
+{name:"Giàn Đại Hùng 01 (DH-01)", hc:"135", cluster:"Khối trực tiếp sản xuất", groups:[
+  {g:"Ban chỉ huy giàn", items:[["Giàn trưởng",2],["Giàn phó Hàng hải",2],["Giàn phó cơ khí, bảo trì",2],["Phó Quản Đốc khai thác",2]]},
+  {g:"Hàng hải", items:[["KSC Hàng hải",2],["KS Hàng hải",4],["KSC Hàng hải Giám sát tàu dầu",2]]},
+  {g:"Deck", items:[["Thủy thủ trưởng",2],["Trưởng nhóm boong",2],["Thủy thủ",11,1],["Thợ Lái cẩu",8,3]]},
+  {g:"Khai thác", items:[["Giám sát giàn đầu giếng",4,2],["KS Khai thác",6],["KTV Khai thác",18]]},
+  {g:"Cơ khí", items:[["Trưởng bộ phận Cơ khí",2],["Giám sát thiết bị quay",2],["KS Cơ khí",6,2],["KTV Cơ khí",15],["Thợ Hàn",3]]},
+  {g:"Điện", items:[["Trưởng bộ phận Điện",2],["Kỹ sư Điện",6,2],["KTV Điện",8]]},
+  {g:"Tự động hóa", items:[["Trưởng bộ phận Đo lường - Tự động hóa",2],["KS Đo lường Tự động hóa",6,3],["KTV Đo lường Tự động hóa",8]]},
+  {g:"Office", items:[["KS Thông tin",2],["KSC Giám sát An toàn",2],["Bác sỹ Quản trị giàn",2],["KS Vật tư - Thủ kho",2]]}]}
+],
+notes:[
+  "Các vị trí giàn bố trí theo ca nên mỗi chức danh thường có 2 người trở lên.",
+  "Org Chart nguồn ghi “Phó Trưởng phòng ĐHSX phụ trách Hàng hải” cho cả 2 ô Phó Trưởng phòng (1 ô đang trống); bài học giữ nguyên tên như sơ đồ."
+]
+},
+
+/* ===================== 6.3 · PVEP-KM ===================== */
+{
+id:"km", code:"6.3", name:"PVEP-KM", color:"#B95D50",
+title:"Nhân sự dự án PVEP-KM năm 2027",
+scope:"Chi nhánh PVEP-KM",
+year:"2027",
+source:"SDTC 2027 PVEP KM — Nhân sự dự án dự kiến năm 2027",
+total:"65",
+totalNote:"vị trí nhân sự dự kiến năm 2027",
+lang:"vi",
+mgmt:[["Giám đốc Chi nhánh",1,0,"","Director"],["Phó Giám đốc Chi nhánh",2,1,"","Deputy Director (Technical) · Deputy Director"]],
+units:[
+{name:"Phòng Hành chính & Nhân sự (HRA)", hc:"6", groups:[
+  {g:"HRA", items:[
+    ["Trưởng Phòng TCHCNS&ĐT",1,0,"","HRA Manager"],
+    ["CVC Hành chính & Nhân sự",1,0,"","Snr. Admin & HR Specialist"],
+    ["CV Hành chính & Nhân sự",1,0,"","Admin & HR Officer"],
+    ["Chuyên viên nhân sự",1,1,"new","HR Officer"],
+    ["Thư ký Ban Giám đốc",1,0,"","BOD Assistant"],
+    ["Kỹ sư CNTT",1,0,"","IT Engineer"]]}]},
+{name:"Phòng Tài chính & Kế toán (F&A)", hc:"7", groups:[
+  {g:"F&A", items:[
+    ["Trưởng Phòng Tài chính & Kế toán",1,0,"","F&A Manager"],
+    ["Trưởng nhóm TCKT",1,0,"","F&A Lead"],
+    ["Chuyên viên chính kế toán công nợ",1,0,"","Snr. JV/AP/AR Accountant"],
+    ["Chuyên viên chính NS và thuế",1,1,"","Snr. Tax/ Budget Performance Report"],
+    ["Chuyên viên chính kế toán bán dầu, khí",1,1,"new","Snr. Oil and Gas / Accountant"],
+    ["Chuyên viên chính kế hoạch",1,0,"","Snr. Planner"],
+    ["Chuyên viên kế toán",1,0,"","Accountant"]]}]},
+{name:"Phòng Kế hoạch và Thương mại (KHTM)", hc:"5", groups:[
+  {g:"Planning & Procurement", items:[
+    ["Trưởng Phòng KHTM",1,0,"","PPM Manager"],
+    ["Chuyên viên chính Hợp đồng",1,0,"","Snr. Contract Specialist"],
+    ["Chuyên viên chính Thương mại",1,0,"","Snr. Commercial Specialist"],
+    ["Chuyên viên chính mua sắm",1,0,"","Snr. Procurement/Sourcing Specialist"],
+    ["Nhân viên hậu cần và hỗ trợ base",1,0,"","Logistics & Warehouse Support"]]}]},
+{name:"Phòng Địa chất – CNM (SSF)", hc:"19", groups:[
+  {g:"Quản lý phòng", items:[
+    ["Trưởng Phòng ĐC-CNM",1,0,"","SSF Manager"],
+    ["Phó Trưởng Phòng ĐC-CNM",2,1,"","SSF Deputy Manager (Drilling) · SSF Deputy Manager (SSF)"],
+    ["Trưởng nhóm SSF",1,0,"","SSF Lead"]]},
+  {g:"Địa chất – Địa vật lý – Công nghệ mỏ", items:[
+    ["Kỹ sư chính Địa chất",1,1,"new","Snr. Geologist"],
+    ["Kỹ sư Địa chất",1,0,"","Geologist Engineer"],
+    ["Kỹ sư chính địa vật lý",1,1,"new","Snr. Geophysicist"],
+    ["Kỹ sư địa vật lý",1,0,"","Geophysicist"],
+    ["Kỹ sư chính địa vật lý giếng khoan",1,1,"new","Snr. Petrophysicist"],
+    ["Kỹ sư địa vật lý giếng khoan",1,0,"","Petrophysicist"],
+    ["Kỹ sư chính công nghệ mỏ",1,1,"new","Snr. Reservoir Engineer"],
+    ["Kỹ sư Công nghệ mỏ",1,0,"","RE Engineer"],
+    ["Kỹ sư chính dầu khí",1,1,"new","Snr. Petroleum Engineer"],
+    ["Kỹ sư quản lý tài liệu",1,1,"","Data Management Engineer"]]},
+  {g:"Khoan & Hoàn thiện giếng", items:[
+    ["Kỹ sư chính Khoan",2,0,"","Snr. Drilling Engineer"],
+    ["Kỹ sư Chính Hoàn thiện giếng",1,0,"","Snr. Completion Engineer"],
+    ["Giám sát Khoan",1,1,"new","Drilling Supervisor"],
+    ["Kỹ sư khoan",1,0,"","Drilling Engineer"]]}]},
+{name:"Phòng Phát triển mỏ (Development)", hc:"15", groups:[
+  {g:"Quản lý & điều phối", items:[
+    ["Trưởng Phòng Phát triển dự án",1,0,"","Development Manager"],
+    ["Kỹ sư chính Phát triển dự án",1,0,"","Sr. Development Engr"],
+    ["Điều phối viên Dự án Phát triển",1,0,"","Project Coordinator"],
+    ["Đại diện điều hành",1,1,"","Operation Rep"]]},
+  {g:"Thiết kế – Thiết bị", items:[
+    ["Trưởng nhóm thiết kế",1,0,"","Engineering Lead"],
+    ["Trưởng nhóm thiết bị",1,0,"","Lead Facilities"],
+    ["Kỹ sư chính Công nghệ",2,0,"","Sr. Process Engineer"],
+    ["Kỹ sư chính dự án",1,0,"","Snr Project Engineer"],
+    ["Kỹ sư chính cơ khí",2,1,"","Senior Mechanical Engineer"]]},
+  {g:"An toàn môi trường", items:[
+    ["Trưởng nhóm an toàn môi trường",1,1,"new","HSE Lead"],
+    ["Kỹ sư chính an toàn môi trường",2,1,"new","Senior HSE"],
+    ["Kỹ sư an toàn môi trường",1,0,"","HSE Engineer"]]}]},
+{name:"Phòng Vận hành khai thác (OPE)", hc:"10", groups:[
+  {g:"Vận hành khai thác (toàn bộ là vị trí mới)", items:[
+    ["Trưởng phòng Khai thác",1,1,"new","Operation Manager"],
+    ["Trưởng giàn",1,1,"new","Field Superintendent"],
+    ["Kỹ sư chính Khai thác",1,1,"new","Snr Production Engineer"],
+    ["Kỹ sư chính cơ khí",1,1,"new","Snr Mechanical Engineer"],
+    ["Kỹ sư chính E&I",1,1,"new","Snr. E&I Engineer"],
+    ["Kỹ sư chính phân chia sản phẩm",1,1,"new","Snr. Allocation Engineer"],
+    ["Kỹ sư chính quản lý tài sản",1,1,"new","Snr. Asset Integrity Engineer"],
+    ["Giám sát Cơ sở Hậu cần",1,1,"new","Supply Base Superintendent"],
+    ["Kỹ sư chính vật tư",1,1,"new","Senior Warehouse/Inventory Engineer"],
+    ["Kỹ sư chính quản lý tài liệu",1,1,"new","Sr. Material Controller"]]}]}
+],
+notes:[
+  "Danh sách lấy theo cột “Chức danh tiếng Việt”, tên tiếng Anh hiển thị bên dưới để đối chiếu.",
+  "“Vacant” trong nguồn gồm vị trí mới năm 2027 và vị trí cũ đã duyệt chưa có người."
+]
+},
+
+/* ===================== 6.4 · PVEP-CỬU LONG ===================== */
+{
+id:"cl", code:"6.4", name:"PVEP-Cửu Long", color:"#756C98",
+title:"2027 PVEP-Cuu Long Organization Chart",
+scope:"Văn phòng · Giàn STD/STV/STT · Ban QLDA STT Phase 2B & ST Do",
+year:"2027",
+source:"Proposed 2027 PVEP-CUU LONG Org. chart (03/09/2026) — Approved by General Manager",
+total:"521",
+totalNote:"2027 total for headcount: văn phòng 221 · giàn 232 · PMT STT 2B 68 (ST Do PMT chưa tính)",
+lang:"en",
+mgmt:[["General Manager",1],["Deputy General Manager",2],["Senior Manager",1]],
+units:[
+{name:"HR&ADM", vn:"Hành chính – Nhân sự", hc:"29", cluster:"Khối văn phòng", groups:[
+  {g:"Quản lý & hỗ trợ Ban Giám đốc", items:[["HR&ADM Manager",1],["Dep. HR&ADM Manager",1],["Secretary to Board of Mgt",1],["Executive Assistant to GM",1]]},
+  {g:"PR & Office", items:[["PR & Office Coordinator",1],["Sr. ADM Specialist & ADM Secretary",1],["ADM Specialist- Receptionist",1],["Tea Server",1],["Sr. ADM Officer",1],["Sr. ADM Specialist",1]]},
+  {g:"HR", items:[["HR Supervisor",1],["Sr. C&B - HR Specialist",1],["Sr. C&B Specialist",1],["Sr. HR Specialist",1],["T&D Coordinator",1],["T&D Specialist",1,1,"new"]]},
+  {g:"IT", items:[["IT Team Leader",1],["Sr. System Eng.",1],["System Eng.",1],["Sr. Telecom & Network Eng.",2],["Telecom&Network Eng.",1,0,"con"],["Helpdesk Eng.",2],["Applications Eng.",1]]},
+  {g:"Legal & Risk", items:[["Legal&Risk Mgmt Cord.",1,1],["Sr. Legal Specialist",1],["Sr. Insurance Specialist",1]]}],
+  note:"Định biên 29 gồm cả Senior Manager (ô số 1)."},
+{name:"F&A", vn:"Tài chính – Kế toán", hc:"18,5", cluster:"Khối văn phòng", groups:[
+  {g:"Quản lý phòng", items:[["Chief Accountant and F&A Manager",1],["Deputy Finance & Actg. Manager",1],["Finance & Actg. Supervisor",1],["Accountant & Admin. Specialist",1]]},
+  {g:"General Ledger", items:[["Team leader",1],["Sr. Accountant",1],["Accountant",2]]},
+  {g:"Policies, Governance and Audit", items:[["Team Leader",1],["Sr. Accountant",1]]},
+  {g:"Reporting and Accounting System", items:[["Sr. Acct. System Specialist",1],["System Accountant (SAP/ERP Application)",1,1,"new"]]},
+  {g:"Tax, Planning & Analysis", items:[["Team leader",1],["Sr. Management Accountant",1],["Accountant",2]]},
+  {g:"Treasury & Inventory", items:[["Team leader",1],["Sr. Accountant",1],["Accountant",1]]}],
+  note:"Deputy F&A Manager kiêm Deputy Procurement Manager, chi phí chia 50/50."},
+{name:"Procurement", vn:"Mua sắm", hc:"19,5", cluster:"Khối văn phòng", groups:[
+  {g:"Quản lý phòng", items:[["Procurement Manager",1],["Deputy Procurement Manager",1],["Procurement Specialist",1],["Procurement Support Specialist",1],["Partner Representative",1],["Legal & Contract Coordinator",1]]},
+  {g:"Drilling/Operation", items:[["Procurement Leader (Drilling/Operation)",1],["Procurement Specialist",3]]},
+  {g:"DEV/Well Intervention", items:[["Procurement Leader (DEV/Well Intervention)",1],["Sr. Pro. Specialist",2],["Procurement Specialist",1]]},
+  {g:"SSF/ADM", items:[["Legal & Contract Leader (SSF/ADM)",1],["Sr. Pro. Specialist",3]]},
+  {g:"Planning", items:[["Sr. Pro. Planning Specialist",1],["Procurement Specialist",1]]}]},
+{name:"Subsurface", vn:"Địa chất – Công nghệ mỏ", hc:"46", cluster:"Khối văn phòng", groups:[
+  {g:"Quản lý phòng", items:[["Subsurface Manager",1],["D. Subsurface Manager",2],["Partner's Rep",1],["Sr. SSF Admin. Specialist",1,1,"con"],["Sr. Management Support Specialist",1]]},
+  {g:"Geology", items:[["Geology Lead",1],["D. Geology Lead",1],["Data Management Geoscientist",1],["Geo Modeling Team Leader",1],["Sr. Geologist",1],["Petrophysics Team Leader",1,0,"con"],["Sr. Petrophysicist",3],["Sr. Operation Geologist",1],["Geoscientist",1],["Geologist",4]]},
+  {g:"Geophysics", items:[["Geophysics Lead",1],["Sr. Geophysicist",3],["Geophysicist",1],["Geoscientist",1,1]]},
+  {g:"Reservoir Engineering", items:[["RE Eng. Study Lead",1],["D. RE Eng. Study Lead",1],["Sr. Reservoir Eng",3],["Reservoir Eng",3]]},
+  {g:"Petroleum Engineering", items:[["PE Lead",1],["Dep. PE Lead",1,1],["PE Team Leader",2],["Sr. Petroleum Eng",2],["Petroleum Eng",2,1],["Sr. Reservoir Eng",1,1],["Reservoir Eng",1],["Sr. PE-Prod. Coord.",1]]}]},
+{name:"HSE", vn:"An toàn – Sức khỏe – Môi trường", hc:"7", cluster:"Khối văn phòng", groups:[
+  {g:"HSE", items:[["HSE Manager",1],["Lead HSE Specialist",1],["Sr. Environmental Specialist",1,1],["Sr. HSE Specialist",1],["HSE Specialist",2],["Process Safety Expert",1]]}]},
+{name:"Development", vn:"Phát triển mỏ", hc:"24", cluster:"Khối văn phòng", groups:[
+  {g:"Quản lý phòng", items:[["DEV Manager",1],["Deputy DEV Manager",1],["Contract/SAP Administrator",1,1,"con"],["Development Secretary",1],["Partner Representative",1]]},
+  {g:"Development Services", items:[["Sr. Dev. Engineer",1],["DEV Support Spt & DCC",1],["Sr. Cost Controller",1],["Sr. Economist",1]]},
+  {g:"Facilities Engineering", items:[["FAC. ENG. Manager",1],["Deputy. FAC. ENG. Manager",1],["Sr. Mech. Engineer",2],["Sr. Electrical Engineer",2],["Sr. Facilities Engineer",2],["Sr. Inst. Engineer",1],["Sr. Instrument Eng.",1],["Sr. Process Engineer",1]]},
+  {g:"Asset & Operational Integrity", items:[["A&OI Lead Engineer",1],["Sr. Asset Integrity Eng.",1],["Sr. Asset Int. Eng.",1],["Corrosion Engineer",1]]}],
+  note:"Deputy FAC. ENG. Manager chia sẻ 50% với Operations; ô DEV Support Spt & DCC do nhân sự Operations đảm nhiệm (sharing)."},
+{name:"Operations", vn:"Vận hành khai thác (văn phòng)", hc:"77", cluster:"Khối văn phòng", groups:[
+  {g:"Quản lý phòng", items:[["Operations Manager",1],["Dep. Operations Manager",1],["Sr. OPR Specialist",1],["Secretary",1]]},
+  {g:"Drilling", items:[["Lead Drilling Supt.",1],["Dep. Drilling Supt.",1],["Lead Drilling Eng.",1],["Dep. Lead Drlg Eng",1],["Sr. Drilling Eng.",5,1],["Drilling Co-ordinator",1],["Drilling Eng.",2],["Sr. Operations Material & Logistic Specialist",1]]},
+  {g:"Well Operations", items:[["Well Ops Eng. Lead",1],["Dep. Well Ops Eng Lead",1,1,"kn"],["Well Operations Coord.",1],["Sr. Well Operation Eng.",2],["Well Operations Eng.",2],["ESP Expert",1]]},
+  {g:"Cost & Document Control", items:[["Lead Cost Analyst",1],["Cost Analyst",1],["Sr. Doc Controller",1]]},
+  {g:"Supply Base", items:[["Supply Base Supt",1],["Dep. Supply Base Supt",1],["Logistics Coord.",1],["Sr.Log/Mat Specialist",2],["Log/Mat Specialist",2],["Warehouse Specialist",1],["Warehouse Coord.",1,0,"new"],["WH Specialist",4],["Marine Engineer",1,0,"new"],["QC Eng.- Contractor",1,0,"con"]]},
+  {g:"Maintenance & Operations (M&O)", items:[["M&O Suprintendent",1],["Dep M&O Suprintendent",1,0,"kn"],["M&R Coordinator",1],["Sr. Maint Eng.",1],["Sr. Mechanical Eng.",2,1,"new"],["M&R Eng.",1],["Facility Certification Coord.",1],["Marine Maint Coord.",1],["Maximo Coord",1],["Sr. Maximo Eng.",1],["E&I Coordinator",1],["Sr. Electrical Eng.",2],["Sr. Inst/DCS Eng.",2],["Sr. Metering Eng.",1],["Sr. Radio Com Eng.",1],["Constr. Coord.",1],["Constr. Supv.",2],["Lead Planner",1],["Sr. Planning Eng.",1]]},
+  {g:"Marine & Lifting", items:[["Marine Coord.",1],["Lifting Coord.",1],["Sr. Lifting Specialist",1],["Lifting Specialist",1]]},
+  {g:"Production", items:[["Production Supt.",1],["Dep. Prod. Supt.",1],["Ops Coord.",1],["Sr. Process Eng.",1,1,"new"],["Project OPR Rep.",1],["Sr. Prod. Eng.",3,1,"new"],["Production Coord.",1],["Sr. PE-Prod. Coord.",1,0,"kn"]]}],
+  note:"Các ô bị gạch trên sơ đồ đã được chuyển đổi (OPR Support Specialist → Sr. Process Eng.; Doc Control Ass. → Sr. Prod. Eng.; Marine Assistant → Marine Engineer; Maint & Ops Specialist → Sr. Mechanical Eng.) nên không đưa vào danh mục. Dep. Well Ops Eng Lead dùng chung một định biên với Sr. Drilling Eng. của Perenco (50%-50%); Dep M&O Suprintendent tính định biên cho Development; Sr. PE-Prod. Coord. (KNOC) tính cho Subsurface."},
+{name:"STD Operations", vn:"Giàn Sư Tử Đen (STD)", hc:"112", cluster:"Khối giàn khai thác", groups:[
+  {g:"Chỉ huy giàn & giám sát", items:[["OIM",2],["M&R Supv.",2],["E&I Supv.",2,1],["P&P Supv.",2],["Sr. HSE Specialist",2],["Sr. Marine Specialist",2,1],["Medic/Adm.",2,0,"con"]]},
+  {g:"Marine (nhà thầu)", items:[["Marine Supv.",2,0,"con"],["Marine Officer",4,0,"con"],["Cargo Officer",2,0,"con"],["Crane Operator",2,0,"con"],["Deck Crew",6,0,"con"],["Maintenance Tech.",6,0,"con"],["Marine E&I Eng.",2,0,"con"],["Fitter / Rigger",6,0,"con"]]},
+  {g:"Marine Maintenance", items:[["Marine Maint. Supv.",2],["Marine Maint Eng.",2]]},
+  {g:"M&R", items:[["Sr. Rotat Equip Eng.",2],["Sr. M&R Eng.",2],["M&R Eng.",2],["M&R Tech.",6,2],["Sr. Mat./Plan. Specialist",2],["Material Controller",2],["Sr. WHP M&R Eng.",2],["Crane Operator",2]]},
+  {g:"E&I", items:[["Sr. Instr Eng.",2],["DCS Eng.",1],["Instrument Eng.",3],["Instr Tech.",2],["Sr. WHP E&I Eng.",2],["Sr. Elect Eng.",2],["Electrical Eng.",2],["Electrical Tech.",2,1]]},
+  {g:"P&P", items:[["Sr. Control Room Eng",8],["P&P Eng.",5],["P&P Tech.",5],["Lab Tech",2,0,"con"],["WHP P&P Supv.",2],["WHP P&P Eng.",2],["WHP P&P Tech.",4,3]]}]},
+{name:"STV Operations", vn:"Giàn Sư Tử Vàng (STV)", hc:"76", cluster:"Khối giàn khai thác", groups:[
+  {g:"Chỉ huy giàn & giám sát", items:[["OIM",2],["M&R Supv.",2],["E&I Supv.",2],["P&P Supv.",2],["Sr. HSE Specialist",2],["Medic/Adm.",2,0,"con"]]},
+  {g:"M&R", items:[["Sr. Rotating Equip Eng.",2],["Sr. M&R Eng.",2],["M&R Eng.",1],["M&R Tech.",5],["WHP M&R Eng.",2],["Sr. Deck Foreman",2],["Crane Operator",2],["Roust/Rigger/Fitter",4,0,"con"],["Sr. Material & Planning Specialist",2],["Material Controller",2]]},
+  {g:"E&I", items:[["Sr. Instr Eng.",2],["DCS Eng.",1],["Instrument Eng.",1],["Instrument Tech.",2],["Sr. Electrical Eng.",2],["Electrical Eng",3],["Electrical Tech.",1],["WHP E&I Eng.",2]]},
+  {g:"P&P", items:[["Sr. Control Room Eng.",10],["P&P Eng.",4,3],["P&P Tech.",6],["Lab Tech",2,0,"con"],["WHP P&P Supv.",2],["WHP P&P Eng.",2]]}]},
+{name:"STT Operations", vn:"Giàn Sư Tử Trắng (STT)", hc:"44", cluster:"Khối giàn khai thác", groups:[
+  {g:"Chỉ huy giàn & giám sát", items:[["OIM",2],["M&R Supv. - VN",2,2,"new"],["E&I Supv. - VN",2,2,"new"],["P&P Supv.-VN",2],["Sr. HSE Specialist- VN",2],["Medic/Adm. (Con)",2,0,"con"]]},
+  {g:"M&R", items:[["Sr. Rotat. Equip Eng.-VN",2,2,"new"],["Sr. M&R Eng. - VN",4],["M&R Eng. - VN",4,4,"y28"],["Sr. Deck Foreman - VN",2,2,"y28"],["Crane Operator - VN",2],["Roust/Rigger/Fitter-Con.",4,4,"y28"],["Material & Planning Specialist - VN",2,2,"y28"],["Material Controler - VN",2,2,"y28"]]},
+  {g:"E&I", items:[["Sr Instr Eng. - VN",4],["Instrument Eng.- VN",2,2,"y28"],["Sr. Electrical Eng. - VN",4],["Electrical Eng. - VN",2,2,"y28"]]},
+  {g:"P&P", items:[["Sr.Control Room Eng.-VN",8,4,"new"],["P&P Eng. - VN",5],["P&P Tech. - VN",3,2],["P&P Tech. - VN",4,4,"y28"],["Lab Tech (Con)",2,2,"y28"]]}],
+  note:"Định biên 2027 là 44; các ô đánh dấu “bổ sung 2028” nâng tổng số lên 68 vào năm 2028."},
+{name:"STT Phase 2B PMT", vn:"Ban QLDA STT Phase 2B", hc:"68", cluster:"Ban quản lý dự án", groups:[
+  {g:"Ban quản lý dự án", items:[["Project Manger",1],["Deputy Project Manager",1,0,"kn"],["Partner Rep.",1],["Project Secretary",1],["Operations Rep.",1,0,"kn"]]},
+  {g:"Project Service & Procurement", items:[["Project Service and Procurement Manager",1],["Procurement Supervisor",1],["Lead Contract Engineer",1],["Snr Contract Engineer",2],["Lead Procurement",1],["Buyer / Expeditor",3],["Procurement Support",1,0,"kn"],["Snr. Planner",1],["Lead Cost Engineer",1,0,"kn"],["Sr. Cost Engineer",1],["Lead DCC",1],["Doc. Controller",1]]},
+  {g:"Engineering", items:[["Engineering Manager",1],["Deputy Engineering Manager",1],["Snr Project Engineer",1],["Lead Process Engineer",1],["Snr Process Engineer",1],["Lead Electrical Engineer",1,0,"kn"],["Snr Electrical Engineer (2)",1],["Lead Mechanical Engineer",1,0,"kn"],["Snr Mechanical Engineer (1)",1,0,"kn"],["Snr Mechanical Engineer (3)",1],["Sr. HVAC Engineer",1],["Lead Inst & Control Engineer",1],["Snr Inst & Control Engineer (1)",1],["Lead Structural Engineer",1,0,"kn"],["Snr Structural Engineer (1)",1,0,"kn"],["Lead Piping Engineer",1],["Sr. Piping Engineer (1)",1],["Snr Safety Engineer",1,0,"kn"]]},
+  {g:"Construction", items:[["Construction Manager",1],["Deputy Construction Manager",1],["Structural & Piping Superintendent",1],["Structural Supervisor (1)",1],["Structural Supervisor (2)",1,1],["Piping Supervisor (1)",1],["Piping Supervisor (2)",1,1],["Sr. Piping Engineer (2)",1],["Mechanical Superintendent",1,1],["Sr. Mechanical Engineer (2)",1],["LQ Supervisor",1,1],["Brownfield Superintendent",1],["Brownfield Supervisor",1,1],["Material Controller",1],["E&I Superintendent",1,1],["E&I Supervisor",1,1],["Sr. Electrical Engineer (1)",1],["Sr. Inst & Control Engineer (2)",1],["HVAC Supervisor",1,0,"kn"]]},
+  {g:"QA/QC", items:[["QA/QC Manager",1],["QA/QC Coordinator",1],["Welding Engineer",1],["Welding & Structure Inspector Lead",1],["Welding & Structure Inspector (1)",1],["Welding & Structure Inspector (2)",1,1],["Living Quarter Welding Inspector",1,1],["E&I Inspector Lead",1,1],["E&I Inspector",1,1],["NDT Specialist",1],["Piping & Mechanical Lead",1],["Piping & Mechanical Inspector",1,1],["Coating Inspector Lead",1],["Coating Inspector",1,1]]},
+  {g:"HSE", items:[["HSE Manager",1,0,"kn"],["HSE Sr. Supervisor",1],["HSE Supervisor (1)",1],["HSE Supervisor (2)",1],["HSE Supervisor (3)",1,1],["HSE Supervisor (4)",1,1]]},
+  {g:"T&I", items:[["T&I Manager",1],["T&I Coordinator",1]]},
+  {g:"Hook-up (sử dụng nhân sự các nhóm khác)", items:[["Hook up Manager",1,0,"kn"],["Hook up Coordinator",1,0,"kn"],["Structural & Piping Superintendent",1,0,"kn"],["Structural Supervisor",1,0,"kn"],["Piping Supervisor",1,0,"kn"],["E&I Superintendent",1,0,"kn"],["Mechanical Superintendent",1,0,"kn"],["Mechanical Supervisor",1,0,"kn"]]},
+  {g:"Commissioning", items:[["Commissioning Manager",1],["Commissioning Coordinator",1,0,"kn"],["Mechanical Superintendent",1,0,"kn"],["E&I Superintendent",1,0,"kn"],["Piping Commissioning Lead",1,0,"kn"],["Snr. Piping Engineer",1,0,"kn"],["Mechanical Commissioning Lead",1,0,"kn"],["Snr. Mech Commissioning Engineer",1,0,"kn"],["Inst and Telecom Commissioning Lead",1,0,"kn"],["Snr. Inst and Telecom Comm Engineer",1,0,"kn"],["Process Commissioning Lead",1,0,"kn"],["Electrical Commissioning Lead",1,0,"kn"],["Snr. Electrical Commissioning Engineer",1,0,"kn"],["HVAC Commissioning Lead",1,0,"kn"]]}],
+  note:"Các ô “Utilize…” và ô Note 2/Note 4 dùng nhân sự của nhóm hoặc phòng khác nên không tính vào định biên 68."},
+{name:"ST Do PMT", vn:"Ban QLDA ST Do – giai đoạn tiền phát triển", hc:"12", cluster:"Ban quản lý dự án", groups:[
+  {g:"Ban quản lý dự án (kiêm nhiệm từ các phòng)", items:[["Project Manger",1,1,"kn"],["Deputy Project Manager",1,1,"kn"],["Project Secretary",1,1,"kn"],["Operations Rep.",1,1,"kn"]]},
+  {g:"Project & Service", items:[["Senior Project Engineer",1,1],["Doc. Controller",1,1],["Service/Procurement Manager",1,1]]},
+  {g:"Engineering", items:[["Engineering Manager",1,1],["Lead Process Engineer",1,1],["Lead Electrical Engineer",1,1],["Lead Mechanical Engineer",1,1],["Lead Pipeline Engineer",1,1],["Lead I&C Engineer",1,1],["Lead Piping Engineer",1,1],["Lead Structural Engineer",1,1],["Process Safety Engineer",1,1]]}],
+  note:"Phụ thuộc kế hoạch thăm dò (Subject to the exploration plan); toàn bộ vị trí đang TBA."}
+],
+notes:[
+  "Nhân sự đến từ PVEP, Perenco, KNOC, SK, nhân sự tuyển trực tiếp (VN) và nhà thầu; Org Chart nguồn ghi rõ nguồn nhân sự ở từng ô.",
+  "Số định biên lấy theo dòng “2027 total for headcount” của từng sơ đồ; giá trị lẻ 0,5 là vị trí chia chi phí giữa hai phòng."
+]
+}
+
+];
+
+</script>
+<script>
+
+/* =========================================================
+   MODULE 6 · ORG CHART CÁC DỰ ÁN — HIỂN THỊ
+========================================================= */
+(function(){
+  const P = Array.isArray(window.PROJECT_OC) ? window.PROJECT_OC : [];
+  if(!P.length) return;
+
+  const h = s => String(s == null ? "" : s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  const fmt = n => String(n).replace(".", ",");
+  const slideIndex = id => slideEls.indexOf(document.getElementById(id));
+
+  const TAGS = {
+    kn:  ["kn",  "Kiêm nhiệm / dùng chung định biên"],
+    new: ["new", "Vị trí mới 2027"],
+    y28: ["y28", "Bổ sung năm 2028"],
+    con: ["con", "Nhà thầu / thuê ngoài"]
+  };
+
+  /* ---------- Thống kê ---------- */
+  function counted(it){ return it[3] !== "kn" && it[3] !== "y28"; }
+  function unitStats(u){
+    let pos = 0, vac = 0; const titles = new Set();
+    u.groups.forEach(g => g.items.forEach(it => {
+      titles.add(it[0].toLowerCase());
+      if(counted(it)){ pos += it[1]; vac += (it[2] || 0); }
+    }));
+    return {pos, vac, titles: titles.size};
+  }
+  function projStats(p){
+    const titles = new Set(); let vac = 0;
+    p.mgmt.forEach(it => { titles.add(it[0].toLowerCase()); vac += (it[2] || 0); });
+    p.units.forEach(u => u.groups.forEach(g => g.items.forEach(it => {
+      titles.add(it[0].toLowerCase());
+      if(counted(it)) vac += (it[2] || 0);
+    })));
+    return {titles: titles.size, units: p.units.length, vac};
+  }
+
+  /* ---------- Tổng quan ---------- */
+  function renderOverview(){
+    const box = document.getElementById("ocProjects");
+    if(!box) return;
+    box.innerHTML = P.map(p => {
+      const s = projStats(p);
+      return `
+        <button class="ocProj" style="--pc:${p.color}" onclick="go(${slideIndex("oc-cover-"+p.id)})">
+          <small>HỢP PHẦN ${h(p.code)}</small>
+          <strong>${h(p.name)}</strong>
+          <em>${h(p.scope)} · Org Chart ${h(p.year)}</em>
+          <div class="ocNums">
+            <span><b>${h(p.total)}</b>vị trí</span>
+            <span><b>${s.units}</b>đơn vị</span>
+            <span><b>${s.titles}</b>chức danh</span>
+          </div>
+          <i>Vào hợp phần →</i>
+        </button>`;
+    }).join("");
+
+    const input = document.getElementById("ocQuery");
+    if(input) input.addEventListener("input", runSearch);
+    runSearch();
+  }
+
+  /* ---------- Tìm chức danh trên 4 Org Chart ---------- */
+  const INDEX = [];
+  P.forEach((p, pi) => {
+    p.mgmt.forEach(it => INDEX.push({p:pi, u:-1, t:it[0], en:it[4] || ""}));
+    p.units.forEach((u, ui) => u.groups.forEach(g => g.items.forEach(it =>
+      INDEX.push({p:pi, u:ui, t:it[0], en:it[4] || ""})
+    )));
+  });
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/đ/g,"d");
+
+  function runSearch(){
+    const out = document.getElementById("ocResults");
+    const input = document.getElementById("ocQuery");
+    if(!out || !input) return;
+    const q = norm(input.value.trim());
+    if(q.length < 2){
+      out.innerHTML = `<div class="ocEmpty">Gõ ít nhất 2 ký tự, ví dụ: <b>Drilling</b>, <b>Kế toán</b>, <b>Supervisor</b>, <b>KSC</b>.</div>`;
+      return;
+    }
+    const seen = new Set(); const rows = [];
+    INDEX.forEach(r => {
+      if(!norm(r.t + " " + r.en).includes(q)) return;
+      const key = r.p + "|" + r.u + "|" + r.t;
+      if(seen.has(key)) return; seen.add(key); rows.push(r);
+    });
+    if(!rows.length){
+      out.innerHTML = `<div class="ocEmpty">Không có chức danh phù hợp trong 4 Org Chart.</div>`;
+      return;
+    }
+    out.innerHTML = rows.slice(0, 80).map(r => {
+      const p = P[r.p];
+      const where = r.u < 0 ? "Ban Giám đốc" : (p.units[r.u].vn || p.units[r.u].name);
+      return `<button style="--pc:${p.color}" onclick="ocOpen('${p.id}',${r.u},'${h(r.t).replace(/'/g,"\\'")}')">
+        <b>${h(r.t)}</b><span>${h(p.name)} · ${h(where)}</span></button>`;
+    }).join("") + (rows.length > 80 ? `<div class="ocEmpty">Hiển thị 80/${rows.length} kết quả — gõ cụ thể hơn để thu hẹp.</div>` : "");
+  }
+
+  /* ---------- Cover hợp phần ---------- */
+  function renderCover(p){
+    const el = document.getElementById("oc-cover-" + p.id);
+    if(!el) return;
+    const s = projStats(p);
+    el.innerHTML = `
+      <div class="hero">
+        <div class="eyebrow">MODULE 06 · HỢP PHẦN ${h(p.code)}</div>
+        <h1>Org Chart<br>${h(p.name)}</h1>
+        <div class="goldline"></div>
+        <p>${h(p.title)} · ${h(p.scope)}</p>
+        <div class="ocFacts">
+          <span><b>${h(p.total)}</b>vị trí · ${h(p.totalNote)}</span>
+          <span><b>${s.units}</b>phòng / đơn vị</span>
+          <span><b>${s.titles}</b>chức danh trong danh mục</span>
+        </div>
+        <p class="ocSource">Nguồn: ${h(p.source)}</p>
+        <button class="primary" onclick="next()">Xem cơ cấu tổ chức →</button>
+      </div>`;
+  }
+
+  /* ---------- Cơ cấu tổ chức ---------- */
+  function renderStructure(p){
+    const el = document.getElementById("oc-struct-" + p.id);
+    if(!el) return;
+    const top = p.mgmt[0], deps = p.mgmt.slice(1);
+    const clusters = [];
+    p.units.forEach((u, i) => {
+      const c = u.cluster || "Các phòng / đơn vị";
+      let g = clusters.find(x => x.name === c);
+      if(!g){ g = {name:c, units:[]}; clusters.push(g); }
+      g.units.push([u, i]);
+    });
+    const catIdx = slideIndex("oc-cat-" + p.id);
+    el.innerHTML = `
+      <div class="eyebrow">HỢP PHẦN ${h(p.code)} · CƠ CẤU TỔ CHỨC</div>
+      <h2>Cơ cấu tổ chức ${h(p.name)}</h2>
+      <p class="ocSub">Chọn một phòng / đơn vị để xem danh mục chức danh theo Org Chart. <b>Nguồn:</b> ${h(p.source)}.</p>
+      <div class="ocTree">
+        <div class="ocTopRow">
+          <div class="ocBox">${h(top[0])}${top[1] > 1 ? " ×" + top[1] : ""}${top[4] ? `<small>${h(top[4])}</small>` : ""}</div>
+        </div>
+        <div class="ocStem"></div>
+        <div class="ocTopRow">
+          ${deps.map(d => `<div class="ocBox sub">${h(d[0])}${d[1] > 1 ? " ×" + d[1] : ""}
+            <small>${d[4] ? h(d[4]) : (d[2] ? d[2] + " vị trí đang trống" : "Ban Giám đốc")}</small></div>`).join("")}
+        </div>
+        <div class="ocStem"></div>
+        <div class="ocClusters">
+          ${clusters.map(c => `
+            <div class="ocCluster">
+              ${clusters.length > 1 ? `<h4>${h(c.name)}</h4>` : ""}
+              <div class="ocTiles">
+                ${c.units.map(([u, i]) => {
+                  const s = unitStats(u);
+                  return `<button class="ocTile" onclick="go(${catIdx});ocSelect('${p.id}',${i})">
+                    <b>${h(u.name)}</b>
+                    ${u.vn ? `<small>${h(u.vn)}</small>` : ""}
+                    <span><strong>${h(fmt(u.hc))}</strong> vị trí · ${s.titles} chức danh</span>
+                  </button>`;
+                }).join("")}
+              </div>
+            </div>`).join("")}
+        </div>
+      </div>
+      ${p.notes && p.notes.length ? `<div class="callout ocNotes"><b>Lưu ý khi đọc Org Chart:</b>
+        <ul>${p.notes.map(n => `<li>${h(n)}</li>`).join("")}</ul></div>` : ""}`;
+  }
+
+  /* ---------- Danh mục chức danh ---------- */
+  const state = {};
+  function renderCatalogue(p){
+    const el = document.getElementById("oc-cat-" + p.id);
+    if(!el) return;
+    let lastCluster = null;
+    el.innerHTML = `
+      <div class="eyebrow">HỢP PHẦN ${h(p.code)} · DANH MỤC CHỨC DANH</div>
+      <h2>Danh mục chức danh ${h(p.name)}</h2>
+      <p class="ocSub">Tên chức danh giữ nguyên theo Org Chart${p.lang === "en" ? " (tiếng Anh)" : ""}; số bên phải là số vị trí trên sơ đồ.</p>
+      <div class="ocCat">
+        <aside class="ocUnits">
+          <button data-u="-1" onclick="ocSelect('${p.id}',-1)">
+            <b>Ban Giám đốc</b><small>${p.mgmt.length} chức danh</small>
+            <i>${p.mgmt.reduce((a, x) => a + x[1], 0)}</i>
+          </button>
+          ${p.units.map((u, i) => {
+            const head = (u.cluster && u.cluster !== lastCluster) ? `<h5>${h(u.cluster)}</h5>` : "";
+            lastCluster = u.cluster || lastCluster;
+            return `${head}<button data-u="${i}" onclick="ocSelect('${p.id}',${i})">
+              <b>${h(u.name)}</b><small>${h(u.vn || (unitStats(u).titles + " chức danh"))}</small>
+              <i>${h(fmt(u.hc))}</i></button>`;
+          }).join("")}
+        </aside>
+        <div class="ocPanel" id="oc-panel-${p.id}"></div>
+      </div>`;
+    ocSelect(p.id, 0);
+  }
+
+  function itemHTML(it, hit){
+    const tags = [];
+    if(it[2]) tags.push(`<span class="ocTag vac">${it[1] > 1 ? it[2] + " trống/TBA" : "Trống/TBA"}</span>`);
+    if(it[3] && TAGS[it[3]]) tags.push(`<span class="ocTag ${TAGS[it[3]][0]}">${TAGS[it[3]][1]}</span>`);
+    const isHit = hit && it[0] === hit;
+    return `<li class="${isHit ? "hit" : ""}">
+      <span>${h(it[0])}</span>
+      ${it[4] ? `<em>${h(it[4])}</em>` : ""}
+      ${tags.length ? `<span class="tags">${tags.join("")}</span>` : ""}
+      <span class="n${it[1] === 1 ? " one" : ""}">×${it[1]}</span></li>`;
+  }
+
+  window.ocSelect = function(pid, ui, hit){
+    const p = P.find(x => x.id === pid);
+    const panel = document.getElementById("oc-panel-" + pid);
+    if(!p || !panel) return;
+    state[pid] = ui;
+    panel.parentElement.querySelectorAll(".ocUnits button").forEach(b =>
+      b.classList.toggle("on", Number(b.dataset.u) === ui));
+
+    let head, groups, note = "", stats;
+    if(ui < 0){
+      head = `<h3>Ban Giám đốc</h3><p>${h(p.name)}</p>`;
+      groups = [{g:"Lãnh đạo", items:p.mgmt}];
+      const pos = p.mgmt.reduce((a, x) => a + x[1], 0), vac = p.mgmt.reduce((a, x) => a + (x[2] || 0), 0);
+      stats = {pos, vac, titles:p.mgmt.length, hc:pos};
+    }else{
+      const u = p.units[ui];
+      head = `<h3>${h(u.name)}</h3><p>${h(u.vn || "")}${u.vn && u.cluster ? " · " : ""}${h(u.cluster || "")}</p>`;
+      groups = u.groups; note = u.note || "";
+      stats = Object.assign(unitStats(u), {hc:u.hc});
+    }
+    const usedTags = new Set();
+    groups.forEach(g => g.items.forEach(it => { if(it[2]) usedTags.add("vac"); if(it[3]) usedTags.add(it[3]); }));
+
+    panel.innerHTML = `
+      <div class="ocPanelHead">
+        <div>${head}</div>
+        <div class="ocStats">
+          <span>Định biên <b>${h(fmt(stats.hc))}</b></span>
+          <span>Chức danh <b>${stats.titles}</b></span>
+          ${stats.vac ? `<span>Trống/TBA <b>${stats.vac}</b></span>` : ""}
+        </div>
+      </div>
+      ${groups.map(g => `
+        <div class="ocGroup">
+          <h4>${h(g.g)}</h4>
+          <ul class="ocList">${g.items.map(it => itemHTML(it, hit)).join("")}</ul>
+        </div>`).join("")}
+      ${note ? `<div class="ocUnitNote">${h(note)}</div>` : ""}
+      ${usedTags.size ? `<div class="ocLegend">Nhãn:
+        ${usedTags.has("vac") ? `<span class="ocTag vac">Trống/TBA</span> vị trí chưa có người` : ""}
+        ${["kn","new","y28","con"].filter(t => usedTags.has(t)).map(t => `<span class="ocTag ${t}">${TAGS[t][1]}</span>`).join(" ")}
+      </div>` : ""}`;
+    panel.scrollTop = 0;
+    if(hit){
+      const li = panel.querySelector("li.hit");
+      if(li) setTimeout(() => li.scrollIntoView({block:"center", behavior:"smooth"}), 450);
+    }
+  };
+
+  window.ocOpen = function(pid, ui, title){
+    go(slideIndex("oc-cat-" + pid));
+    ocSelect(pid, ui, title);
+  };
+
+  /* ---------- Khởi tạo ---------- */
+  P.forEach(p => {
+    ["oc-cover-","oc-struct-","oc-cat-"].forEach(k => {
+      const el = document.getElementById(k + p.id);
+      if(el) el.style.setProperty("--pc", p.color);
+    });
+    renderCover(p); renderStructure(p); renderCatalogue(p);
+  });
+  renderOverview();
+
+  const total = document.getElementById("total");
+  if(total) total.textContent = String(slideEls.length).padStart(2, "0");
+})();
+
+</script>
 </body>
 </html>
