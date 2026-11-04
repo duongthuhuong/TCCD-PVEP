@@ -1942,6 +1942,241 @@ article b,.metric b{color:#4A568D}
   .ocTiles{grid-template-columns:1fr 1fr}
 }
 
+
+/* =========================================================
+   MỞ ĐẦU · YÊU CẦU TGĐ  &  MODULE 7 · CÁC BƯỚC TRIỂN KHAI
+========================================================= */
+.gdBanner{display:flex;gap:18px;align-items:stretch;margin:18px 0 6px;max-width:1100px;
+  background:#343D72;color:#F0F2F8;border-left:7px solid #C96754;padding:18px 22px}
+.gdBanner small{display:block;font-size:11px;font-weight:900;letter-spacing:.16em;color:#F0B9A9;margin-bottom:6px}
+.gdBanner p{margin:0;font-size:15px;line-height:1.6}
+.gdDate{margin-left:auto;min-width:170px;text-align:center;background:#C96754;color:#fff;padding:12px 16px;display:flex;flex-direction:column;justify-content:center}
+.gdDate span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
+.gdDate b{font-size:26px;letter-spacing:-.02em}
+
+.gdChain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin:10px 0 6px}
+.gdChain>i{display:grid;place-items:center;font-style:normal;font-size:28px;color:#596077}
+.gdLink{background:#E4E7F2;border-top:5px solid #4A568D;padding:16px 18px}
+.gdLink small{font-size:11px;font-weight:900;letter-spacing:.12em;color:#A94F42}
+.gdLink h3{margin:6px 0}
+.gdLink p{margin:0;font-size:13.5px;color:#4E586D;line-height:1.55}
+.gdLink.hot{background:#343D72;border-top-color:#C96754}
+.gdLink.hot h3,.gdLink.hot p{color:#F0F2F8}.gdLink.hot small{color:#F0B9A9}
+
+.roleGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}
+.roleCard{display:flex;gap:12px;background:#E4E7F2;border:1px solid #B7C0D2;padding:14px 16px}
+.roleCard>span{flex:0 0 44px;height:44px;display:grid;place-items:center;background:#4A568D;color:#fff;font-weight:900;font-size:13px}
+.roleCard h3{margin:0 0 4px;font-size:16px}
+.roleCard p{margin:0;font-size:13px;color:#4E586D;line-height:1.5}
+.roleCard.hot{background:#343D72;border-color:#343D72}
+.roleCard.hot>span{background:#C96754}.roleCard.hot h3,.roleCard.hot p{color:#F0F2F8}
+
+.tl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin:20px 0 0;position:relative}
+.tlItem{position:relative;padding:28px 12px 14px;border-top:4px solid #4A568D;background:#E4E7F2;margin-right:6px}
+.tlItem::before{content:"";position:absolute;top:-11px;left:12px;width:16px;height:16px;border-radius:50%;background:#4A568D;border:3px solid #D8DFEE}
+.tlItem small{display:block;font-size:11.5px;font-weight:900;color:#A94F42;letter-spacing:.04em}
+.tlItem b{display:block;margin:4px 0;color:#303866;font-size:15px}
+.tlItem p{margin:0;font-size:12.5px;color:#4E586D}
+.tlItem.go{background:#343D72;border-top-color:#C96754}
+.tlItem.go::before{background:#C96754}
+.tlItem.go small{color:#F0B9A9}.tlItem.go b,.tlItem.go p{color:#F0F2F8}
+.tlPar{margin:10px 6px 4px 0;padding:10px 14px;background:#CFE2DF;border-left:5px solid #4F847F;font-size:13.5px;color:#20263D}
+.tlPar span{font-weight:900;letter-spacing:.12em;color:#2E6A60;margin-right:8px;font-size:11px}
+
+/* Swimlane */
+.swimWrap{overflow-x:auto;padding-bottom:6px}
+.swim{display:grid;grid-template-columns:130px repeat(7,minmax(118px,1fr));gap:8px;min-width:1060px}
+.swHead{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#4A568D;padding:8px 10px;text-align:center}
+.swHead:first-child{background:transparent}
+.swHead.go{background:#C96754}
+.swLane{display:flex;align-items:center;font-size:12.5px;font-weight:800;color:#303866;background:#D2D9E9;padding:10px;border-left:5px solid #4A568D;line-height:1.3}
+.swBox{text-align:left;border:1px solid #B7C0D2;border-top:5px solid #4A568D;background:#F2F4FA;color:#20263D;padding:10px 11px;min-height:96px;display:flex;flex-direction:column;gap:3px;transition:.15s}
+.swBox:hover{transform:translateY(-2px);background:#fff}
+.swBox i{font-style:normal;font-weight:900;font-size:20px;color:#4A568D;line-height:1}
+.swBox b{font-size:13px;line-height:1.3}
+.swBox small{font-size:11.5px;color:#596077}
+.swBox.hr{border-top-color:#756C98}.swBox.hr i{color:#756C98}
+.swBox.ap{border-top-color:#C96754}.swBox.ap i{color:#C96754}
+.swBox.go{background:#343D72;border-color:#343D72;border-top-color:#C96754;color:#F0F2F8}
+.swBox.go i{color:#F0B9A9}.swBox.go small{color:#D9DDEB}
+.swNote{display:flex;align-items:center;justify-content:center;font-size:12px;color:#596077;border:1px dashed #AEB8CE;padding:8px;text-align:center}
+.swPar{display:flex;justify-content:space-around;align-items:center;gap:8px;background:#CFE2DF;border:1px solid #9FC4BE;border-left:5px solid #4F847F;padding:12px;min-height:58px;color:#2E6A60;font-weight:800;font-size:12.5px}
+.swPar:hover{background:#C2DAD6}
+.swPar span{background:#E6F0EE;padding:6px 10px}
+.swEmpty{min-height:58px;background:repeating-linear-gradient(135deg,transparent 0 8px,rgba(120,130,160,.08) 8px 16px)}
+.swFound{grid-column:1/-1;background:#303866;color:#F0F2F8;padding:12px 16px;font-size:14px;border-left:7px solid #C96754}
+.swFound b{letter-spacing:.14em;font-size:11px;color:#F0B9A9;margin-right:10px}
+
+.kvCols{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px;margin-top:10px}
+.kvCol{background:#E4E7F2;padding:16px 18px;border-top:6px solid #4F847F}
+.kvCol.add{border-top-color:#C96754}.kvCol.no{border-top-color:#8A6A7A}
+.kvCol h3{margin:0 0 8px}
+.kvCol ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.6;color:#20263D}
+
+.stepHead{display:flex;gap:16px;align-items:flex-start;margin-bottom:6px}
+.stepHead>span{flex:0 0 auto;background:#4A568D;color:#fff;font-weight:900;font-size:13px;letter-spacing:.1em;padding:10px 12px;margin-top:4px}
+.stepHead.par>span{background:#4F847F}.stepHead.hr>span{background:#756C98}
+.stepHead .eyebrow{margin-bottom:6px}
+.stepHead h2{margin-bottom:12px;font-size:clamp(26px,3vw,42px)}
+.stepGrid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.stepBlock{background:#E9ECF5;border:1px solid #B7C0D2;padding:16px 18px}
+.stepBlock h3{margin:0 0 8px}
+.stepBlock ol{margin:0;padding-left:20px;font-size:14px;line-height:1.6}
+.stepBlock ol li{margin-bottom:4px}
+.hint{font-size:12px;color:#596077;margin:8px 0 0}
+table.mini{font-size:12.5px}
+table.mini td em{color:#A94F42}
+.outRow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.outRow>div{background:#343D72;color:#F0F2F8;padding:12px 16px}
+.outRow>div.par{background:#CFE2DF;color:#20263D;border-left:5px solid #4F847F}
+.outRow small{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;color:#F0B9A9;margin-bottom:4px}
+.outRow .par small{color:#2E6A60}
+.outRow b{font-size:14px}
+
+.dictCard{display:grid;gap:6px}
+.dictCard>div{display:grid;grid-template-columns:110px 1fr;gap:8px;background:#F3F4F9;border:1px solid #D2D7E5;padding:7px 10px;font-size:13px}
+.dictCard small{color:#68708A;font-weight:700}
+.dictCard>div:first-child b{color:#A94F42}
+
+.codeAnat{display:flex;align-items:stretch;gap:8px;margin:14px 0 6px;flex-wrap:wrap}
+.codeAnat .ca{background:#343D72;color:#fff;padding:12px 18px;text-align:center;min-width:120px}
+.codeAnat .ca b{display:block;font-size:30px;letter-spacing:-.02em}
+.codeAnat .ca small{font-size:11.5px;color:#D9DDEB}
+.codeAnat .ca.wide{background:#E4E7F2;color:#303866;min-width:260px;text-align:left}
+.codeAnat .ca.wide b{font-size:20px}.codeAnat .ca.wide small{color:#596077}
+.codeAnat .dot,.codeAnat .arrow{display:grid;place-items:center;font-size:30px;font-weight:900;color:#596077}
+
+.chips8{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.chips8 span{background:#F3F4F9;border:1px solid #C3CADB;border-left:4px solid #4A568D;padding:8px 10px;font-size:13px;font-weight:700;color:#303866}
+
+.revFlow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 12px}
+.revFlow>div{background:#CFE2DF;border-left:5px solid #4F847F;padding:10px 14px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:center}
+.revFlow i{grid-row:1/span 2;font-style:normal;font-weight:900;font-size:20px;color:#2E6A60}
+.revFlow b{font-size:14px;color:#20263D}.revFlow small{font-size:12px;color:#4E586D}
+.revTable{max-width:900px;overflow:auto}
+.revTable td{font-size:13px}
+
+.markRow{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:center;margin-bottom:8px}
+.markRow p{margin:0;font-size:13.5px}
+.mk{display:inline-block;text-align:center;padding:6px 8px;font-weight:800;font-size:12.5px}
+.mk.keep{background:#D8DCEC;color:#3C4678}
+.mk.adj{background:#F0DCC8;color:#8C4B2B}
+.mk.new{background:#CFE4DF;color:#2E6A60}
+
+.duo{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;margin-top:12px}
+.duoCard{background:#E4E7F2;border-top:7px solid #C96754;padding:18px 22px}
+.duoCard>span{font-size:11px;font-weight:900;letter-spacing:.14em;color:#A94F42}
+.duoCard h3{font-size:20px;margin:6px 0 10px}
+.duoCard ul{margin:0;padding-left:18px;font-size:14px;line-height:1.65}
+.duoCard.go{background:#343D72;border-top-color:#C96754}
+.duoCard.go>span{color:#F0B9A9}.duoCard.go h3,.duoCard.go ul{color:#F0F2F8}
+.duoArrow{display:grid;place-items:center;font-size:34px;color:#596077}
+
+.evalFlow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:8px;align-items:stretch;margin:8px 0 6px}
+.ev{background:#343D72;color:#F0F2F8;padding:14px;display:flex;flex-direction:column;gap:4px}
+.ev i{font-style:normal;font-weight:900;font-size:22px;color:#F0B9A9}
+.ev b{font-size:14px}.ev small{font-size:12px;color:#D9DDEB}
+.ev.hr{background:#756C98}.ev.hr.soft{background:#E3DDEF;color:#20263D}
+.ev.hr.soft i{color:#5A4E86}.ev.hr.soft small{color:#4E586D}
+.evA{display:grid;place-items:center;font-size:24px;color:#596077}
+
+.checkList{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:1100px}
+.checkList label{display:flex;gap:10px;align-items:flex-start;background:#E4E7F2;border:1px solid #B7C0D2;padding:11px 14px;font-weight:600;color:#20263D;margin:0;cursor:pointer;font-size:14px}
+.checkList input{margin-top:3px;accent-color:#4F847F;width:16px;height:16px}
+.checkList label.done{background:#CFE4DF;border-color:#4F847F}
+.checkMeter{display:flex;align-items:center;gap:12px;margin-top:14px;max-width:1100px}
+.checkMeter>div{flex:1;height:8px;background:#BFC6D7;position:relative}
+.checkMeter>div::after{content:"";position:absolute;inset:0;width:var(--w,0%);background:#4F847F;transition:.25s}
+.checkMeter span{font-weight:800;color:#303866;font-size:13px}
+
+
+/* TB 776 */
+.tbGrid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px;margin:14px 0 4px}
+.tbCard{display:flex;gap:14px;background:#E4E7F2;border:1px solid #B7C0D2;border-top:5px solid #4A568D;padding:16px 18px}
+.tbCard small{font-size:11px;font-weight:900;letter-spacing:.12em;color:#A94F42}
+.tbCard h3{margin:4px 0 6px;font-size:17px}
+.tbCard p{margin:0;font-size:13.5px;color:#4E586D;line-height:1.55}
+.tbCard.hot{background:#343D72;border-color:#343D72;border-top-color:#C96754}
+.tbCard.hot h3,.tbCard.hot p{color:#F0F2F8}.tbCard.hot small{color:#F0B9A9}.tbCard.hot p b{color:#fff}
+.tbBig{flex:0 0 96px;background:#C96754;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px}
+.tbBig small{color:#fff!important;letter-spacing:.08em;text-transform:uppercase;font-size:10.5px}
+.tbBig b{font-size:38px;line-height:1;letter-spacing:-.03em}
+.tbIcon{flex:0 0 44px;height:44px;display:grid;place-items:center;background:#4A568D;color:#fff;font-size:20px;font-weight:900}
+
+.pcWrap{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;margin-top:10px;align-items:start}
+.stair{position:relative;display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:8px;height:290px;padding-bottom:0}
+.st{display:flex;flex-direction:column;justify-content:flex-start;padding:12px;color:#fff;background:#4A568D}
+.st small{font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.st b{font-size:15px;margin:4px 0}.st span{font-size:12px;opacity:.92}
+.st.s1{height:35%;background:#6B76A6}.st.s2{height:70%;background:#4A568D}.st.s3{height:100%;background:#343D72;border-top:5px solid #C96754}
+.floor{position:absolute;left:33.6%;right:0;bottom:35%;border-top:3px dashed #C96754;pointer-events:none}
+.floor i{position:absolute;right:0;top:-24px;font-style:normal;font-size:11.5px;font-weight:900;color:#A94F42;background:#F4F5FA;padding:2px 6px}
+.pcRules{display:grid;gap:8px;margin-top:14px}
+.pcRules>div{display:flex;gap:10px;align-items:center;background:#E4E7F2;padding:9px 12px;border-left:5px solid #4F847F}
+.pcRules i{font-style:normal;font-weight:900;color:#4F847F;font-size:18px;width:18px}
+.pcRules p{margin:0;font-size:13.5px;color:#20263D}
+.lvList h3{margin:0 0 8px;font-size:16px}
+.lv{display:flex;gap:12px;align-items:stretch;margin-bottom:6px;background:#F2F4FA;border:1px solid #C3CADB}
+.lv b{flex:0 0 40px;display:grid;place-items:center;background:#BFC6D7;color:#303866;font-size:18px}
+.lv p{margin:0;padding:8px 10px 8px 0;font-size:13px;color:#20263D;line-height:1.45}
+.lv.hi{background:#F7E4DF;border-color:#E0B2A6}.lv.hi b{background:#C96754;color:#fff}
+.tbCheck{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.tbCheck li{background:#F3F4F9;border:1px solid #C3CADB;border-left:4px solid #C96754;padding:8px 10px;font-size:13px;color:#20263D}
+
+@media(max-width:1000px){
+  .tbGrid,.pcWrap{grid-template-columns:1fr}
+  .gdChain,.duo,.evalFlow{grid-template-columns:1fr}
+  .gdChain>i,.duoArrow,.evA{transform:rotate(90deg)}
+  .roleGrid{grid-template-columns:1fr 1fr}
+  .tl{grid-template-columns:repeat(3,1fr);row-gap:22px}
+  .kvCols,.stepGrid,.outRow,.revFlow{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .roleGrid,.tl,.checkList{grid-template-columns:1fr}
+  .gdBanner{flex-direction:column}.gdDate{margin-left:0}
+}
+
+.tbCard p b{font-size:inherit;display:inline;color:inherit;font-weight:800;margin:0;letter-spacing:0}
+.tbCard.hot p b{color:#fff}
+
+/* Chuẩn gốc bằng số */
+.kpi3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:14px 0 14px}
+.kpi{text-align:left;background:#343D72;color:#F0F2F8;border:0;border-top:6px solid #C96754;padding:18px 20px;display:flex;flex-direction:column;gap:4px;transition:.15s}
+.kpi:hover{transform:translateY(-2px)}
+.kpi small{font-size:11px;font-weight:900;letter-spacing:.14em;color:#F0B9A9}
+.kpi b{font-size:64px;line-height:1;letter-spacing:-.04em;color:#fff}
+.kpi span{font-size:13.5px;line-height:1.5;color:#D9DDEB}
+.statGrid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;margin-top:8px;align-items:start}
+.hbars{display:grid;gap:3px}
+.hbCap{font-size:12px;font-weight:800;color:#4E586D;margin-bottom:4px}
+.hb{display:grid;grid-template-columns:210px 1fr;gap:10px;align-items:center;font-size:12.5px;color:#20263D;padding:1px 0}
+.hb:hover{background:rgba(74,86,141,.08)}
+.hb>span{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb>div{display:flex;align-items:center;gap:6px}
+.hb i{display:block;height:13px;width:var(--w);background:#4A568D;border-radius:0 4px 4px 0;min-width:3px}
+.hb b{font-size:12px;color:#20263D;font-variant-numeric:tabular-nums}
+.statSide h3{margin:0 0 8px;font-size:16px}
+.tiny{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#E4E7F2;border-left:4px solid #4A568D;padding:8px 12px;margin-bottom:5px;font-size:13px;color:#20263D}
+.tiny b{font-size:18px;color:#303866;font-variant-numeric:tabular-nums}
+.tiny.hi{border-left-color:#C96754;background:#F7E4DF}
+.codeEx{background:#F2F4FA;border:1px solid #C3CADB;padding:8px 12px;margin-bottom:5px;font-size:18px;color:#596077}
+.codeEx b{color:#303866;font-weight:900}
+.codeEx small{display:block;font-size:12px;color:#4E586D;margin-top:2px}
+.rgWrap{display:grid;gap:10px;padding-top:4px}
+.rgRow{display:grid;grid-template-columns:230px 1fr;gap:12px;align-items:center}
+.rgLab{display:flex;gap:10px;align-items:center}
+.rgLab i{font-style:normal;flex:0 0 30px;height:30px;display:grid;place-items:center;background:#4A568D;color:#fff;font-weight:900}
+.rgLab b{display:block;font-size:13px;color:#20263D;line-height:1.25}
+.rgLab small{font-size:11.5px;color:#4E586D}
+.rgTrack{position:relative;height:34px;background:repeating-linear-gradient(90deg,transparent 0 calc(33.333% - 1px),#C3CADB calc(33.333% - 1px) 33.333%)}
+.rgBar{position:absolute;top:10px;height:14px;background:#4A568D;border-radius:4px}
+.rgRow:first-child .rgBar{background:#343D72}
+.rgTrack em{position:absolute;top:-4px;transform:translateX(-100%);padding-right:5px;font-style:normal;font-size:11.5px;font-weight:800;color:#4E586D;font-variant-numeric:tabular-nums}
+.rgTrack em.r{transform:none;padding-left:5px;padding-right:0;top:8px;color:#20263D;font-size:12.5px}
+.rgTrack em:not(.r){top:8px}
+.rgAxis{margin-left:242px;display:flex;justify-content:space-between;font-size:11px;color:#596077;border-top:1px solid #AEB8CE;padding-top:4px}
+@media(max-width:1000px){.kpi3,.statGrid{grid-template-columns:1fr}.hb{grid-template-columns:150px 1fr}.rgRow{grid-template-columns:1fr}.rgAxis{margin-left:0}}
+
 </style></head><body>
 
 <div class="app">
@@ -1998,7 +2233,7 @@ article b,.metric b{color:#4A568D}
 
 <script>
   /* =========================================================
-   DỮ LIỆU 48 SLIDE
+   DỮ LIỆU SLIDE
 ========================================================= */
 
 const slides = [
@@ -2038,6 +2273,220 @@ html:`
     Thông báo 809/TB-TDKT; yêu cầu được xác định theo chức danh, cấp bậc
     và tính chất công việc.
   </div>
+</section>`
+},
+
+
+/* ===================== MỞ ĐẦU · YÊU CẦU CỦA TỔNG GIÁM ĐỐC ===================== */
+{
+chapter:"Mở đầu · Yêu cầu của Tổng Giám đốc",
+html:`
+<section class="slide">
+  <div class="eyebrow">YÊU CẦU TRIỂN KHAI ĐỒNG BỘ</div>
+  <h2>Hoàn thành TCCD Chi nhánh, Dự án<br>để vận hành từ ngày 01/01/2027</h2>
+
+  <p class="lead">
+    Các Chi nhánh và Dự án triển khai thống nhất từ danh mục chức danh, từ điển năng lực,
+    mã hóa đến Tiêu chuẩn chức danh chi tiết cho từng vị trí trên Org Chart.
+  </p>
+
+  <div class="gdBanner">
+    <div>
+      <small>YÊU CẦU CỦA TỔNG GIÁM ĐỐC</small>
+      <p>Chuẩn hóa chức danh, năng lực và tiêu chuẩn của từng vị trí; bám nền tảng Bộ TCCD
+      của Tổng công ty; đầu mối rõ, hồ sơ đầy đủ để sẵn sàng vận hành thực chất.</p>
+    </div>
+    <div class="gdDate"><span>Vận hành từ</span><b>01/01/2027</b></div>
+  </div>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Thống nhất nền tảng</h3>
+      <p>Lấy Bộ TCCD Tổng công ty làm chuẩn để phát triển lên; dùng chung thang cấp độ 1–5 và biểu mẫu TCCD.</p>
+    </article>
+    <article>
+      <b>02</b>
+      <h3>Sẵn sàng dữ liệu</h3>
+      <p>Danh mục chức danh đúng Org Chart đã duyệt, có mã trong bộ của đơn vị; năng lực có mã để gọi ra và tra cứu.</p>
+    </article>
+    <article>
+      <b>03</b>
+      <h3>Sẵn sàng tổ chức</h3>
+      <p>Lãnh đạo đơn vị chỉ đạo trực tiếp, có đầu mối thực hiện, có review ngành dọc và phê duyệt đúng thẩm quyền.</p>
+    </article>
+  </div>
+</section>`
+},
+
+{
+chapter:"Mở đầu · Nguyên tắc TCCD của Tổng Giám đốc (TB 776)",
+html:`
+<section class="slide">
+  <div class="eyebrow">THÔNG BÁO SỐ 776/TB-TDKT · 17/9/2025</div>
+  <h2>Nguyên tắc xây dựng, hiệu chỉnh TCCD của Tổng Giám đốc</h2>
+  <p class="lead">Áp dụng cho các Ban, Văn phòng và Chi nhánh: TCCD bám sát chức năng, nhiệm vụ, yêu cầu công việc và tuân thủ các nguyên tắc sau.</p>
+
+  <div class="tbGrid">
+    <article class="tbCard hot">
+      <div class="tbBig"><small>cấp độ</small><b>≥ 3</b></div>
+      <div><small>NGUYÊN TẮC 1</small>
+      <h3>Lãnh đạo Ban, Lãnh đạo Phòng</h3>
+      <p>Các đơn vị <b>kiến thức</b> và <b>năng lực cốt lõi</b> phải đạt <b>từ cấp độ 3 trở lên</b>.</p></div>
+    </article>
+    <article class="tbCard">
+      <div class="tbIcon">▤</div>
+      <div><small>NGUYÊN TẮC 2</small>
+      <h3>Tiêu chí điểm cho từng chức danh</h3>
+      <p>Điểm số giữa các nhóm chức danh phải thể hiện rõ <b>sự phân cấp</b> về năng lực và trách nhiệm.</p></div>
+    </article>
+    <article class="tbCard">
+      <div class="tbIcon">✚</div>
+      <div><small>NGUYÊN TẮC 3</small>
+      <h3>Đảm bảo sức khỏe làm việc</h3>
+      <p>Đáp ứng môi trường của PVEP: văn phòng, giàn khoan, tàu biển, sa mạc…; đi công tác dài ngày không đòi hỏi chăm sóc y tế đặc biệt.</p></div>
+    </article>
+  </div>
+
+  <div class="callout">
+    <b>Trách nhiệm:</b> Các Phó Tổng Giám đốc, Trưởng các Ban, <b>Giám đốc Chi nhánh</b> chịu trách nhiệm trực tiếp
+    trước Tổng Giám đốc về tiến độ và chất lượng TCCD tại đơn vị được phân công quản lý, phụ trách.
+  </div>
+</section>`
+},
+
+{
+chapter:"Mở đầu · Phân cấp yêu cầu theo TB 776",
+html:`
+<section class="slide">
+  <div class="eyebrow">YÊU CẦU CỤ THỂ THEO PHÂN CẤP</div>
+  <h2>Cấp cao hơn — yêu cầu cao hơn</h2>
+
+  <div class="pcWrap">
+    <div class="pcLeft">
+      <div class="stair">
+        <div class="st s1"><small>Chuyên viên, Kỹ sư</small><b>Nền chuyên môn</b><span>Cấp độ theo bậc 1 → 10</span></div>
+        <div class="st s2"><small>Lãnh đạo Phòng</small><b>Cao hơn CV, KS</b><span>Kiến thức, NL cốt lõi ≥ 3</span></div>
+        <div class="st s3"><small>Lãnh đạo Ban</small><b>Cao hơn LĐP</b><span>Kiến thức, NL cốt lõi ≥ 3</span></div>
+        <div class="floor"><i>Sàn cấp độ 3 cho LĐB, LĐP</i></div>
+      </div>
+      <div class="pcRules">
+        <div><i>1</i><p><b>LĐB &gt; LĐP &gt; Chuyên viên, Kỹ sư</b> về yêu cầu TCCD</p></div>
+        <div><i>2</i><p><b>Cấp Trưởng &gt; cấp Phó</b> trong cùng một nhóm</p></div>
+        <div><i>3</i><p>Trong cùng chức danh: <b>bậc sau &gt; bậc trước</b> ở các yêu cầu cơ bản</p></div>
+      </div>
+    </div>
+
+    <div class="lvList">
+      <h3>Thang 5 cấp độ kiến thức chuyên môn nghiệp vụ</h3>
+      <div class="lv"><b>1</b><p>Làm việc được giao theo quy chế, quy trình; biết tra cứu nguồn dữ liệu, tài liệu tham chiếu.</p></div>
+      <div class="lv"><b>2</b><p>Tự chủ, đạt kết quả không cần chỉ dẫn, giám sát; giải thích được quy trình, đề xuất cải tiến.</p></div>
+      <div class="lv hi"><b>3</b><p>Hiểu biết tốt; phân tích, viết báo cáo, xử lý việc tương đối phức tạp; tự đưa ra biện pháp giải quyết, hướng dẫn người khác.</p></div>
+      <div class="lv hi"><b>4</b><p>Tư duy chiến lược; lập kế hoạch, đề án, dự án; chủ trì nghiên cứu, soạn thảo văn bản.</p></div>
+      <div class="lv hi"><b>5</b><p>Hiểu biết sâu rộng, toàn diện; sáng tạo, có ảnh hưởng; xây dựng chiến lược dài hạn, quản trị rủi ro.</p></div>
+      <p class="hint">Vùng tô đậm (3–5): mức tối thiểu với kiến thức và năng lực cốt lõi của LĐB, LĐP.</p>
+    </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Mở đầu · Vì sao phải chuẩn hóa",
+html:`
+<section class="slide">
+  <div class="eyebrow">TỪ ĐỊNH HƯỚNG ĐẾN GIẢI PHÁP</div>
+  <h2>Mục tiêu Tổng công ty → Nhiệm vụ đơn vị → Chuẩn nhân lực</h2>
+
+  <div class="gdChain">
+    <div class="gdLink">
+      <small>TỔNG CÔNG TY</small>
+      <h3>Một hệ thống chuẩn chung</h3>
+      <p>Bộ TCCD và Từ điển năng lực là chuẩn gốc để các đơn vị phát triển lên.</p>
+    </div>
+    <i>›</i>
+    <div class="gdLink">
+      <small>CHI NHÁNH · DỰ ÁN</small>
+      <h3>Cụ thể hóa theo Org Chart</h3>
+      <p>Mỗi vị trí trên Org Chart đã duyệt có tên, mã và TCCD chi tiết tương ứng.</p>
+    </div>
+    <i>›</i>
+    <div class="gdLink hot">
+      <small>GIẢI PHÁP</small>
+      <h3>Quản trị nhân lực bằng chuẩn</h3>
+      <p>Tuyển dụng, bố trí, đánh giá, đào tạo dùng chung một căn cứ có thể đối chiếu.</p>
+    </div>
+  </div>
+
+  <div class="cards three">
+    <article>
+      <b>▦</b>
+      <h3>Hiện trạng: chuẩn phân tán</h3>
+      <p>Tiêu chuẩn ở nhiều nơi còn mô tả chung chung, chưa thể hiện rõ phân cấp, khó đối chiếu với Bộ TCCD Tổng công ty.</p>
+    </article>
+    <article>
+      <b>◷</b>
+      <h3>Hệ quả: khó điều hành</h3>
+      <p>Khó so sánh, luân chuyển, đánh giá nhân sự giữa Tổng công ty và Chi nhánh, Dự án.</p>
+    </article>
+    <article>
+      <b>◉</b>
+      <h3>Đích đến: chung một chuẩn gốc</h3>
+      <p>Mỗi đơn vị phát triển từ Bộ TCCD Tổng công ty, tham khảo lẫn nhau để không phải làm lại từ đầu.</p>
+    </article>
+  </div>
+</section>`
+},
+
+{
+chapter:"Mở đầu · Ai làm gì?",
+html:`
+<section class="slide">
+  <div class="eyebrow">YÊU CẦU TRIỂN KHAI · AI LÀM GÌ?</div>
+  <h2>Mỗi cấp có một vai trò rõ trong chu trình</h2>
+
+  <div class="roleGrid">
+    <div class="roleCard"><span>LĐ</span><div><h3>Lãnh đạo Chi nhánh, Dự án</h3>
+      <p>Chỉ đạo triển khai, chịu trách nhiệm về chất lượng và tiến độ hoàn thành trước 01/01/2027.</p></div></div>
+    <div class="roleCard"><span>ĐM</span><div><h3>Đầu mối nhân sự đơn vị</h3>
+      <p>Điều phối, tổng hợp danh mục, từ điển, TCCD chi tiết; lập hồ sơ gửi Ban QTNNL.</p></div></div>
+    <div class="roleCard"><span>PB</span><div><h3>Các phòng chuyên môn đơn vị</h3>
+      <p>Xây dựng nội dung năng lực và cấp độ cho chức danh thuộc lĩnh vực mình.</p></div></div>
+    <div class="roleCard"><span>NG</span><div><h3>Ban chuyên môn Tổng công ty</h3>
+      <p>Review ngành dọc song song từ danh mục, từ điển năng lực đến TCCD chi tiết.</p></div></div>
+    <div class="roleCard"><span>HR</span><div><h3>Ban QTNNL</h3>
+      <p>Rà soát tổng thể, xác nhận phần bổ sung so với bộ hiện có; hậu kiểm, check chéo kết quả đánh giá khi cần.</p></div></div>
+    <div class="roleCard hot"><span>PD</span><div><h3>PTGĐ phụ trách Chi nhánh</h3>
+      <p>Phê duyệt Bộ TCCD của Chi nhánh, Dự án để áp dụng từ 01/01/2027.</p></div></div>
+  </div>
+
+  <div class="callout">
+    Mỗi Chi nhánh, Dự án xây Bộ TCCD của mình, nhưng <b>phát triển từ chuẩn là Bộ TCCD Tổng công ty</b>
+    và nên <b>tham khảo bộ của nhau</b> với chức danh tương tự để kịp tiến độ.
+  </div>
+</section>`
+},
+
+{
+chapter:"Mở đầu · Lộ trình đến 01/01/2027",
+html:`
+<section class="slide">
+  <div class="eyebrow">LỘ TRÌNH TRIỂN KHAI</div>
+  <h2>Từ nay đến 01/01/2027</h2>
+  <p class="lead">Các mốc dưới đây là mốc gợi ý để lập kế hoạch; đơn vị bám theo văn bản chỉ đạo chính thức.</p>
+
+  <div class="tl">
+    <div class="tlItem"><small>Đến 15/11/2026</small><b>GĐ1 · Danh mục</b><p>Đúng Org Chart, có mã</p></div>
+    <div class="tlItem"><small>Đến 25/11/2026</small><b>GĐ2 · Từ điển năng lực</b><p>5 cấp độ, mã hóa năng lực</p></div>
+    <div class="tlItem"><small>Đến 10/12/2026</small><b>GĐ3 · TCCD chi tiết</b><p>Theo biểu mẫu, đúng TB 776</p></div>
+    <div class="tlItem"><small>Đến 20/12/2026</small><b>Ban QTNNL rà soát</b><p>Đánh dấu phần bổ sung</p></div>
+    <div class="tlItem"><small>Đến 28/12/2026</small><b>PTGĐ phê duyệt</b><p>PTGĐ phụ trách Chi nhánh</p></div>
+    <div class="tlItem go"><small>01/01/2027</small><b>Vận hành</b><p>Áp dụng và đánh giá</p></div>
+  </div>
+  <div class="tlPar">
+    <span>SONG SONG</span> Review ngành dọc với các Ban chuyên môn Tổng công ty — từ danh mục, từ điển năng lực đến TCCD chi tiết
+  </div>
+
+  <button class="primary" onclick="goId('m7-map')">Xem sơ đồ các bước chi tiết →</button>
 </section>`
 },
 
@@ -3476,95 +3925,6 @@ html:`
 </section>`
 },
 
-/* ===================== 44 ===================== */
-{
-chapter:"Kiểm tra cuối khóa",
-html:`
-<section class="slide">
-  <div class="eyebrow">FINAL QUIZ</div>
-  <h2>Cùng kiểm tra lại<br>những gì bạn vừa học</h2>
-
-  <div class="split">
-    <div>
-      <p class="lead">
-        Bài kiểm tra gồm <b>15 câu</b>.
-        Mỗi câu có một đáp án đúng.
-      </p>
-
-      <div class="chips">
-        <span>15 câu</span>
-        <span>Ngưỡng 80%</span>
-        <span>12/15 để hoàn thành</span>
-      </div>
-
-      <button class="primary" onclick="startQuiz()">
-        Bắt đầu bài kiểm tra →
-      </button>
-    </div>
-
-    <div class="callout">
-      <b>Lưu ý:</b><br><br>
-      Kết quả quiz chỉ phản ánh mức độ hiểu nội dung khóa học,
-      <b>không phải</b> kết quả đánh giá TCCD chính thức của cá nhân.
-    </div>
-  </div>
-</section>`
-},
-
-/* ===================== 45 ===================== */
-{
-chapter:"Kiểm tra cuối khóa",
-html:`
-<section class="slide">
-  <div class="eyebrow">KIỂM TRA CUỐI KHÓA</div>
-
-  <div class="quizBox">
-    <div class="quizBar">
-      <i id="quizProgress" style="width:6.67%"></i>
-    </div>
-
-    <div id="quizMeta"
-      style="margin-top:14px;color:#718188;font-weight:800">
-      Câu 1 / 15
-    </div>
-
-    <div class="q" id="quizQuestion"></div>
-
-    <div class="mc" id="quizAnswers"></div>
-
-    <div style="margin-top:18px;text-align:right">
-      <button class="primary"
-        id="quizNext"
-        onclick="quizNextQuestion()"
-        disabled>
-        Câu tiếp theo →
-      </button>
-    </div>
-  </div>
-</section>`
-},
-
-/* ===================== 46 ===================== */
-{
-chapter:"Kết quả",
-html:`
-<section class="slide">
-  <div class="eyebrow">KẾT QUẢ</div>
-
-  <div id="finalResult">
-    <h2>Hoàn thành bài kiểm tra</h2>
-
-    <p class="lead">
-      Kết quả của bạn sẽ hiển thị tại đây sau khi trả lời đủ 15 câu.
-    </p>
-
-    <button class="primary" onclick="startQuiz()">
-      Làm bài kiểm tra
-    </button>
-  </div>
-</section>`
-},
-
 /* ===================== 47 ===================== */
 {
 chapter:"Kế hoạch cá nhân",
@@ -3603,7 +3963,664 @@ html:`
   </button>
 </section>`
 },
+/* ===================== MODULE 7 · CÁC BƯỚC TRIỂN KHAI ===================== */
+{
+chapter:"Module 6 · Các bước triển khai tại Chi nhánh, Dự án",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 06</div>
+    <h1>Các bước triển khai<br>tại Chi nhánh, Dự án</h1>
+    <div class="goldline"></div>
+    <p>
+      Ba giai đoạn xây dựng — danh mục chức danh, từ điển năng lực, TCCD chi tiết — rồi rà soát,
+      phê duyệt và vận hành từ ngày 01/01/2027. Chuẩn gốc là Bộ TCCD của Tổng công ty.
+    </p>
+  </div>
+</section>`
+},
 
+{
+chapter:"Module 6 · Sơ đồ tổng thể",
+html:`
+<section class="slide m7" id="m7-map">
+  <div class="eyebrow">MODULE 06 · SƠ ĐỒ TỔNG THỂ</div>
+  <h2>Ba giai đoạn xây dựng, rồi rà soát, phê duyệt và vận hành</h2>
+  <p class="ocSub">Chọn từng ô để xem chi tiết. Review ngành dọc chạy <b>song song</b> suốt ba giai đoạn, không đợi xây xong mới gửi.</p>
+
+  <div class="swimWrap">
+  <div class="swim">
+    <div class="swHead"></div>
+    <div class="swHead" style="grid-column:2/6">Xây dựng tại đơn vị</div>
+    <div class="swHead" style="grid-column:6/8">Rà soát &amp; phê duyệt</div>
+    <div class="swHead go" style="grid-column:8/9">Vận hành</div>
+
+    <!-- Lane 1 -->
+    <div class="swLane">Chi nhánh,<br>Dự án</div>
+    <button class="swBox" onclick="goId('m7-b1')"><i>GĐ1</i><b>Danh mục chức danh</b><small>Theo Org Chart, lĩnh vực, nhóm · có mã</small></button>
+    <button class="swBox" onclick="goId('m7-b2')"><i>GĐ2</i><b>Từ điển năng lực</b><small>5 cấp độ · mã hóa để gọi ra</small></button>
+    <button class="swBox" onclick="goId('m7-b4')"><i>GĐ3</i><b>TCCD chi tiết từng chức danh</b><small>Theo biểu mẫu · đúng TB 776</small></button>
+    <button class="swBox" onclick="goId('m7-b5')"><i>↗</i><b>Hoàn thiện hồ sơ</b><small>Biểu mẫu 2a · nêu phần bổ sung</small></button>
+    <div class="swNote" style="grid-column:6/8">Hoàn thiện theo góp ý ↓</div>
+    <button class="swBox go" onclick="goId('m7-b7')"><i>01/01</i><b>Vận hành 2027</b><small>Chi nhánh tự đánh giá</small></button>
+
+    <!-- Lane 2 -->
+    <div class="swLane">Ban chuyên môn<br>TCT (ngành dọc)</div>
+    <button class="swPar" style="grid-column:2/5" onclick="goId('m7-review')">
+      <span>↕ Review danh mục</span><span>↕ Review từ điển</span><span>↕ Review TCCD chi tiết</span>
+    </button>
+    <div class="swEmpty" style="grid-column:5/9"></div>
+
+    <!-- Lane 3 -->
+    <div class="swLane">Ban QTNNL</div>
+    <div class="swEmpty" style="grid-column:2/6"></div>
+    <button class="swBox hr" onclick="goId('m7-b5')"><i>R</i><b>Rà soát tổng thể</b><small>Đánh dấu phần bổ sung</small></button>
+    <div class="swEmpty"></div>
+    <button class="swBox hr" onclick="goId('m7-eval')"><i>✓</i><b>Hậu kiểm</b><small>Check chéo (nếu cần)</small></button>
+
+    <!-- Lane 4 -->
+    <div class="swLane">PTGĐ phụ trách<br>Chi nhánh</div>
+    <div class="swEmpty" style="grid-column:2/7"></div>
+    <button class="swBox ap" onclick="goId('m7-b6')"><i>P</i><b>Phê duyệt</b><small>Bộ TCCD đơn vị</small></button>
+    <div class="swEmpty"></div>
+
+    <!-- Foundation -->
+    <div class="swFound">
+      <b>CHUẨN GỐC</b> Bộ TCCD Tổng công ty — bám sát, phát triển lên, không xáo trộn. Các Chi nhánh, Dự án nên tham khảo bộ của nhau.
+    </div>
+  </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Chuẩn gốc: Bộ TCCD Tổng công ty",
+html:`
+<section class="slide m7">
+  <div class="eyebrow">NGUYÊN TẮC XUYÊN SUỐT</div>
+  <h2>Lấy Bộ TCCD Tổng công ty làm chuẩn để phát triển lên</h2>
+  <p class="lead">Không xây lại từ đầu, không xáo trộn nền đã có. Chi nhánh, Dự án kế thừa và chỉ bổ sung phần thực sự đặc thù.</p>
+
+  <div class="kvCols">
+    <div class="kvCol keep">
+      <h3>Bám chuẩn</h3>
+      <ul>
+        <li>Nguyên tắc TCCD của Tổng Giám đốc tại Thông báo 776/TB-TDKT</li>
+        <li>Thang cấp độ 1–5 và mô tả cấp độ trong Từ điển năng lực</li>
+        <li>Biểu mẫu TCCD theo nhóm: Lãnh đạo Ban, Lãnh đạo Phòng, Chuyên viên/Kỹ sư, Nhân viên</li>
+        <li>Năng lực đã có trong Từ điển Tổng công ty: giữ tên, mã và nội hàm</li>
+        <li>Tiêu chuẩn tiếng Anh theo Thông báo 809/TB-TDKT</li>
+      </ul>
+    </div>
+    <div class="kvCol add">
+      <h3>Phát triển thêm, có lý do</h3>
+      <ul>
+        <li>Chức danh đặc thù chỉ có ở Chi nhánh, Dự án (giàn khai thác, hàng hải, căn cứ…)</li>
+        <li>Năng lực đặc thù vận hành chưa có trong Từ điển năng lực Tổng công ty</li>
+        <li>Điều chỉnh cấp độ yêu cầu khi phạm vi công việc thực tế khác — phải nêu lý do</li>
+      </ul>
+    </div>
+    <div class="kvCol no">
+      <h3>Không làm</h3>
+      <ul>
+        <li>Đổi tên hoặc nội hàm của năng lực lấy từ Từ điển Tổng công ty</li>
+        <li>Xây bộ tiêu chuẩn riêng tách rời Bộ TCCD Tổng công ty</li>
+        <li>Hạ yêu cầu của LĐB, LĐP xuống dưới cấp độ 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout ok">
+    <b>Tham khảo lẫn nhau:</b> khi có chức danh tương tự, các Chi nhánh, Dự án nên xem bộ của đơn vị khác
+    để rút ngắn thời gian. Mỗi đơn vị vẫn tự chịu trách nhiệm về bộ của mình.
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Bộ chuẩn Tổng công ty bằng số",
+html:`
+<section class="slide m7" id="m7-stat">
+  <div class="eyebrow">CHUẨN GỐC BẰNG SỐ · BỘ MÁY ĐIỀU HÀNH TỔNG CÔNG TY</div>
+  <h2>Ba bộ dữ liệu Chi nhánh, Dự án dùng làm chuẩn</h2>
+
+  <div class="kpi3">
+    <button class="kpi" onclick="goId('m7-stat-dm')"><small>DANH MỤC CHỨC DANH</small><b>225</b><span>chức danh · 21 Trưởng Ban/lĩnh vực · mỗi chức danh một mã</span></button>
+    <button class="kpi" onclick="goId('m7-stat-td')"><small>TỪ ĐIỂN NĂNG LỰC</small><b>336</b><span>đơn vị năng lực · 322 kiến thức chuyên môn (20 lĩnh vực) + 14 kỹ năng, năng lực chung, lãnh đạo</span></button>
+    <button class="kpi" onclick="goId('m7-stat-tc')"><small>TIÊU CHUẨN CHỨC DANH</small><b>6</b><span>nhóm chức danh · bậc 1–3, 1–4, 1–10 · có điểm chuẩn cho từng bậc</span></button>
+  </div>
+
+  <div class="cards three">
+    <article><b>A</b><h3>Danh mục</h3><p>Tra tên, mã chức danh tương tự trước khi đặt tên, mã cho chức danh của đơn vị.</p></article>
+    <article><b>B</b><h3>Từ điển</h3><p>Chọn đơn vị kiến thức đã có mã; chỉ bổ sung khi thực sự chưa có.</p></article>
+    <article><b>C</b><h3>TCCD</h3><p>Đối chiếu dải điểm, số bậc, yêu cầu tiếng Anh của chức danh tương tự.</p></article>
+  </div>
+  <p class="hint">Nguồn: Danh mục chức danh, Tổng hợp TCCD và Từ điển năng lực PVEP (dự thảo kèm Quyết định/Tờ trình tháng 12/2025).</p>
+</section>`
+},
+
+{
+chapter:"Module 6 · Danh mục chức danh Tổng công ty",
+html:`
+<section class="slide m7" id="m7-stat-dm">
+  <div class="eyebrow">CHUẨN GỐC BẰNG SỐ · A</div>
+  <h2>Danh mục: 225 chức danh theo 21 Trưởng Ban/lĩnh vực</h2>
+
+  <div class="statGrid">
+    <div class="hbars">
+        <div class="hb" title="Phát triển khai thác: 24"><span>Phát triển khai thác</span><div><i style="--w:100.0%"></i><b>24</b></div></div>
+        <div class="hb" title="Văn phòng: 22"><span>Văn phòng</span><div><i style="--w:91.7%"></i><b>22</b></div></div>
+        <div class="hb" title="Công nghệ Chuyển đổi số: 19"><span>Công nghệ Chuyển đổi số</span><div><i style="--w:79.2%"></i><b>19</b></div></div>
+        <div class="hb" title="Quản trị nguồn nhân lực: 18"><span>Quản trị nguồn nhân lực</span><div><i style="--w:75.0%"></i><b>18</b></div></div>
+        <div class="hb" title="Kế toán Kiểm toán: 17"><span>Kế toán Kiểm toán</span><div><i style="--w:70.8%"></i><b>17</b></div></div>
+        <div class="hb" title="Trưởng Ban & tương đương: 14"><span>Trưởng Ban & tương đương</span><div><i style="--w:58.3%"></i><b>14</b></div></div>
+        <div class="hb" title="Công nghệ mỏ: 14"><span>Công nghệ mỏ</span><div><i style="--w:58.3%"></i><b>14</b></div></div>
+        <div class="hb" title="Thăm dò: 13"><span>Thăm dò</span><div><i style="--w:54.2%"></i><b>13</b></div></div>
+        <div class="hb" title="Kiểm soát nội bộ: 13"><span>Kiểm soát nội bộ</span><div><i style="--w:54.2%"></i><b>13</b></div></div>
+        <div class="hb" title="Quản lý Hợp đồng Dầu khí: 12"><span>Quản lý Hợp đồng Dầu khí</span><div><i style="--w:50.0%"></i><b>12</b></div></div>
+        <div class="hb" title="Đầu tư: 8"><span>Đầu tư</span><div><i style="--w:33.3%"></i><b>8</b></div></div>
+        <div class="hb" title="Văn phòng Đảng đoàn: 8"><span>Văn phòng Đảng đoàn</span><div><i style="--w:33.3%"></i><b>8</b></div></div>
+        <div class="hb" title="Pháp chế: 7"><span>Pháp chế</span><div><i style="--w:29.2%"></i><b>7</b></div></div>
+        <div class="hb" title="CN Trung tâm kỹ thuật: 6"><span>CN Trung tâm kỹ thuật</span><div><i style="--w:25.0%"></i><b>6</b></div></div>
+        <div class="hb" title="Khoan: 5"><span>Khoan</span><div><i style="--w:20.8%"></i><b>5</b></div></div>
+        <div class="hb" title="An toàn - Sức khỏe - Môi trường: 5"><span>An toàn - Sức khỏe - Môi trường</span><div><i style="--w:20.8%"></i><b>5</b></div></div>
+        <div class="hb" title="Pháp lý đấu thầu: 5"><span>Pháp lý đấu thầu</span><div><i style="--w:20.8%"></i><b>5</b></div></div>
+        <div class="hb" title="Chiến lược & Kế hoạch: 5"><span>Chiến lược & Kế hoạch</span><div><i style="--w:20.8%"></i><b>5</b></div></div>
+        <div class="hb" title="Quản trị rủi ro: 4"><span>Quản trị rủi ro</span><div><i style="--w:16.7%"></i><b>4</b></div></div>
+        <div class="hb" title="Tài chính: 4"><span>Tài chính</span><div><i style="--w:16.7%"></i><b>4</b></div></div>
+        <div class="hb" title="CN Hồ Chí Minh: 2"><span>CN Hồ Chí Minh</span><div><i style="--w:8.3%"></i><b>2</b></div></div>
+    </div>
+    <div class="statSide">
+      <h3>Theo cấp chức danh</h3>
+      <div class="tiny"><span>Trưởng Ban &amp; tương đương</span><b>14</b></div>
+      <div class="tiny"><span>Phó Trưởng Ban &amp; tương đương</span><b>36</b></div>
+      <div class="tiny"><span>Trưởng phòng</span><b>37</b></div>
+      <div class="tiny"><span>Phó Trưởng phòng</span><b>33</b></div>
+      <div class="tiny hi"><span>Chuyên viên, Kỹ sư</span><b>101</b></div>
+      <div class="tiny"><span>Nhân viên, lái xe</span><b>3</b></div>
+      <h3 style="margin-top:14px">Cấu trúc mã</h3>
+      <div class="codeEx"><b>KS</b>.<b>ĐCĐH</b><small>Loại chức danh . Chuyên ngành — Kỹ sư Địa chất điều hành</small></div>
+      <div class="codeEx"><b>TP</b>.<b>ĐVL</b><small>Trưởng phòng Địa vật lý</small></div>
+    </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Từ điển năng lực Tổng công ty",
+html:`
+<section class="slide m7" id="m7-stat-td">
+  <div class="eyebrow">CHUẨN GỐC BẰNG SỐ · B</div>
+  <h2>Từ điển năng lực: 336 đơn vị năng lực đã có mã</h2>
+
+  <div class="statGrid">
+    <div class="hbars">
+        <div class="hbCap">Kiến thức chuyên môn theo lĩnh vực (322)</div>
+        <div class="hb" title="Thăm dò: 38"><span>Thăm dò</span><div><i style="--w:100.0%"></i><b>38</b></div></div>
+        <div class="hb" title="Văn phòng: 30"><span>Văn phòng</span><div><i style="--w:78.9%"></i><b>30</b></div></div>
+        <div class="hb" title="Công nghệ mỏ: 27"><span>Công nghệ mỏ</span><div><i style="--w:71.1%"></i><b>27</b></div></div>
+        <div class="hb" title="QTNNL: 26"><span>QTNNL</span><div><i style="--w:68.4%"></i><b>26</b></div></div>
+        <div class="hb" title="Khoan: 22"><span>Khoan</span><div><i style="--w:57.9%"></i><b>22</b></div></div>
+        <div class="hb" title="An toàn Môi trường: 21"><span>An toàn Môi trường</span><div><i style="--w:55.3%"></i><b>21</b></div></div>
+        <div class="hb" title="Kế toán & Kiểm toán: 18"><span>Kế toán & Kiểm toán</span><div><i style="--w:47.4%"></i><b>18</b></div></div>
+        <div class="hb" title="Phát triển khai thác: 18"><span>Phát triển khai thác</span><div><i style="--w:47.4%"></i><b>18</b></div></div>
+        <div class="hb" title="CNTT - Chuyển đổi số: 17"><span>CNTT - Chuyển đổi số</span><div><i style="--w:44.7%"></i><b>17</b></div></div>
+        <div class="hb" title="Pháp chế: 15"><span>Pháp chế</span><div><i style="--w:39.5%"></i><b>15</b></div></div>
+        <div class="hb" title="Đầu tư: 14"><span>Đầu tư</span><div><i style="--w:36.8%"></i><b>14</b></div></div>
+        <div class="hb" title="Quản lý HĐDK: 12"><span>Quản lý HĐDK</span><div><i style="--w:31.6%"></i><b>12</b></div></div>
+        <div class="hb" title="Chiến lược & Kế hoạch: 11"><span>Chiến lược & Kế hoạch</span><div><i style="--w:28.9%"></i><b>11</b></div></div>
+        <div class="hb" title="Khoa học Công nghệ: 10"><span>Khoa học Công nghệ</span><div><i style="--w:26.3%"></i><b>10</b></div></div>
+        <div class="hb" title="Pháp lý Đấu thầu: 10"><span>Pháp lý Đấu thầu</span><div><i style="--w:26.3%"></i><b>10</b></div></div>
+        <div class="hb" title="Công tác Đảng: 9"><span>Công tác Đảng</span><div><i style="--w:23.7%"></i><b>9</b></div></div>
+        <div class="hb" title="Công tác Đoàn thể: 7"><span>Công tác Đoàn thể</span><div><i style="--w:18.4%"></i><b>7</b></div></div>
+        <div class="hb" title="Kiểm soát nội bộ: 7"><span>Kiểm soát nội bộ</span><div><i style="--w:18.4%"></i><b>7</b></div></div>
+        <div class="hb" title="Quản trị rủi ro: 5"><span>Quản trị rủi ro</span><div><i style="--w:13.2%"></i><b>5</b></div></div>
+        <div class="hb" title="Tài chính: 5"><span>Tài chính</span><div><i style="--w:13.2%"></i><b>5</b></div></div>
+    </div>
+    <div class="statSide">
+      <h3>Năng lực dùng chung (14)</h3>
+      <div class="tiny"><span>Kỹ năng · KN.01 → KN.05</span><b>5</b></div>
+      <div class="tiny"><span>Năng lực chung · NLC.01 → NLC.04</span><b>4</b></div>
+      <div class="tiny hi"><span>Năng lực lãnh đạo · NLLĐ.01 → NLLĐ.05</span><b>5</b></div>
+      <h3 style="margin-top:14px">Cách gọi bằng mã</h3>
+      <div class="codeEx"><b>TD</b>.<b>07</b><small>Tài nguyên và trữ lượng dầu khí</small></div>
+      <div class="codeEx"><b>ATMT</b>.<b>04</b><small>Quản lý rủi ro ATSKMT dự án dầu khí</small></div>
+      <div class="codeEx"><b>NLLĐ</b>.<b>02</b><small>Kỹ năng ra quyết định và xử lý vấn đề</small></div>
+      <p class="hint">Mỗi đơn vị năng lực có mô tả chi tiết và được yêu cầu theo thang cấp độ 1–5.</p>
+    </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Tiêu chuẩn chức danh Tổng công ty",
+html:`
+<section class="slide m7" id="m7-stat-tc">
+  <div class="eyebrow">CHUẨN GỐC BẰNG SỐ · C</div>
+  <h2>TCCD: điểm chuẩn tăng dần theo cấp và theo bậc</h2>
+  <p class="ocSub">Dải điểm trung bình của từng nhóm, từ bậc thấp nhất đến bậc cao nhất. Đúng nguyên tắc TB 776: cấp cao hơn có yêu cầu cao hơn.</p>
+
+  <div class="statGrid">
+    <div class="rgWrap">
+      <div class="rgRow" title="Nhóm 1: điểm TB bậc thấp nhất 108.4 → bậc cao nhất 128.7"><div class="rgLab"><i>1</i><span><b>Trưởng Ban, Chánh VP, GĐ Chi nhánh</b><small>14 chức danh · bậc 1–3</small></span></div><div class="rgTrack"><div class="rgBar" style="left:72.3%;width:13.5%"></div><em style="left:72.3%">108</em><em class="r" style="left:85.8%">129</em></div></div>
+      <div class="rgRow" title="Nhóm 2: điểm TB bậc thấp nhất 90.5 → bậc cao nhất 105.2"><div class="rgLab"><i>2</i><span><b>Phó Trưởng Ban, Phó CVP, PGĐ Chi nhánh</b><small>36 chức danh · bậc 1–3</small></span></div><div class="rgTrack"><div class="rgBar" style="left:60.3%;width:9.8%"></div><em style="left:60.3%">90</em><em class="r" style="left:70.1%">105</em></div></div>
+      <div class="rgRow" title="Nhóm 3: điểm TB bậc thấp nhất 73.4 → bậc cao nhất 88.3"><div class="rgLab"><i>3</i><span><b>Trưởng phòng</b><small>37 chức danh · bậc 1–4</small></span></div><div class="rgTrack"><div class="rgBar" style="left:48.9%;width:9.9%"></div><em style="left:48.9%">73</em><em class="r" style="left:58.9%">88</em></div></div>
+      <div class="rgRow" title="Nhóm 4: điểm TB bậc thấp nhất 61.8 → bậc cao nhất 74.4"><div class="rgLab"><i>4</i><span><b>Phó Trưởng phòng</b><small>33 chức danh · bậc 1–4</small></span></div><div class="rgTrack"><div class="rgBar" style="left:41.2%;width:8.4%"></div><em style="left:41.2%">62</em><em class="r" style="left:49.6%">74</em></div></div>
+      <div class="rgRow" title="Nhóm 5: điểm TB bậc thấp nhất 20.9 → bậc cao nhất 59.5"><div class="rgLab"><i>5</i><span><b>Chuyên viên, Kỹ sư</b><small>101 chức danh · bậc 1–10</small></span></div><div class="rgTrack"><div class="rgBar" style="left:13.9%;width:25.7%"></div><em style="left:13.9%">21</em><em class="r" style="left:39.7%">60</em></div></div>
+      <div class="rgRow" title="Nhóm 6: điểm TB bậc thấp nhất 9.3 → bậc cao nhất 18.3"><div class="rgLab"><i>6</i><span><b>Nhân viên, lái xe</b><small>3 chức danh · bậc 1–4</small></span></div><div class="rgTrack"><div class="rgBar" style="left:6.2%;width:6.0%"></div><em style="left:6.2%">9</em><em class="r" style="left:12.2%">18</em></div></div>
+      <div class="rgAxis"><span>0</span><span>50</span><span>100</span><span>150 điểm</span></div>
+    </div>
+    <div class="statSide">
+      <h3>Yêu cầu tiếng Anh (TOEIC)</h3>
+      <div class="tiny"><span>TOEIC 500</span><b>188</b></div>
+      <div class="tiny"><span>Cố định 600 – 750</span><b>21</b></div>
+      <div class="tiny"><span>Tăng theo bậc (500 → 650)</span><b>12</b></div>
+      <div class="tiny"><span>Không yêu cầu</span><b>3</b></div>
+      <p class="hint">Tính trên 224 chức danh có bảng điểm. Ở mọi chức danh, điểm bậc sau đều cao hơn bậc trước.</p>
+    </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Giai đoạn 1 · Danh mục chức danh",
+html:`
+<section class="slide m7" id="m7-b1">
+  <div class="stepHead"><span>GĐ 1</span><div><div class="eyebrow">CHI NHÁNH, DỰ ÁN THỰC HIỆN</div>
+  <h2>Danh mục chức danh theo chuyên ngành, lĩnh vực</h2></div></div>
+
+  <div class="stepGrid">
+    <div class="stepBlock">
+      <h3>Nội dung thực hiện</h3>
+      <ol>
+        <li><b>Rà soát chức danh hiện có</b> theo Org Chart đã phê duyệt; liệt kê đủ các ô chức danh.</li>
+        <li><b>Phân loại theo lĩnh vực:</b> địa chất, khoan, khai thác, công nghệ mỏ, tài chính, hành chính…</li>
+        <li><b>Cập nhật chức danh mới:</b> đặc thù dự án, chuyển đổi số, dịch chuyển năng lượng.</li>
+        <li><b>Phân định nhóm:</b> quản lý – chuyên môn – hành chính, hỗ trợ.</li>
+        <li><b>Chuẩn hóa tên gọi, mã số</b> trong danh mục của đơn vị; tham khảo Bộ TCCD Tổng công ty và bộ của Chi nhánh khác khi có chức danh tương tự.</li>
+        <li><b>Xác định biểu mẫu</b> áp dụng cho từng nhóm.</li>
+      </ol>
+    </div>
+    <div class="stepBlock">
+      <h3>Biểu mẫu TCCD theo nhóm</h3>
+      <table class="mini">
+        <thead><tr><th>Biểu mẫu</th><th>Nhóm</th><th>Số bậc</th><th>Kinh nghiệm tối thiểu</th></tr></thead>
+        <tbody>
+          <tr><td>1a</td><td>Lãnh đạo Ban</td><td>3</td><td>7 năm chuyên môn, 3 năm quản lý</td></tr>
+          <tr><td>1b</td><td>Lãnh đạo Phòng</td><td>4</td><td>6 năm chuyên môn</td></tr>
+          <tr><td>1c</td><td>Chuyên viên, Kỹ sư</td><td>10</td><td>0 → 5 năm theo bậc</td></tr>
+          <tr><td>1d</td><td>Nhân viên, lái xe…</td><td>—</td><td>Theo biểu mẫu</td></tr>
+        </tbody>
+      </table>
+      <p class="hint">Vị trí quản lý trên Org Chart Chi nhánh, Dự án vận dụng biểu mẫu tương ứng với cấp quản lý.</p>
+    </div>
+  </div>
+
+  <div class="outRow">
+    <div><small>SẢN PHẨM ĐẦU RA</small><b>Danh mục chức danh khớp Org Chart, theo lĩnh vực và nhóm, có mã, có biểu mẫu áp dụng</b></div>
+    <div class="par"><small>SONG SONG</small><b>Gửi Ban chuyên môn ngành dọc review danh mục</b></div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Giai đoạn 2 · Từ điển năng lực",
+html:`
+<section class="slide m7" id="m7-b2">
+  <div class="stepHead"><span>GĐ 2</span><div><div class="eyebrow">CHI NHÁNH, DỰ ÁN THỰC HIỆN</div>
+  <h2>Từ điển năng lực: mô tả theo 5 cấp độ, dùng chung trong đơn vị</h2></div></div>
+
+  <div class="stepGrid">
+    <div class="stepBlock">
+      <h3>Nội dung thực hiện</h3>
+      <ol>
+        <li>Lấy Từ điển năng lực Tổng công ty làm gốc; xác định <b>năng lực cốt lõi</b> và <b>năng lực chuyên môn</b> cho từng nhóm chức danh.</li>
+        <li>Ưu tiên dùng năng lực đã có: kiến thức chuyên môn, kỹ năng/năng lực chung, năng lực lãnh đạo.</li>
+        <li>Năng lực mới chỉ đề xuất khi công việc thực tế chưa có năng lực tương ứng — kèm định nghĩa và <b>mô tả hành vi 5 cấp độ</b> (1 thấp → 5 cao).</li>
+        <li>Thống nhất khung đơn vị kiến thức cho các chức danh tương tự và kỹ năng tối thiểu cho từng nhóm trong đơn vị.</li>
+        <li>Một từ điển cho cả đơn vị: các phòng dùng chung, không mỗi phòng một bản.</li>
+      </ol>
+    </div>
+    <div class="stepBlock">
+      <h3>Cấu trúc một mục từ điển</h3>
+      <div class="dictCard">
+        <div><small>Mã</small><b>KN.05</b></div>
+        <div><small>Tên năng lực</small><b>Ứng dụng công nghệ số (AI, IoT, Cloud)</b></div>
+        <div><small>Định nghĩa</small><b>Nội hàm của năng lực</b></div>
+        <div><small>Cấp độ 1 → 5</small><b>Hành vi quan sát được ở từng cấp</b></div>
+        <div><small>Nguồn</small><b>Từ điển TCT / Bổ sung đặc thù</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="outRow">
+    <div><small>SẢN PHẨM ĐẦU RA</small><b>Từ điển năng lực của đơn vị: phân cấp độ, có mã, ghi rõ nguồn từng năng lực</b></div>
+    <div class="par"><small>SONG SONG</small><b>Ban chuyên môn review năng lực chuyên môn thuộc lĩnh vực</b></div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Giai đoạn 2 · Mã hóa năng lực",
+html:`
+<section class="slide m7" id="m7-b3">
+  <div class="stepHead"><span>GĐ 2</span><div><div class="eyebrow">CHI NHÁNH, DỰ ÁN THỰC HIỆN</div>
+  <h2>Mã hóa năng lực để có thể gọi ra</h2></div></div>
+
+  <p class="lead">Mã là “địa chỉ” của năng lực: TCCD chỉ cần gọi mã, khi tra cứu và đánh giá đọc được ngay nội hàm và cấp độ.</p>
+
+  <div class="codeAnat">
+    <div class="ca"><b>PTKT</b><small>Nhóm / lĩnh vực</small></div>
+    <div class="dot">.</div>
+    <div class="ca"><b>05</b><small>Số thứ tự trong nhóm</small></div>
+    <div class="arrow">→</div>
+    <div class="ca wide"><b>Vận hành Khai thác</b><small>Nội hàm + 5 cấp độ trong từ điển</small></div>
+  </div>
+
+  <div class="cards three">
+    <article>
+      <b>01</b>
+      <h3>Năng lực lấy từ Tổng công ty</h3>
+      <p>Giữ mã gốc trong Từ điển Tổng công ty để dễ đối chiếu với chuẩn.</p>
+    </article>
+    <article>
+      <b>02</b>
+      <h3>Năng lực bổ sung</h3>
+      <p>Đơn vị đặt mã nối tiếp trong nhóm tương ứng và ghi rõ là phần bổ sung.</p>
+    </article>
+    <article>
+      <b>03</b>
+      <h3>Một mã — một năng lực</h3>
+      <p>Trong bộ của đơn vị, kiểm tra trùng mã trước khi đưa vào TCCD chi tiết.</p>
+    </article>
+  </div>
+
+  <div class="callout warn">
+    <b>Lỗi thường gặp khi rà soát dữ liệu hiện có:</b> cùng tên năng lực nhưng mã khác nhau, hoặc một mã dùng cho
+    hai năng lực khác nhau. Cần làm sạch trước khi sang Giai đoạn 3.
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Giai đoạn 3 · TCCD chi tiết từng chức danh",
+html:`
+<section class="slide m7" id="m7-b4">
+  <div class="stepHead"><span>GĐ 3</span><div><div class="eyebrow">CHI NHÁNH, DỰ ÁN THỰC HIỆN</div>
+  <h2>Soạn TCCD chi tiết cho từng chức danh theo biểu mẫu</h2></div></div>
+
+  <div class="stepGrid">
+    <div class="stepBlock">
+      <h3>Các hạng mục trong biểu mẫu</h3>
+      <div class="chips8">
+        <span>I. Bằng cấp</span><span>II. Số năm kinh nghiệm</span>
+        <span>III. Năng lực chuyên môn</span><span>IV. Kỹ năng, năng lực chung</span>
+        <span>V. Năng lực lãnh đạo</span><span>VI. Sức khỏe làm việc</span>
+        <span>VII. Ngoại ngữ (TOEIC)</span><span>Tổng điểm theo chức danh</span>
+      </div>
+      <p class="hint">Năng lực III–V chọn từ Từ điển năng lực và gọi bằng mã; cấp độ 1–5 ghi theo từng bậc. Năng lực lãnh đạo áp dụng cho LĐB, LĐP. Ngoại ngữ theo 809/TB-TDKT.</p>
+    </div>
+    <div class="stepBlock">
+      <h3>Tự kiểm theo Thông báo 776</h3>
+      <ul class="tbCheck">
+        <li><b>LĐB, LĐP:</b> kiến thức và năng lực cốt lõi từ cấp độ 3 trở lên</li>
+        <li><b>Tổng điểm:</b> LĐB &gt; LĐP &gt; Chuyên viên, Kỹ sư</li>
+        <li><b>Cấp Trưởng</b> yêu cầu cao hơn cấp Phó</li>
+        <li><b>Cùng chức danh:</b> bậc sau cao hơn bậc trước</li>
+        <li><b>Sức khỏe:</b> đáp ứng môi trường văn phòng, giàn khoan, tàu biển, sa mạc…</li>
+      </ul>
+      <p class="hint">Đánh dấu dòng nào khác Bộ TCCD Tổng công ty và lý do.</p>
+    </div>
+  </div>
+
+  <div class="outRow">
+    <div><small>SẢN PHẨM ĐẦU RA</small><b>TCCD chi tiết đủ chức danh trên Org Chart và Biểu mẫu 2a tổng hợp TCCD của đơn vị</b></div>
+    <div class="par"><small>SONG SONG</small><b>Ban chuyên môn review cấp độ yêu cầu trước khi gửi Ban QTNNL</b></div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Song song · Review ngành dọc",
+html:`
+<section class="slide m7" id="m7-review">
+  <div class="stepHead par"><span>SONG SONG</span><div><div class="eyebrow">CHẠY CÙNG GIAI ĐOẠN 1 → 3</div>
+  <h2>Liên hệ ngành dọc với các Ban chuyên môn Tổng công ty để review trước</h2></div></div>
+
+  <div class="revFlow">
+    <div><i>GĐ1</i><b>Danh mục chức danh</b><small>Tên, lĩnh vực, nhóm, chức danh đặc thù</small></div>
+    <div><i>GĐ2</i><b>Từ điển &amp; mã năng lực</b><small>Năng lực chuyên môn bổ sung, nội hàm, cấp độ</small></div>
+    <div><i>GĐ3</i><b>TCCD chi tiết</b><small>Cấp độ yêu cầu theo bậc</small></div>
+  </div>
+
+  <div class="revTable">
+    <table>
+      <thead><tr><th>Lĩnh vực chức danh</th><th>Ban review ngành dọc</th></tr></thead>
+      <tbody>
+        <tr><td>Địa chất, Địa vật lý; Khoan – Hoàn thiện giếng</td><td>Ban Thăm dò</td></tr>
+        <tr><td>Vận hành khai thác, Phát triển mỏ, Bảo trì bảo dưỡng, ATSKMT</td><td>Ban Phát triển Khai thác</td></tr>
+        <tr><td>Mô hình mỏ, Thiết kế mỏ, Quản lý mỏ</td><td>Ban Công nghệ mỏ</td></tr>
+        <tr><td>Hợp đồng dầu khí, Pháp lý đấu thầu, Thương mại</td><td>Ban Quản lý Dự án</td></tr>
+        <tr><td>Pháp chế, Mua sắm, Kế hoạch, Quản trị rủi ro</td><td>Ban Chiến lược &amp; QTRR</td></tr>
+        <tr><td>Tài chính, Đầu tư</td><td>Ban Tài chính Đầu tư</td></tr>
+        <tr><td>Kế toán, Kiểm toán</td><td>Ban Kế toán &amp; Kiểm toán</td></tr>
+        <tr><td>CNTT, Chuyển đổi số</td><td>Ban Công nghệ &amp; Chuyển đổi số</td></tr>
+        <tr><td>Hành chính, Văn thư, Truyền thông</td><td>Văn phòng</td></tr>
+        <tr><td>Nhân sự, Đào tạo, Tiền lương</td><td>Ban QTNNL</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout ok">
+    Review sớm ở từng giai đoạn giúp phát hiện lệch chuẩn ngay từ danh mục, tránh phải sửa lại toàn bộ TCCD chi tiết ở cuối.
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Gửi Ban QTNNL rà soát",
+html:`
+<section class="slide m7" id="m7-b5">
+  <div class="stepHead hr"><span>RÀ SOÁT</span><div><div class="eyebrow">BAN QTNNL THỰC HIỆN</div>
+  <h2>Gửi Ban QTNNL rà soát, đánh dấu phần bổ sung so với bộ hiện có</h2></div></div>
+
+  <div class="stepGrid">
+    <div class="stepBlock">
+      <h3>Hồ sơ đơn vị gửi</h3>
+      <ol>
+        <li>Danh mục chức danh có mã, khớp Org Chart đã duyệt (GĐ1).</li>
+        <li>Từ điển năng lực và bảng mã năng lực của đơn vị (GĐ2).</li>
+        <li>TCCD chi tiết từng chức danh và Biểu mẫu 2a tổng hợp (GĐ3).</li>
+        <li>Ý kiến review của các Ban chuyên môn ngành dọc.</li>
+        <li>Bảng phần khác biệt so với Bộ TCCD Tổng công ty, kèm lý do.</li>
+      </ol>
+    </div>
+    <div class="stepBlock">
+      <h3>Cách đánh dấu</h3>
+      <div class="markRow"><span class="mk keep">Giữ nguyên</span><p>Kế thừa nguyên trạng từ Bộ TCCD Tổng công ty.</p></div>
+      <div class="markRow"><span class="mk adj">Điều chỉnh</span><p>Có trong bộ hiện có nhưng thay đổi cấp độ / yêu cầu — nêu lý do.</p></div>
+      <div class="markRow"><span class="mk new">Bổ sung mới</span><p>Chức danh hoặc năng lực đặc thù chưa có trong bộ hiện có.</p></div>
+      <p class="hint">Ban QTNNL kiểm tra việc bám Bộ TCCD Tổng công ty, các nguyên tắc tại TB 776 và sự cần thiết của phần bổ sung.</p>
+    </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Phê duyệt và vận hành",
+html:`
+<section class="slide m7" id="m7-b6">
+  <div class="eyebrow">PHÊ DUYỆT → VẬN HÀNH</div>
+  <h2>Trình phê duyệt và vận hành từ 01/01/2027</h2>
+
+  <div class="duo">
+    <div class="duoCard ap">
+      <span>PHÊ DUYỆT</span>
+      <h3>Trình PTGĐ phụ trách Chi nhánh phê duyệt</h3>
+      <ul>
+        <li>Hồ sơ đã có ý kiến rà soát của Ban QTNNL.</li>
+        <li>Nêu rõ phạm vi áp dụng, danh mục chức danh và phần bổ sung so với bộ hiện có.</li>
+        <li>Sau phê duyệt, cập nhật vào hệ thống: văn phòng điện tử, HRM, đào tạo.</li>
+      </ul>
+    </div>
+    <div class="duoArrow">→</div>
+    <div class="duoCard go" id="m7-b7">
+      <span>01/01/2027</span>
+      <h3>Vận hành</h3>
+      <ul>
+        <li>Đào tạo, hướng dẫn để CBNV nắm chuẩn của chức danh, bậc mình đang giữ.</li>
+        <li>Áp dụng TCCD cho tuyển dụng, bố trí, đánh giá, đào tạo tại đơn vị.</li>
+        <li>Thay đổi Org Chart sau này → cập nhật danh mục và TCCD theo cùng quy trình.</li>
+      </ul>
+    </div>
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Đánh giá và hậu kiểm",
+html:`
+<section class="slide m7" id="m7-eval">
+  <div class="eyebrow">ĐÁNH GIÁ THEO TCCD</div>
+  <h2>Chi nhánh đánh giá — Ban QTNNL hậu kiểm, check chéo (nếu cần)</h2>
+
+  <div class="evalFlow">
+    <div class="ev"><i>1</i><b>Chi nhánh, Dự án tổ chức đánh giá</b><small>Đối chiếu CBNV với TCCD của chức danh, bậc đã phê duyệt</small></div>
+    <div class="evA">→</div>
+    <div class="ev"><i>2</i><b>Lưu kết quả và minh chứng</b><small>Điểm kiến thức/kỹ năng, điều kiện hồ sơ, bằng chứng</small></div>
+    <div class="evA">→</div>
+    <div class="ev hr"><i>3</i><b>Ban QTNNL hậu kiểm</b><small>Rà soát tính tuân thủ, tính nhất quán</small></div>
+    <div class="evA">→</div>
+    <div class="ev hr soft"><i>4</i><b>Check chéo (nếu cần)</b><small>Kiểm tra lại mẫu hoặc trường hợp bất thường</small></div>
+  </div>
+
+  <div class="cards two">
+    <article>
+      <b>ĐV</b>
+      <h3>Trách nhiệm của Chi nhánh, Dự án</h3>
+      <p>Chủ động tổ chức đánh giá, chịu trách nhiệm về tính chính xác của kết quả và lưu trữ minh chứng đầy đủ.</p>
+    </article>
+    <article>
+      <b>HR</b>
+      <h3>Vai trò của Ban QTNNL</h3>
+      <p>Không đánh giá thay đơn vị; hậu kiểm và check chéo khi cần.</p>
+    </article>
+  </div>
+
+  <div class="callout">
+    Điều kiện đạt vẫn theo quy định: kiến thức/kỹ năng đạt ngưỡng <b>≥80%</b> và đáp ứng đủ các điều kiện hồ sơ của chức danh.
+  </div>
+</section>`
+},
+
+{
+chapter:"Module 6 · Danh sách kiểm tra trước 01/01/2027",
+html:`
+<section class="slide m7">
+  <div class="eyebrow">TỰ RÀ SOÁT TRƯỚC KHI TRÌNH</div>
+  <h2>Danh sách sẵn sàng vận hành</h2>
+  <p class="lead">Đánh dấu các mục đơn vị đã hoàn thành.</p>
+
+  <div class="checkList" id="m7Check">
+    <label><input type="checkbox"> Danh mục chức danh khớp Org Chart, phân theo lĩnh vực và nhóm, có mã</label>
+    <label><input type="checkbox"> Đã bám Bộ TCCD Tổng công ty; tham khảo bộ của Chi nhánh khác khi có chức danh tương tự</label>
+    <label><input type="checkbox"> Từ điển năng lực mô tả 5 cấp độ, có mã, ghi rõ nguồn</label>
+    <label><input type="checkbox"> TCCD chi tiết đủ chức danh, đủ bậc, đủ hạng mục theo biểu mẫu</label>
+    <label><input type="checkbox"> LĐB, LĐP: kiến thức và năng lực cốt lõi từ cấp độ 3 trở lên</label>
+    <label><input type="checkbox"> Phân cấp rõ: LĐB &gt; LĐP &gt; CV, KS; Trưởng &gt; Phó; bậc sau &gt; bậc trước</label>
+    <label><input type="checkbox"> Có ý kiến review của các Ban chuyên môn ngành dọc</label>
+    <label><input type="checkbox"> Đã đánh dấu Giữ nguyên / Điều chỉnh / Bổ sung mới và lý do</label>
+    <label><input type="checkbox"> Ban QTNNL đã rà soát; hồ sơ trình PTGĐ phụ trách Chi nhánh</label>
+    <label><input type="checkbox"> Có kế hoạch đào tạo, phổ biến và tổ chức đánh giá từ 01/01/2027</label>
+  </div>
+  <div class="checkMeter"><div id="m7Bar"></div><span id="m7Txt">0/10 mục</span></div>
+</section>`
+}
+,
+/* ===================== MODULE 7 · ORG CHART CÁC DỰ ÁN ===================== */
+{
+chapter:"Module 7 · Org Chart các dự án",
+html:`
+<section class="slide module">
+  <div class="hero">
+    <div class="eyebrow">MODULE 07</div>
+    <h1>Org Chart<br>các dự án</h1>
+    <div class="goldline"></div>
+    <p>
+      Chức danh tại các dự án được xác định theo Org Chart đã phê duyệt.
+      Module gồm 4 hợp phần: PVEP-HCM, PVEP-NCS, Chi nhánh Khánh Mỹ (PVEP-KM) và PVEP-Cửu Long.
+    </p>
+  </div>
+</section>`
+},
+{
+chapter:"Module 7 · Org Chart các dự án · Tổng quan",
+html:`
+<section class="slide ocSlide" id="oc-overview">
+  <div class="eyebrow">MODULE 07 · TỔNG QUAN</div>
+  <h2>4 dự án · 4 hợp phần Org Chart</h2>
+  <p class="ocSub">Mỗi hợp phần gồm: cơ cấu tổ chức và danh mục chức danh theo từng phòng / đơn vị.
+  Tên chức danh được giữ nguyên như trên Org Chart nguồn.</p>
+  <div class="ocProjects" id="ocProjects"></div>
+  <div class="ocSearch">
+    <label for="ocQuery">⌕ Tìm chức danh trên cả 4 Org Chart</label>
+    <input type="text" id="ocQuery" placeholder="Nhập tên chức danh, ví dụ: Drilling Engineer, KSC Khoan, Kế toán…" autocomplete="off">
+    <div class="ocResults" id="ocResults"></div>
+  </div>
+</section>`
+},
+/* ===================== HỢP PHẦN 6.1 · PVEP-HCM ===================== */
+{
+chapter:"Hợp phần 7.1 · PVEP-HCM",
+html:`<section class="slide module ocCover" id="oc-cover-hcm"></section>`
+},
+{
+chapter:"Hợp phần 7.1 · PVEP-HCM · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-hcm"></section>`
+},
+{
+chapter:"Hợp phần 7.1 · PVEP-HCM · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-hcm"></section>`
+},
+/* ===================== HỢP PHẦN 6.2 · PVEP-NCS ===================== */
+{
+chapter:"Hợp phần 7.2 · PVEP-NCS",
+html:`<section class="slide module ocCover" id="oc-cover-ncs"></section>`
+},
+{
+chapter:"Hợp phần 7.2 · PVEP-NCS · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-ncs"></section>`
+},
+{
+chapter:"Hợp phần 7.2 · PVEP-NCS · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-ncs"></section>`
+},
+/* ===================== HỢP PHẦN 6.3 · PVEP-Khánh Mỹ ===================== */
+{
+chapter:"Hợp phần 7.3 · PVEP-Khánh Mỹ",
+html:`<section class="slide module ocCover" id="oc-cover-km"></section>`
+},
+{
+chapter:"Hợp phần 7.3 · PVEP-Khánh Mỹ · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-km"></section>`
+},
+{
+chapter:"Hợp phần 7.3 · PVEP-Khánh Mỹ · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-km"></section>`
+},
+/* ===================== HỢP PHẦN 6.4 · PVEP-Cửu Long ===================== */
+{
+chapter:"Hợp phần 7.4 · PVEP-Cửu Long",
+html:`<section class="slide module ocCover" id="oc-cover-cl"></section>`
+},
+{
+chapter:"Hợp phần 7.4 · PVEP-Cửu Long · Cơ cấu tổ chức",
+html:`<section class="slide ocSlide" id="oc-struct-cl"></section>`
+},
+{
+chapter:"Hợp phần 7.4 · PVEP-Cửu Long · Danh mục chức danh",
+html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-cl"></section>`
+},
 /* ===================== 48 ===================== */
 {
 chapter:"Tổng kết",
@@ -3635,96 +4652,11 @@ html:`
   </div>
 </section>`
 }
-,
-/* ===================== MODULE 6 · ORG CHART CÁC DỰ ÁN ===================== */
-{
-chapter:"Module 6 · Org Chart các dự án",
-html:`
-<section class="slide module">
-  <div class="hero">
-    <div class="eyebrow">MODULE 06</div>
-    <h1>Org Chart<br>các dự án</h1>
-    <div class="goldline"></div>
-    <p>
-      Chức danh tại các dự án được xác định theo Org Chart đã phê duyệt.
-      Module gồm 4 hợp phần: PVEP-HCM, PVEP-NCS, Chi nhánh Khánh Mỹ (PVEP-KM) và PVEP-Cửu Long.
-    </p>
-  </div>
-</section>`
-},
-{
-chapter:"Module 6 · Org Chart các dự án · Tổng quan",
-html:`
-<section class="slide ocSlide" id="oc-overview">
-  <div class="eyebrow">MODULE 06 · TỔNG QUAN</div>
-  <h2>4 dự án · 4 hợp phần Org Chart</h2>
-  <p class="ocSub">Mỗi hợp phần gồm: cơ cấu tổ chức và danh mục chức danh theo từng phòng / đơn vị.
-  Tên chức danh được giữ nguyên như trên Org Chart nguồn.</p>
-  <div class="ocProjects" id="ocProjects"></div>
-  <div class="ocSearch">
-    <label for="ocQuery">⌕ Tìm chức danh trên cả 4 Org Chart</label>
-    <input type="text" id="ocQuery" placeholder="Nhập tên chức danh, ví dụ: Drilling Engineer, KSC Khoan, Kế toán…" autocomplete="off">
-    <div class="ocResults" id="ocResults"></div>
-  </div>
-</section>`
-},
-/* ===================== HỢP PHẦN 6.1 · PVEP-HCM ===================== */
-{
-chapter:"Hợp phần 6.1 · PVEP-HCM",
-html:`<section class="slide module ocCover" id="oc-cover-hcm"></section>`
-},
-{
-chapter:"Hợp phần 6.1 · PVEP-HCM · Cơ cấu tổ chức",
-html:`<section class="slide ocSlide" id="oc-struct-hcm"></section>`
-},
-{
-chapter:"Hợp phần 6.1 · PVEP-HCM · Danh mục chức danh",
-html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-hcm"></section>`
-},
-/* ===================== HỢP PHẦN 6.2 · PVEP-NCS ===================== */
-{
-chapter:"Hợp phần 6.2 · PVEP-NCS",
-html:`<section class="slide module ocCover" id="oc-cover-ncs"></section>`
-},
-{
-chapter:"Hợp phần 6.2 · PVEP-NCS · Cơ cấu tổ chức",
-html:`<section class="slide ocSlide" id="oc-struct-ncs"></section>`
-},
-{
-chapter:"Hợp phần 6.2 · PVEP-NCS · Danh mục chức danh",
-html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-ncs"></section>`
-},
-/* ===================== HỢP PHẦN 6.3 · PVEP-Khánh Mỹ ===================== */
-{
-chapter:"Hợp phần 6.3 · PVEP-Khánh Mỹ",
-html:`<section class="slide module ocCover" id="oc-cover-km"></section>`
-},
-{
-chapter:"Hợp phần 6.3 · PVEP-Khánh Mỹ · Cơ cấu tổ chức",
-html:`<section class="slide ocSlide" id="oc-struct-km"></section>`
-},
-{
-chapter:"Hợp phần 6.3 · PVEP-Khánh Mỹ · Danh mục chức danh",
-html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-km"></section>`
-},
-/* ===================== HỢP PHẦN 6.4 · PVEP-Cửu Long ===================== */
-{
-chapter:"Hợp phần 6.4 · PVEP-Cửu Long",
-html:`<section class="slide module ocCover" id="oc-cover-cl"></section>`
-},
-{
-chapter:"Hợp phần 6.4 · PVEP-Cửu Long · Cơ cấu tổ chức",
-html:`<section class="slide ocSlide" id="oc-struct-cl"></section>`
-},
-{
-chapter:"Hợp phần 6.4 · PVEP-Cửu Long · Danh mục chức danh",
-html:`<section class="slide ocSlide ocCatSlide" id="oc-cat-cl"></section>`
-}
 ];
 
 
 /* =========================================================
-   HIỂN THỊ 48 SLIDE
+   HIỂN THỊ SLIDE
 ========================================================= */
 
 const stage = document.getElementById("stage");
@@ -3782,13 +4714,6 @@ function renderSlide(){
     renderTOC();
   }
 
-  if(current === 44){
-    renderQuizQuestion();
-  }
-
-  if(current === 45){
-    renderFinalResult();
-  }
 }
 
 function go(n){
@@ -4033,428 +4958,24 @@ function loadPlan(){
 }
 
 
-/* =========================================================
-   QUIZ 15 CÂU
-========================================================= */
-
-const QUIZ = [
-
-{
-q:"Tiêu chuẩn chức danh chủ yếu mô tả điều gì?",
-options:[
-"Ý kiến của người quản lý về một nhân viên",
-"Yêu cầu đối với một chức danh/vị trí",
-"Kết quả công việc của một tháng",
-"Mức lương của người lao động"
-],
-answer:1
-},
-
-{
-q:"Khi tra cứu TCCD, tổ hợp thông tin nào cần xác định đúng?",
-options:[
-"Chỉ tên Ban/Đơn vị",
-"Chỉ bằng cấp",
-"Đơn vị/lĩnh vực, chức danh và bậc chức danh",
-"Chỉ số năm kinh nghiệm"
-],
-answer:2
-},
-
-{
-q:"TCCD có phải chỉ gồm yêu cầu về bằng cấp không?",
-options:[
-"Có",
-"Không",
-"Chỉ đối với kỹ sư",
-"Chỉ đối với lãnh đạo"
-],
-answer:1
-},
-
-{
-q:"Nội dung nào thuộc nhóm kinh nghiệm?",
-options:[
-"Số năm kinh nghiệm chuyên môn",
-"Điểm ngoại ngữ",
-"Kỹ năng giao tiếp",
-"Quản lý dữ liệu"
-],
-answer:0
-},
-
-{
-q:"KN.02 trong Từ điển năng lực là:",
-options:[
-"Kỹ năng giao tiếp",
-"Quản lý dữ liệu",
-"Tư duy phương pháp luận",
-"Ra quyết định"
-],
-answer:0
-},
-
-{
-q:"NLC.01 là năng lực nào?",
-options:[
-"Quản lý dữ liệu",
-"Kỹ năng đàm phán",
-"Sử dụng tiếng Việt",
-"Tạo động lực"
-],
-answer:0
-},
-
-{
-q:"Năng lực lãnh đạo được áp dụng chủ yếu đối với:",
-options:[
-"Mọi chức danh giống nhau",
-"Các chức danh quản lý",
-"Chỉ nhân viên mới",
-"Chỉ người làm CNTT"
-],
-answer:1
-},
-
-{
-q:"Theo Thông báo 809/TB-TDKT, cách hiểu nào phù hợp nhất về tiêu chuẩn tiếng Anh hiện hành?",
-options:[
-"Mọi chức danh đều áp dụng chung TOEIC 500",
-"Tiêu chuẩn được xác định theo chức danh, cấp bậc và yêu cầu công việc; nhiều chức danh áp dụng 4 kỹ năng",
-"Chỉ cần đánh giá kỹ năng Reading",
-"Mọi chức danh đều bắt buộc TOEIC 800"
-],
-answer:1
-},
-
-{
-q:"Khi xác định tiêu chuẩn tiếng Anh hiện hành của một chức danh, cần làm gì?",
-options:[
-"Chỉ nhìn mức TOEIC 500 trong tài liệu cũ",
-"Đối chiếu đúng chức danh/cấp bậc và cập nhật yêu cầu theo Thông báo 809/TB-TDKT",
-"Không cần đánh giá ngoại ngữ",
-"Chỉ đánh giá kỹ năng đọc"
-],
-answer:1
-},
-
-{
-q:"KN.05 liên quan đến nội dung nào?",
-options:[
-"Ứng dụng công nghệ số",
-"Chỉ kỹ năng Word",
-"Chỉ quản lý nhân sự",
-"Chỉ tiếng Anh"
-],
-answer:0
-},
-
-{
-q:"Bậc chức danh và cấp độ năng lực có phải cùng một khái niệm không?",
-options:[
-"Có",
-"Không",
-"Chỉ giống nhau với lãnh đạo",
-"Chỉ giống nhau với chuyên viên"
-],
-answer:1
-},
-
-{
-q:"Ngưỡng đánh giá kiến thức/kỹ năng dùng để xác định đạt yêu cầu là:",
-options:[
-"50%",
-"60%",
-"70%",
-"80%"
-],
-answer:3
-},
-
-{
-q:"Nếu một tiêu chí điều kiện bắt buộc của chức danh không đáp ứng thì cách hiểu phù hợp là:",
-options:[
-"Vẫn mặc nhiên đạt nếu chuyên môn tốt",
-"Không thể chỉ dựa vào điểm chuyên môn để kết luận đạt TCCD",
-"Tự động được miễn tiêu chí đó",
-"Không cần xem TCCD nữa"
-],
-answer:1
-},
-
-{
-q:"Khoảng cách giữa yêu cầu chức danh và năng lực hiện tại có thể được sử dụng để:",
-options:[
-"Xác định nhu cầu đào tạo và phát triển",
-"Tự động tăng lương",
-"Thay thế mọi quy trình nhân sự",
-"Không có mục đích cụ thể"
-],
-answer:0
-},
-
-{
-q:"Thông điệp phù hợp nhất sau khóa học là:",
-options:[
-"Chỉ cần đạt bài kiểm tra",
-"Biết chuẩn, hiểu mình và chủ động phát triển",
-"Chỉ cần có bằng cấp phù hợp",
-"Chỉ lãnh đạo cần quan tâm TCCD"
-],
-answer:1
+function goId(id){
+  const i = slideEls.indexOf(document.getElementById(id));
+  if(i >= 0) go(i);
 }
 
-];
-
-let quizIndex = 0;
-let quizSelected = null;
-let quizUserAnswers = [];
-
-function startQuiz(){
-
-  quizIndex = 0;
-  quizSelected = null;
-  quizUserAnswers = [];
-
-  go(46);
-
-  setTimeout(
-    renderQuizQuestion,
-    30
-  );
-}
-
-function renderQuizQuestion(){
-
-  const qEl =
-    document.getElementById("quizQuestion");
-
-  const aEl =
-    document.getElementById("quizAnswers");
-
-  const meta =
-    document.getElementById("quizMeta");
-
-  const prog =
-    document.getElementById("quizProgress");
-
-  const nextBtn =
-    document.getElementById("quizNext");
-
-  if(!qEl || !aEl || !meta || !prog){
-    return;
-  }
-
-  if(quizIndex >= QUIZ.length){
-    finishQuiz();
-    return;
-  }
-
-  const q = QUIZ[quizIndex];
-
-  quizSelected = null;
-
-  meta.textContent =
-    `Câu ${quizIndex + 1} / ${QUIZ.length}`;
-
-  prog.style.width =
-    ((quizIndex + 1) / QUIZ.length * 100) + "%";
-
-  qEl.textContent = q.q;
-
-  aEl.innerHTML =
-    q.options.map((option,i)=>`
-      <button
-        onclick="selectQuizAnswer(${i},this)">
-        <b>${String.fromCharCode(65+i)}.</b>
-        ${option}
-      </button>
-    `).join("");
-
-  if(nextBtn){
-
-    nextBtn.disabled = true;
-
-    nextBtn.textContent =
-      quizIndex === QUIZ.length - 1
-      ? "Xem kết quả"
-      : "Câu tiếp theo →";
-  }
-}
-
-function selectQuizAnswer(index,button){
-
-  quizSelected = index;
-
-  document
-    .querySelectorAll("#quizAnswers button")
-    .forEach(x=>{
-      x.classList.remove("good","bad");
-      x.style.background = "#fff";
-      x.style.borderColor = "#d7e1e3";
-    });
-
-button.style.background = "#FFF4EC";
-button.style.borderColor = "#B85C38";
-
-  document.getElementById("quizNext").disabled = false;
-}
-
-function quizNextQuestion(){
-
-  if(quizSelected === null){
-    return;
-  }
-
-  quizUserAnswers[quizIndex] =
-    quizSelected;
-
-  quizIndex++;
-
-  if(quizIndex >= QUIZ.length){
-
-    finishQuiz();
-
-  }else{
-
-    renderQuizQuestion();
-  }
-}
-
-function finishQuiz(){
-
-  let score = 0;
-
-  QUIZ.forEach((q,i)=>{
-
-    if(quizUserAnswers[i] === q.answer){
-      score++;
-    }
-
-  });
-
-  const percent =
-    Math.round(
-      score / QUIZ.length * 100
-    );
-
-  const passed =
-    score >= 12;
-
-  localStorage.setItem(
-    "PVEP_TCCD_QUIZ_RESULT",
-    JSON.stringify({
-      score,
-      percent,
-      passed,
-      completedAt:
-        new Date().toISOString()
-    })
-  );
-
-  go(45);
-
-  setTimeout(
-    renderFinalResult,
-    30
-  );
-}
-
-function renderFinalResult(){
-
-  const target =
-    document.getElementById("finalResult");
-
-  if(!target) return;
-
-  const raw =
-    localStorage.getItem(
-      "PVEP_TCCD_QUIZ_RESULT"
-    );
-
-  if(!raw){
-
-    target.innerHTML = `
-      <h2>Hoàn thành bài kiểm tra</h2>
-
-      <p class="lead">
-        Kết quả của bạn sẽ hiển thị tại đây
-        sau khi trả lời đủ 15 câu.
-      </p>
-
-      <button class="primary"
-        onclick="startQuiz()">
-        Làm bài kiểm tra
-      </button>
-    `;
-
-    return;
-  }
-
-  try{
-
-    const r =
-      JSON.parse(raw);
-
-    target.innerHTML = `
-
-      <div class="split">
-
-        <div class="metric">
-          <span>${r.score}/15</span>
-          <b>${r.percent}%</b>
-
-          <p>
-            ${r.passed
-              ? "Đạt ngưỡng hoàn thành bài kiểm tra."
-              : "Chưa đạt ngưỡng 80% của bài kiểm tra."}
-          </p>
-        </div>
-
-        <div>
-
-          <h2>
-            ${r.passed
-              ? "Bạn đã hoàn thành bài kiểm tra"
-              : "Hãy xem lại nội dung chính"}
-          </h2>
-
-          <div class="callout ${r.passed ? "ok":"bad"}">
-
-            <b>
-              ${r.passed
-                ? "Đạt yêu cầu"
-                : "Chưa đạt yêu cầu"}
-            </b>
-
-            <br><br>
-
-            ${
-              r.passed
-              ? "Bạn đã trả lời đúng ít nhất 12/15 câu."
-              : "Bạn cần đạt ít nhất 12/15 câu để hoàn thành bài kiểm tra."
-            }
-
-          </div>
-
-          <button class="primary"
-            onclick="startQuiz()">
-            Làm lại quiz
-          </button>
-
-          <button class="primary"
-            style="background:#29323A;margin-left:6px"
-            onclick="go(47)">
-            Tiếp tục →
-          </button>
-
-        </div>
-
-      </div>
-    `;
-
-  }catch(e){}
-}
+(function(){
+  const box = document.getElementById("m7Check");
+  if(!box) return;
+  const items = box.querySelectorAll("input");
+  const upd = () => {
+    let n = 0;
+    items.forEach(x => { x.parentElement.classList.toggle("done", x.checked); if(x.checked) n++; });
+    document.getElementById("m7Bar").style.setProperty("--w", (n/items.length*100)+"%");
+    document.getElementById("m7Txt").textContent = n + "/" + items.length + " mục";
+  };
+  items.forEach(x => x.addEventListener("change", upd));
+  upd();
+})();
 
 function goContents(){
   current = 1;
@@ -5038,7 +5559,7 @@ window.PROJECT_OC = [
 
 /* ===================== 6.1 · PVEP-HCM ===================== */
 {
-id:"hcm", code:"6.1", name:"PVEP-HCM", color:"#4A568D",
+id:"hcm", code:"7.1", name:"PVEP-HCM", color:"#4A568D",
 title:"2027 Project Organization Chart PVEP-HCM (đề xuất)",
 scope:"Lô 01/10&02/10 · Lô 01/97&02/97 · Lô 09-2/10",
 year:"2027",
@@ -5100,7 +5621,7 @@ notes:[
 
 /* ===================== 6.2 · PVEP-NCS ===================== */
 {
-id:"ncs", code:"6.2", name:"PVEP-NCS", color:"#4F847F",
+id:"ncs", code:"7.2", name:"PVEP-NCS", color:"#4F847F",
 title:"Sơ đồ tổ chức PVEP-NCS 2027",
 scope:"Lô 05.1a · Lô 10/11 và 10&11-1",
 year:"2027",
@@ -5168,7 +5689,7 @@ notes:[
 
 /* ===================== 6.3 · PVEP-KHÁNH MỸ ===================== */
 {
-id:"km", code:"6.3", name:"PVEP-Khánh Mỹ", color:"#B95D50",
+id:"km", code:"7.3", name:"PVEP-Khánh Mỹ", color:"#B95D50",
 title:"Nhân sự dự án Chi nhánh Khánh Mỹ năm 2027",
 scope:"Chi nhánh Khánh Mỹ (PVEP-KM)",
 year:"2027",
@@ -5260,7 +5781,7 @@ notes:[
 
 /* ===================== 6.4 · PVEP-CỬU LONG ===================== */
 {
-id:"cl", code:"6.4", name:"PVEP-Cửu Long", color:"#756C98",
+id:"cl", code:"7.4", name:"PVEP-Cửu Long", color:"#756C98",
 title:"2027 PVEP-Cuu Long Organization Chart",
 scope:"Văn phòng · Giàn STD/STV/STT · Ban QLDA STT Phase 2B & ST Do",
 year:"2027",
@@ -5469,7 +5990,7 @@ notes:[
     const s = projStats(p);
     el.innerHTML = `
       <div class="hero">
-        <div class="eyebrow">MODULE 06 · HỢP PHẦN ${h(p.code)}</div>
+        <div class="eyebrow">MODULE 07 · HỢP PHẦN ${h(p.code)}</div>
         <h1>Org Chart<br>${h(p.name)}</h1>
         <div class="goldline"></div>
         <p>${h(p.title)} · ${h(p.scope)}</p>
